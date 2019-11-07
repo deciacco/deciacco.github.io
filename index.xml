@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deciacco</title>
+    <link>https://deciacco.github.io/</link>
+    <description>Recent content on deciacco</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deciacco.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>&lt;&lt;Place Holder&gt;&gt; Private GitHub Repo and Autohokey</title>
+      <link>https://deciacco.github.io/posts/ahkgithubprivate/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/ahkgithubprivate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitor Folder Service With PHP (Almost)</title>
+      <link>https://deciacco.github.io/posts/monitorfolderservice/</link>
+      <pubDate>Fri, 16 Oct 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/monitorfolderservice/</guid>
+      <description>At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&amp;rsquo;s virtual mailbox.</description>
+    </item>
+    
+    <item>
+      <title>Image Resizer - Php Application for Windows (Almost)</title>
+      <link>https://deciacco.github.io/posts/phpimageresizer/</link>
+      <pubDate>Thu, 03 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpimageresizer/</guid>
+      <description>Small utility to quickly and easily resize images. Written in PHP, and while PHP is mostly a &amp;ldquo;Web&amp;rdquo; language, it actually worked out quite nicely.
+You simply right-click an image or a folder containing images and select the appropriate command. Currently, the program supports JPEG, GIF, and PNG images.
+The original image remains intact as a new, resized version is created.
+Installing
+You can simply download the installer and run it on your computer.</description>
+    </item>
+    
+    <item>
+      <title> Program For Printing Labels - LblPrint</title>
+      <link>https://deciacco.github.io/posts/lblprint/</link>
+      <pubDate>Thu, 13 Mar 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/lblprint/</guid>
+      <description>This is a very simple label printer application.
+Here is how it works:
+The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated. On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container.</description>
+    </item>
+    
+    <item>
+      <title>C# .NET 2.0 Web Service - Sync &#43; Async</title>
+      <link>https://deciacco.github.io/posts/dilbertsycasync/</link>
+      <pubDate>Fri, 19 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/dilbertsycasync/</guid>
+      <description>I wanted to learn how to use web services in .NET with C#, so I created this tiny program that goes out and gets the &amp;ldquo;Dilbert of the Day&amp;rdquo; comic strip and puts it on your desktop in the form of a jpeg file.
+There are two versions to this program. One calls the web service synchronously, while the other calls the web services asynchronously. Synchronous calls are what most programmers would be familiar with.</description>
+    </item>
+    
+    <item>
+      <title>BatchRun</title>
+      <link>https://deciacco.github.io/posts/batchrun/</link>
+      <pubDate>Tue, 16 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/batchrun/</guid>
+      <description>This application was written to run multiple sql scripts files against an MS Sql Server database. I wrote it to learn more about .NET C# 2 Windows application development.
+It is pretty much a work in progress, but it&amp;rsquo;s at a usable point.
+Repository</description>
+    </item>
+    
+    <item>
+      <title>PHP, OpenSSL and ftp_ssl_connect() on Win32</title>
+      <link>https://deciacco.github.io/posts/phpopenssl/</link>
+      <pubDate>Fri, 12 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpopenssl/</guid>
+      <description>For quite some time I&amp;rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
+According to the PHP manual:
+ ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed.</description>
+    </item>
+    
+    <item>
+      <title>Program For Sharing Files At Lanparties - UtFiles</title>
+      <link>https://deciacco.github.io/posts/utfiles/</link>
+      <pubDate>Mon, 19 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/utfiles/</guid>
+      <description>I&amp;rsquo;ve had this app for a while. In fact, this was one of the very first apps I built in Foxpro. I haven&amp;rsquo;t posted it because I wanted to get it cleaned up and add in some of the new things I&amp;rsquo;ve learned.
+It&amp;rsquo;s basically a file sorting utility that takes files from a specified source directory and its subdirectories, and places them in the destination&amp;rsquo;s subdirectories based on the file&amp;rsquo;s extension.</description>
+    </item>
+    
+    <item>
+      <title>Program For Extracting HTML - GetHtml</title>
+      <link>https://deciacco.github.io/posts/gethtml/</link>
+      <pubDate>Fri, 15 Dec 2006 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/gethtml/</guid>
+      <description>Another little program released. This program is for retrieving the HTML of a web page.
+After experimenting with the West Wind Internet and Client Tools and then with my own version of a wininet.dll wrapper, I decided the easiest way was to use the WinHTTP service. I didn&amp;rsquo;t even know it existed until I found it on Calvin Hsia&amp;rsquo;s Weblog.
+Below is the main code of the application. Look at the links provided in the readme for more information on the oHTTP object instantiated in the code.</description>
+    </item>
+    
+    <item>
+      <title>Program For Testing SMTP Servers - SmtpTester</title>
+      <link>https://deciacco.github.io/posts/smtptester/</link>
+      <pubDate>Mon, 30 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/smtptester/</guid>
+      <description>Ok&amp;hellip;so here it is&amp;hellip;the first of hopefully many applications you can download.
+The idea to create this app came to me while I was trying to troubleshoot my uncle’s program that wouldn&amp;rsquo;t connect to his smtp server.
+His application was in VB6 and he used it to send out emails from a list of addresses in an Access database. After he switched ISP&amp;rsquo;s he could no longer get it to work since the new provider required him to authenticate before being able to send mail.</description>
+    </item>
+    
+  </channel>
+</rss>

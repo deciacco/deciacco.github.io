@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>C# .NET 2.0 Web Service - Sync &#43; Async // deciacco</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="eugenio c." />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://deciacco.github.io/css/main.min.830650129dc137cb8e7573f4292c16f70a2df294ff42ef7a5a379734d68036ce.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C# .NET 2.0 Web Service - Sync &#43; Async"/>
+<meta name="twitter:description" content="I wanted to learn how to use web services in .NET with C#, so I created this tiny program that goes out and gets the &ldquo;Dilbert of the Day&rdquo; comic strip and puts it on your desktop in the form of a jpeg file.
+There are two versions to this program. One calls the web service synchronously, while the other calls the web services asynchronously. Synchronous calls are what most programmers would be familiar with."/>
+
+    <meta property="og:title" content="C# .NET 2.0 Web Service - Sync &#43; Async" />
+<meta property="og:description" content="I wanted to learn how to use web services in .NET with C#, so I created this tiny program that goes out and gets the &ldquo;Dilbert of the Day&rdquo; comic strip and puts it on your desktop in the form of a jpeg file.
+There are two versions to this program. One calls the web service synchronously, while the other calls the web services asynchronously. Synchronous calls are what most programmers would be familiar with." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deciacco.github.io/posts/dilbertsycasync/" />
+<meta property="article:published_time" content="2007-10-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2007-10-19T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+
+      <h1>eugenio c.</h1>
+      <p class="site-description">my stuff online</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/deciacco" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+      <nav >
+        
+        <ul class="sidebar-nav">
+        
+          <li><a class="sidebar-nav-item" href="/posts/" title="blog section">Posts</a></li>
+        
+          <li><a class="sidebar-nav-item" href="/tags/" title="tags section">Tags</a></li>
+        
+        </ul>
+      </nav>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">C# .NET 2.0 Web Service - Sync &#43; Async</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 19, 2007
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://deciacco.github.io/tags/.net/">.NET</a><a class="tag" href="https://deciacco.github.io/tags/c#/">C#</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>I wanted to learn how to use web services in .NET with C#, so I created this tiny program that goes out and gets the &ldquo;Dilbert of the Day&rdquo; comic strip and puts it on your desktop in the form of a jpeg file.</p>
+
+<p>There are two versions to this program. One calls the web service synchronously, while the other calls the web services asynchronously. Synchronous calls are what most programmers would be familiar with. When a synchronous function/method is called it doesn&rsquo;t return control back to the calling program until it&rsquo;s finished, while an asynchronous function/method returns control immediately while it runs in a separate thread.</p>
+
+<p>The synchronous version of this program is much simpler than the asynchronous version, but the later allows for more flexibility. For example, in the asynchronous version the program can display a progress indicator while it&rsquo;s waiting for the call to complete.</p>
+
+<p>You could use the synchronous call to the web service and put it in a separate thread yourself. You would achieve the same result as the asynchronous call. It just makes the code a little longer and slightly more complex.</p>
+
+<p><a href="https://github.com/deciacco/dilbertaday">Repository</a></p>
+
+<p>Synchronous Code</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Collections.Generic</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Text</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Threading</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.IO</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Drawing</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Drawing.Imaging</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">DilbertADay.com.esynaps.www</span>;
+
+<span style="color:#6ab825;font-weight:bold">namespace</span> <span style="color:#447fcf;text-decoration:underline">DilbertADay</span>
+{
+    <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Program</span>
+    {
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">void</span> Main(<span style="color:#6ab825;font-weight:bold">string</span>[] args)
+        {
+            DailyDilbert wsDd;
+            Byte[] imageData;
+            MemoryStream strm;
+            Bitmap bmp;           
+
+            <span style="color:#6ab825;font-weight:bold">try</span>
+            {
+                wsDd = <span style="color:#6ab825;font-weight:bold">new</span> DailyDilbert();
+                imageData = wsDd.DailyDilbertImage();
+                strm = <span style="color:#6ab825;font-weight:bold">new</span> MemoryStream(imageData);
+                bmp = <span style="color:#6ab825;font-weight:bold">new</span> Bitmap(strm);
+                bmp.Save(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+                    + <span style="color:#ed9d13">&#34;\\dilbert.jpg&#34;</span>,ImageFormat.Jpeg);
+                bmp.Dispose();
+                strm.Close();
+                wsDd.Dispose();
+            }
+            <span style="color:#6ab825;font-weight:bold">catch</span> (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+        }
+    }
+}
+</code></pre></div>
+<p>Asynchronous Code</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Collections.Generic</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Text</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Threading</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.IO</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Drawing</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">System.Drawing.Imaging</span>;
+<span style="color:#6ab825;font-weight:bold">using</span> <span style="color:#447fcf;text-decoration:underline">DilbertADay.com.esynaps.www</span>;
+
+<span style="color:#6ab825;font-weight:bold">namespace</span> <span style="color:#447fcf;text-decoration:underline">DilbertADay</span>
+{
+    <span style="color:#6ab825;font-weight:bold">class</span> <span style="color:#447fcf;text-decoration:underline">Program</span>
+    {
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">int</span> isCompleted = <span style="color:#3677a9">0</span>;
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> Byte[] imgData;
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">int</span> timeout = <span style="color:#3677a9">10000</span>;
+
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">void</span> Main(<span style="color:#6ab825;font-weight:bold">string</span>[] args)
+        {
+            DailyDilbert wsDd;
+            MemoryStream strm;
+            Bitmap bmp;
+
+            <span style="color:#6ab825;font-weight:bold">int</span> start, currentSecond;
+
+            <span style="color:#6ab825;font-weight:bold">try</span>
+            {
+                wsDd = <span style="color:#6ab825;font-weight:bold">new</span> DailyDilbert();
+                wsDd.DailyDilbertImageCompleted += <span style="color:#6ab825;font-weight:bold">new</span> DailyDilbertImageCompletedEventHandler(
+                    Program.DailyDilbertImageCompleted_Handler);
+                wsDd.DailyDilbertImageAsync();
+
+                start = DateTime.Now.Millisecond;
+                currentSecond = start;
+
+                Console.WriteLine(<span style="color:#ed9d13">&#34;Sending request&#34;</span>);
+                <span style="color:#6ab825;font-weight:bold">while</span> (Program.isCompleted == <span style="color:#3677a9">0</span> &amp;&amp; (currentSecond - start) &lt; Program.timeout)
+                {
+                    <span style="color:#6ab825;font-weight:bold">if</span> (currentSecond &lt; DateTime.Now.Millisecond)
+                    {
+                        currentSecond = DateTime.Now.Millisecond;
+                        Console.Write(<span style="color:#ed9d13">&#34;.&#34;</span>);
+                    }
+                }
+                Console.Write(<span style="color:#ed9d13">&#34;\n&#34;</span>);
+
+                <span style="color:#6ab825;font-weight:bold">if</span> (Program.isCompleted == <span style="color:#3677a9">1</span>)
+                {
+                    Console.WriteLine(<span style="color:#ed9d13">&#34;Generating image&#34;</span>);
+                    strm = <span style="color:#6ab825;font-weight:bold">new</span> MemoryStream(Program.imgData);
+                    bmp = <span style="color:#6ab825;font-weight:bold">new</span> Bitmap(strm);
+                    bmp.Save(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+                        + <span style="color:#ed9d13">&#34;\\dilbert.jpg&#34;</span>, ImageFormat.Jpeg);
+
+                    bmp.Dispose();
+                    strm.Close();
+                    wsDd.Dispose();
+                }
+            }
+            <span style="color:#6ab825;font-weight:bold">catch</span> (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+        }
+
+        <span style="color:#6ab825;font-weight:bold">public</span> <span style="color:#6ab825;font-weight:bold">static</span> <span style="color:#6ab825;font-weight:bold">void</span> DailyDilbertImageCompleted_Handler(<span style="color:#6ab825;font-weight:bold">object</span> sender, DailyDilbertImageCompletedEventArgs args)
+        {
+            <span style="color:#6ab825;font-weight:bold">try</span>
+            {
+                Program.imgData = args.Result;
+                Program.isCompleted = <span style="color:#3677a9">1</span>;
+            }
+            <span style="color:#6ab825;font-weight:bold">catch</span> (Exception ex)
+            {
+                Console.Write(ex.Message);
+                Program.isCompleted = <span style="color:#3677a9">2</span>;
+            }
+        } 
+    }
+}
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

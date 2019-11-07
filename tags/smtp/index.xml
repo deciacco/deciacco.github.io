@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMTP on deciacco</title>
+    <link>https://deciacco.github.io/tags/smtp/</link>
+    <description>Recent content in SMTP on deciacco</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Oct 2006 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deciacco.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Program For Testing SMTP Servers - SmtpTester</title>
+      <link>https://deciacco.github.io/posts/smtptester/</link>
+      <pubDate>Mon, 30 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/smtptester/</guid>
+      <description>Ok&amp;hellip;so here it is&amp;hellip;the first of hopefully many applications you can download.
+The idea to create this app came to me while I was trying to troubleshoot my uncle’s program that wouldn&amp;rsquo;t connect to his smtp server.
+His application was in VB6 and he used it to send out emails from a list of addresses in an Access database. After he switched ISP&amp;rsquo;s he could no longer get it to work since the new provider required him to authenticate before being able to send mail.</description>
+    </item>
+    
+  </channel>
+</rss>

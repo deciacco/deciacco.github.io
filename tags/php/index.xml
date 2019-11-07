@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on deciacco</title>
+    <link>https://deciacco.github.io/tags/php/</link>
+    <description>Recent content in PHP on deciacco</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deciacco.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitor Folder Service With PHP (Almost)</title>
+      <link>https://deciacco.github.io/posts/monitorfolderservice/</link>
+      <pubDate>Fri, 16 Oct 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/monitorfolderservice/</guid>
+      <description>At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&amp;rsquo;s virtual mailbox.</description>
+    </item>
+    
+    <item>
+      <title>Image Resizer - Php Application for Windows (Almost)</title>
+      <link>https://deciacco.github.io/posts/phpimageresizer/</link>
+      <pubDate>Thu, 03 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpimageresizer/</guid>
+      <description>Small utility to quickly and easily resize images. Written in PHP, and while PHP is mostly a &amp;ldquo;Web&amp;rdquo; language, it actually worked out quite nicely.
+You simply right-click an image or a folder containing images and select the appropriate command. Currently, the program supports JPEG, GIF, and PNG images.
+The original image remains intact as a new, resized version is created.
+Installing
+You can simply download the installer and run it on your computer.</description>
+    </item>
+    
+    <item>
+      <title>PHP, OpenSSL and ftp_ssl_connect() on Win32</title>
+      <link>https://deciacco.github.io/posts/phpopenssl/</link>
+      <pubDate>Fri, 12 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpopenssl/</guid>
+      <description>For quite some time I&amp;rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
+According to the PHP manual:
+ ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed.</description>
+    </item>
+    
+  </channel>
+</rss>

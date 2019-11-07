@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Monitor Folder Service With PHP (Almost) // deciacco</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="eugenio c." />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://deciacco.github.io/css/main.min.830650129dc137cb8e7573f4292c16f70a2df294ff42ef7a5a379734d68036ce.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Monitor Folder Service With PHP (Almost)"/>
+<meta name="twitter:description" content="At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&rsquo;s virtual mailbox."/>
+
+    <meta property="og:title" content="Monitor Folder Service With PHP (Almost)" />
+<meta property="og:description" content="At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&rsquo;s virtual mailbox." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deciacco.github.io/posts/monitorfolderservice/" />
+<meta property="article:published_time" content="2009-10-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2009-10-16T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+
+      <h1>eugenio c.</h1>
+      <p class="site-description">my stuff online</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/deciacco" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+      <nav >
+        
+        <ul class="sidebar-nav">
+        
+          <li><a class="sidebar-nav-item" href="/posts/" title="blog section">Posts</a></li>
+        
+          <li><a class="sidebar-nav-item" href="/tags/" title="tags section">Tags</a></li>
+        
+        </ul>
+      </nav>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Monitor Folder Service With PHP (Almost)</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 16, 2009
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://deciacco.github.io/tags/php/">PHP</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&rsquo;s virtual mailbox. (We use pdf as the default.)</p>
+
+<p>Each user&rsquo;s virtual mailbox has a folder associated with it, and this folder is located in each user&rsquo;s personal folder on the server. Most of our employees have workstations and their &ldquo;My Documents&rdquo; folder is mapped to their personal folder on the server. By the time they get back to their desk, all they have to do is go into their &ldquo;My Documents&rdquo; folder and the scanned document is already there.</p>
+
+<p>The problem is with notebook users who don&rsquo;t have a mapped &ldquo;My Documents&rdquo;. If it were mapped, they would not be able to take their documents with them whenever they left the office. So, how can notebook users also retrieve their scanned documents from their &ldquo;My Documents&rdquo; folder?</p>
+
+<p>Basically, all that is needed is some kind of mechanism to monitor a user&rsquo;s virtual mailbox, and when a new file is placed there, copy it down to the user&rsquo;s &ldquo;My Documents&rdquo; folder on the notebook.</p>
+
+<p><strong>PHP Solution:</strong></p>
+
+<p>Install PHP on your server/workstation that will be used to run this. (Google &ldquo;PHP Install&rdquo; for more info&hellip;) Php doesn&rsquo;t have a built in way of creating Windows services, hence the &ldquo;almost&rdquo; in the title. So you can use two nice utilities called INSTSRV.EXE and SRVANY.EXE that come with the Windows Resource Kit.</p>
+
+<p>You can download it from here: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=17657">Windows 2003 Resource Kit Tools</a></p>
+
+<p>Once you&rsquo;ve installed the kit you can use something similar to the following to install the service.</p>
+
+<pre><code>C:\Program Files\Windows Resource Kits\Tools&gt;instsrv scansmon &quot;d:\Program Files\Windows Resource Kits\Tools\srvany.exe&quot;
+</code></pre>
+
+<p>SRVANY does all the work and Windows sees it as the service. SRVANY will look in the registry for the EXE file to use for the service. The EXE name, the starting directory, and any optional parameters should be in the registry as follows:</p>
+
+<pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\
+Services\scansmon\Parameters]
+&quot;AppDirectory&quot;=&quot;D:\\Scripts\\Scansmon&quot;
+&quot;Application&quot;=&quot;php -q D:\\Scripts\\Scansmon\\scansmon.php3&quot;
+&quot;AppParameters&quot;=&quot;&quot;
+</code></pre>
+
+<p>NOTE: You can copy/paste the lines above to a file named scansmon.reg (change the paths as necessary and make sure to include the double back-slashes) and double click the .reg file to add these entries to the registry. Php itself is the EXE that it runs. scansmon.php3 has the following code in it. (you will need to modify it for your network)</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#cd2828;font-weight:bold">&lt;?php</span>
+set_time_limit(<span style="color:#3677a9">0</span>);
+
+<span style="color:#40ffff">$user_a_user_directory</span> = <span style="color:#ed9d13">&#39;\\\\Server01\\user\\user_a\\ScansIn\\&#39;</span>;
+<span style="color:#40ffff">$user_a_notebook_scans_directory</span> = <span style="color:#ed9d13">&#39;\\\\user_a_notebook\\c$\\Documents and Settings\\user_a\\My Documents\\Scans\\&#39;</span>;
+
+<span style="color:#40ffff">$user_b_user_directory</span> = <span style="color:#ed9d13">&#39;\\\\Server01\\user\\user_b\\ScansIn\\&#39;</span>;
+<span style="color:#40ffff">$user_b_notebook_scans_directory</span> = <span style="color:#ed9d13">&#39;\\\\user_b_notebook\\c$\\Documents and Settings\\user_a\\My Documents\\Scans\\&#39;</span>;
+
+<span style="color:#40ffff">$loop</span> = <span style="color:#6ab825;font-weight:bold">true</span>;
+
+<span style="color:#6ab825;font-weight:bold">while</span>(<span style="color:#40ffff">$loop</span>){ <span style="color:#999;font-style:italic">//Will run as a windows service so loop infinitely
+</span><span style="color:#999;font-style:italic"></span>	<span style="color:#40ffff">$log_file</span> = date(<span style="color:#ed9d13">&#34;Ymd&#34;</span>).<span style="color:#ed9d13">&#34;.txt&#34;</span>;
+	
+	writetolog(<span style="color:#ed9d13">&#34;****************&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+	<span style="color:#6ab825;font-weight:bold">try</span>{
+		<span style="color:#6ab825;font-weight:bold">if</span> (file_exists(<span style="color:#40ffff">$user_a_user_directory</span>) &amp;&amp; file_exists(<span style="color:#40ffff">$user_a_notebook_scans_directory</span>)){
+			writetolog(<span style="color:#ed9d13">&#34;Ready to proceed with user_a scans...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+		
+			<span style="color:#40ffff">$oldfile</span> = <span style="color:#ed9d13">&#34;&#34;</span>;
+			<span style="color:#40ffff">$newfile</span> = <span style="color:#ed9d13">&#34;&#34;</span>;
+			
+			<span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#40ffff">$dir</span> = opendir(<span style="color:#40ffff">$user_a_user_directory</span>)){
+				<span style="color:#6ab825;font-weight:bold">while</span> (<span style="color:#40ffff">$file</span> = readdir(<span style="color:#40ffff">$dir</span>)){ <span style="color:#999;font-style:italic">//As long as there are files copy them and write to log
+</span><span style="color:#999;font-style:italic"></span>					<span style="color:#40ffff">$oldfile</span> = <span style="color:#40ffff">$user_a_user_directory</span>.<span style="color:#40ffff">$file</span>;
+					<span style="color:#6ab825;font-weight:bold">if</span> (is_file(<span style="color:#40ffff">$oldfile</span>)){ <span style="color:#999;font-style:italic">//&amp;&amp; substr($file, -4) == &#39;.pdf&#39;
+</span><span style="color:#999;font-style:italic"></span>						<span style="color:#40ffff">$newfile</span> = <span style="color:#40ffff">$user_a_notebook_scans_directory</span>.<span style="color:#40ffff">$file</span>;
+						writetolog(<span style="color:#ed9d13">&#34;copying </span><span style="color:#ed9d13">$file</span><span style="color:#ed9d13">&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						<span style="color:#6ab825;font-weight:bold">if</span> (!copy(<span style="color:#40ffff">$oldfile</span>, <span style="color:#40ffff">$newfile</span>)){
+							writetolog(<span style="color:#ed9d13">&#34;failed to copy </span><span style="color:#ed9d13">$oldfile</span><span style="color:#ed9d13">...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						}<span style="color:#6ab825;font-weight:bold">else</span>{
+							unlink(<span style="color:#40ffff">$oldfile</span>);
+							writetolog(<span style="color:#ed9d13">&#34;deleted </span><span style="color:#ed9d13">$oldfile</span><span style="color:#ed9d13">...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						}
+					}
+				}
+				closedir(<span style="color:#40ffff">$dir</span>);
+			} 
+		}<span style="color:#6ab825;font-weight:bold">else</span>{
+			writetolog(<span style="color:#ed9d13">&#34;Can&#39;t do user_a scans...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+		}
+		
+		<span style="color:#6ab825;font-weight:bold">if</span> (file_exists(<span style="color:#40ffff">$user_b_user_directory</span>) &amp;&amp; file_exists(<span style="color:#40ffff">$user_b_notebook_scans_directory</span>)){
+			writetolog(<span style="color:#ed9d13">&#34;Ready to proceed we user_b scans...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+		
+			<span style="color:#40ffff">$oldfile</span> = <span style="color:#ed9d13">&#34;&#34;</span>;
+			<span style="color:#40ffff">$newfile</span> = <span style="color:#ed9d13">&#34;&#34;</span>;
+			
+			<span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#40ffff">$dir</span> = opendir(<span style="color:#40ffff">$user_b_user_directory</span>)){
+				<span style="color:#6ab825;font-weight:bold">while</span> (<span style="color:#40ffff">$file</span> = readdir(<span style="color:#40ffff">$dir</span>)){
+					<span style="color:#40ffff">$oldfile</span> = <span style="color:#40ffff">$user_b_user_directory</span>.<span style="color:#40ffff">$file</span>;
+					<span style="color:#6ab825;font-weight:bold">if</span> (is_file(<span style="color:#40ffff">$oldfile</span>)){ <span style="color:#999;font-style:italic">//&amp;&amp; substr($file, -4) == &#39;.pdf&#39;
+</span><span style="color:#999;font-style:italic"></span>						<span style="color:#40ffff">$newfile</span> = <span style="color:#40ffff">$user_b_notebook_scans_directory</span>.<span style="color:#40ffff">$file</span>;
+						writetolog(<span style="color:#ed9d13">&#34;copying </span><span style="color:#ed9d13">$file</span><span style="color:#ed9d13">&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						<span style="color:#6ab825;font-weight:bold">if</span> (!copy(<span style="color:#40ffff">$oldfile</span>, <span style="color:#40ffff">$newfile</span>)){
+							writetolog(<span style="color:#ed9d13">&#34;failed to copy </span><span style="color:#ed9d13">$oldfile</span><span style="color:#ed9d13">...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						}<span style="color:#6ab825;font-weight:bold">else</span>{
+			    			unlink(<span style="color:#40ffff">$oldfile</span>);
+							writetolog(<span style="color:#ed9d13">&#34;deleted </span><span style="color:#ed9d13">$oldfile</span><span style="color:#ed9d13">...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+						}
+					}
+				}
+				closedir(<span style="color:#40ffff">$dir</span>);
+			} 
+		}<span style="color:#6ab825;font-weight:bold">else</span>{
+			writetolog(<span style="color:#ed9d13">&#34;Can&#39;t do user_b scans...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+		}
+		
+		writetolog(<span style="color:#ed9d13">&#34;Waiting for 180 seconds...&#34;</span>, <span style="color:#40ffff">$log_file</span>);
+		Sleep(<span style="color:#3677a9">180</span>); <span style="color:#999;font-style:italic">//Wait three minutes before next check
+</span><span style="color:#999;font-style:italic"></span>	}
+	<span style="color:#6ab825;font-weight:bold">catch</span>(Exception <span style="color:#40ffff">$e</span>){
+		<span style="color:#40ffff">$loop</span> = <span style="color:#6ab825;font-weight:bold">false</span>;
+		writetolog(<span style="color:#40ffff">$e</span>-&gt;<span style="color:#bbb">getMessage</span>(), <span style="color:#40ffff">$log_file</span>);
+	}
+}
+
+<span style="color:#6ab825;font-weight:bold">function</span> <span style="color:#447fcf">writetolog</span>(<span style="color:#40ffff">$text</span>, <span style="color:#40ffff">$file</span>)
+{
+	<span style="color:#40ffff">$log_directory</span> = <span style="color:#ed9d13">&#39;D:\\Logs\\Scripts\\&#39;</span>;
+	<span style="color:#40ffff">$log_file</span> = <span style="color:#40ffff">$log_directory</span>.<span style="color:#40ffff">$file</span>;
+	<span style="color:#40ffff">$fh</span> = fopen(<span style="color:#40ffff">$log_file</span>, <span style="color:#ed9d13">&#39;a&#39;</span>);
+	fwrite(<span style="color:#40ffff">$fh</span>, date(<span style="color:#ed9d13">&#34;h:i:s A&#34;</span>).<span style="color:#ed9d13">&#34;  </span><span style="color:#ed9d13">$text</span><span style="color:#ed9d13">&#34;</span>.chr(<span style="color:#3677a9">13</span>).chr(<span style="color:#3677a9">10</span>));
+	fclose(<span style="color:#40ffff">$fh</span>);
+}
+<span style="color:#cd2828;font-weight:bold">?&gt;</span>
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
