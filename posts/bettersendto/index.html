@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>A Better &#34;Send to Mail Recipient&#34; With Outlook // deciacco</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="eugenio c." />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://deciacco.github.io/css/main.min.e0a740700d179dfcce46daf97c59dd99be917ec764b052d3f8e89ec6f03fcdc4.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Better &#34;Send to Mail Recipient&#34; With Outlook"/>
+<meta name="twitter:description" content="Sometimes when sending files through email, you want to be able to simply right-click on the file and select Send to mail recipient form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.
+While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments."/>
+
+    <meta property="og:title" content="A Better &#34;Send to Mail Recipient&#34; With Outlook" />
+<meta property="og:description" content="Sometimes when sending files through email, you want to be able to simply right-click on the file and select Send to mail recipient form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.
+While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deciacco.github.io/posts/bettersendto/" />
+<meta property="article:published_time" content="2009-01-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2009-01-03T00:00:00+00:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <h1><a href="https://deciacco.github.io">eugenio c.</a></h1>
+      <p class="site-description">my stuff online</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/deciacco" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+      <nav >
+        
+        <ul class="sidebar-nav">
+        
+          <li><a class="sidebar-nav-item" href="/posts/" title="blog section">Posts</a></li>
+        
+          <li><a class="sidebar-nav-item" href="/tags/" title="tags section">Tags</a></li>
+        
+        </ul>
+      </nav>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">A Better &#34;Send to Mail Recipient&#34; With Outlook</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 3, 2009
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://deciacco.github.io/tags/javascript/">Javascript</a><a class="tag" href="https://deciacco.github.io/tags/outlook/">Outlook</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>Sometimes when sending files through email, you want to be able to simply right-click on the file and select <em>Send to mail recipient</em> form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.</p>
+
+<p>While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments. With this nice formatting ability we also have the added bonus that our signatures get automatically appended to the end of the e-mail.</p>
+
+<p>Below are a few steps to create a new <em>Send To Mail Recipient</em> context menu shortcut that address these issues:</p>
+
+<ol>
+<li><em>Right-Click</em> the START button and select Explore</li>
+
+<li><p>Select the <em>Send To</em> folder from the folder list on the left.</p>
+
+<p><strong>Vista Users:</strong>
+The <em>Send To</em> folder is located under: <code>%APPDATA%\Microsoft\Windows\SendTo</code>
+Everything else should work the same.</p></li>
+
+<li><p><em>Right-Click</em> anywhere in the white space to the right and select <em>New</em>, then <em>Shortcut</em></p></li>
+
+<li><p>In the <em>Type the location of the item:</em> box, type in the following lines based on the version of Outlook you are using</p>
+
+<p><strong>Outlook 2003</strong>:
+  <em>&ldquo;C:Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE&rdquo; /c ipm.note</em></p>
+
+<p><strong>Outlook 2007</strong>:
+  <em>&ldquo;C:Program Files\Microsoft Office\OFFICE12\OUTLOOK.EXE&rdquo; /a</em></p></li>
+
+<li><p>In the <em>Type a name for this shortcut:</em> box type in: <em>Outlook Mail Recipient</em></p></li>
+
+<li><p>Now when you right click on items to send as attachments you will have a new option. By selecting <em>Outlook Mail Recipient</em> you will get your new email in the default email format you have selected in Outlook and, if you have configured your signature for a new email, you will have it as well.</p></li>
+</ol>
+
+<p><strong>UPDATE: 02/10/2009</strong> - It look like this method won&rsquo;t work when selecting multiple files. For a possible workaround try the following:</p>
+
+<p>Create a file sendto.js with the following code and save it somewhere on your system. For this example the file is saved to c:\sendto.js.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#6ab825;font-weight:bold">try</span>
+{
+    <span style="color:#6ab825;font-weight:bold">var</span> args = WScript.Arguments;
+    <span style="color:#6ab825;font-weight:bold">var</span> outlookApp = <span style="color:#6ab825;font-weight:bold">new</span> ActiveXObject(<span style="color:#ed9d13">&#34;Outlook.Application&#34;</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> nameSpace = outlookApp.getNameSpace(<span style="color:#ed9d13">&#34;MAPI&#34;</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> mailFolder = nameSpace.getDefaultFolder(<span style="color:#3677a9">6</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> mailItem = mailFolder.Items.add(<span style="color:#ed9d13">&#39;IPM.Note.FormA&#39;</span>);
+    
+    <span style="color:#6ab825;font-weight:bold">with</span>(mailItem)
+    {
+    	Subject=<span style="color:#ed9d13">&#34;Sending Files&#34;</span>;
+    
+    	<span style="color:#6ab825;font-weight:bold">for</span> (<span style="color:#6ab825;font-weight:bold">var</span> i = <span style="color:#3677a9">0</span>; i &lt; args.length; i++)
+    	{
+    	    Attachments.Add(args(i));
+    	}
+    
+    	Display(<span style="color:#3677a9">0</span>);
+    }
+}
+<span style="color:#6ab825;font-weight:bold">catch</span>(err){
+
+}
+<span style="color:#6ab825;font-weight:bold">finally</span>
+{
+    outlookApp = <span style="color:#6ab825;font-weight:bold">null</span>;
+}
+</code></pre></div>
+<p>Follow the steps in the tutorial above, but in step 4 type this in the box instead: <em>%windir%\system32\wscript.exe &ldquo;C:\sendto.js&rdquo;</em></p>
+
+<p><strong>Note:</strong> Use the &ldquo;Change Icon&rdquo; button on the same screen to manually change the icon and use the icons in the Outlook.exe file, otherwise you will get the wscript.exe icon.</p>
+
+<p><strong>Vista:</strong> To get to the <em>Send To</em> folder, you&rsquo;ll need to open up an Explorer window, and then paste the following into the address bar: <em>%APPDATA%\Microsoft\Windows\SendTo</em></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

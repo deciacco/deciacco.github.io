@@ -3,37 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://deciacco.github.io/posts/phpftpbackuptool/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
+    <loc>https://deciacco.github.io/posts/ahkgithubprivate/</loc>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/tags/autohotkey/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/tags/github/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/posts/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/tags/</loc>
-    <lastmod>2019-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/posts/ahkgithubprivate/</loc>
     <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,6 +58,26 @@
   </url>
   
   <url>
+    <loc>https://deciacco.github.io/posts/phpimagemailer/</loc>
+    <lastmod>2009-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/posts/bettersendto/</loc>
+    <lastmod>2009-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/tags/javascript/</loc>
+    <lastmod>2009-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/tags/outlook/</loc>
+    <lastmod>2009-01-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deciacco.github.io/posts/phpimageresizer/</loc>
     <lastmod>2008-04-03T00:00:00+00:00</lastmod>
   </url>
@@ -75,6 +90,11 @@
   <url>
     <loc>https://deciacco.github.io/posts/lblprint/</loc>
     <lastmod>2008-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/posts/phpftpbackuptool/</loc>
+    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deciacco.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Autohotkey</title>
       <link>https://deciacco.github.io/tags/autohotkey/</link>
-      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/tags/autohotkey/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>GitHub</title>
       <link>https://deciacco.github.io/tags/github/</link>
-      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/tags/github/</guid>
       <description></description>
@@ -53,6 +53,24 @@
       <pubDate>Fri, 16 Oct 2009 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://deciacco.github.io/tags/javascript/</link>
+      <pubDate>Sat, 03 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Outlook</title>
+      <link>https://deciacco.github.io/tags/outlook/</link>
+      <pubDate>Sat, 03 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/tags/outlook/</guid>
       <description></description>
     </item>
     

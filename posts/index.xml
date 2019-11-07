@@ -6,19 +6,10 @@
     <description>Recent content in Posts on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deciacco.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>&lt;&lt;Place Holder&gt;&gt; PHP Ftp Backup Tool</title>
-      <link>https://deciacco.github.io/posts/phpftpbackuptool/</link>
-      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://deciacco.github.io/posts/phpftpbackuptool/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>&lt;&lt;Place Holder&gt;&gt; Private GitHub Repo and Autohokey</title>
@@ -48,6 +39,26 @@
     </item>
     
     <item>
+      <title>Image Mailer - Php Application for Windows (Almost)</title>
+      <link>https://deciacco.github.io/posts/phpimagemailer/</link>
+      <pubDate>Fri, 03 Apr 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpimagemailer/</guid>
+      <description>Here is a small utility to more easily email photos with Microsoft Outlook. Basically, it allows you to embed images in the body of the email message so that it is easier for the recipient to view the files.
+Download the file using the link below. Once downloaded, install it by double-clicking it. To use the program, simply highlight the photos you wish to send, then right-click one of the highlighted images and select &amp;ldquo;&amp;ldquo;Send-To&amp;rdquo;&amp;rdquo; then &amp;ldquo;&amp;ldquo;Image Mailer for Outlook&amp;rdquo;&amp;ldquo;.</description>
+    </item>
+    
+    <item>
+      <title>A Better &#34;Send to Mail Recipient&#34; With Outlook</title>
+      <link>https://deciacco.github.io/posts/bettersendto/</link>
+      <pubDate>Sat, 03 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/bettersendto/</guid>
+      <description>Sometimes when sending files through email, you want to be able to simply right-click on the file and select Send to mail recipient form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.
+While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments.</description>
+    </item>
+    
+    <item>
       <title>Image Resizer - Php Application for Windows (Almost)</title>
       <link>https://deciacco.github.io/posts/phpimageresizer/</link>
       <pubDate>Thu, 03 Apr 2008 00:00:00 +0000</pubDate>
@@ -70,6 +81,17 @@ You can simply download the installer and run it on your computer.</description>
 Here is how it works:
 The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated.
 On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container.</description>
+    </item>
+    
+    <item>
+      <title>PHP Ftp Backup Library</title>
+      <link>https://deciacco.github.io/posts/phpftpbackuptool/</link>
+      <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpftpbackuptool/</guid>
+      <description>UPDATE 2019-11-07: This is a tool I used for work many years ago. At the time I was not happy with what was available to do backups for my company. This tool allowed our critical files to be automatically sent off-site on a nightly basis. Things have come a long way since then!
+You can take a look at the documenation here:
+Documentation Link (Use the dropdown in the top, right to switch between the two objects.</description>
     </item>
     
     <item>

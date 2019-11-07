@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outlook on deciacco</title>
+    <link>https://deciacco.github.io/tags/outlook/</link>
+    <description>Recent content in Outlook on deciacco</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deciacco.github.io/tags/outlook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Better &#34;Send to Mail Recipient&#34; With Outlook</title>
+      <link>https://deciacco.github.io/posts/bettersendto/</link>
+      <pubDate>Sat, 03 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/bettersendto/</guid>
+      <description>Sometimes when sending files through email, you want to be able to simply right-click on the file and select Send to mail recipient form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.
+While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments.</description>
+    </item>
+    
+  </channel>
+</rss>
