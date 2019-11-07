@@ -12,7 +12,7 @@
     
     
     <item>
-      <title> Program For Printing Labels - LblPrint</title>
+      <title>LblPrint</title>
       <link>https://deciacco.github.io/posts/lblprint/</link>
       <pubDate>Thu, 13 Mar 2008 00:00:00 +0000</pubDate>
       
@@ -24,7 +24,7 @@ On every record selection the preview is automatically generated. The user can t
     </item>
     
     <item>
-      <title>Program For Sharing Files At Lanparties - UtFiles</title>
+      <title>UtFiles</title>
       <link>https://deciacco.github.io/posts/utfiles/</link>
       <pubDate>Mon, 19 Feb 2007 00:00:00 +0000</pubDate>
       
@@ -34,7 +34,7 @@ It&amp;rsquo;s basically a file sorting utility that takes files from a specifie
     </item>
     
     <item>
-      <title>Program For Extracting HTML - GetHtml</title>
+      <title>GetHtml</title>
       <link>https://deciacco.github.io/posts/gethtml/</link>
       <pubDate>Fri, 15 Dec 2006 00:00:00 +0000</pubDate>
       
@@ -45,7 +45,7 @@ Below is the main code of the application. Look at the links provided in the rea
     </item>
     
     <item>
-      <title>Program For Testing SMTP Servers - SmtpTester</title>
+      <title>SmtpTester</title>
       <link>https://deciacco.github.io/posts/smtptester/</link>
       <pubDate>Mon, 30 Oct 2006 00:00:00 +0000</pubDate>
       

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deciacco.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>&lt;&lt;Place Holder&gt;&gt; PHP Ftp Backup Tool</title>
+      <link>https://deciacco.github.io/posts/phpftpbackuptool/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/phpftpbackuptool/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>&lt;&lt;Place Holder&gt;&gt; Private GitHub Repo and Autohokey</title>
@@ -17,6 +26,15 @@
       <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/posts/ahkgithubprivate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>&lt;&lt;Place Holder&gt;&gt; Comcast Modem Power Level Monitor</title>
+      <link>https://deciacco.github.io/posts/comcastmodemmonitor/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/comcastmodemmonitor/</guid>
       <description></description>
     </item>
     
@@ -43,7 +61,7 @@ You can simply download the installer and run it on your computer.</description>
     </item>
     
     <item>
-      <title> Program For Printing Labels - LblPrint</title>
+      <title>LblPrint</title>
       <link>https://deciacco.github.io/posts/lblprint/</link>
       <pubDate>Thu, 13 Mar 2008 00:00:00 +0000</pubDate>
       
@@ -87,7 +105,7 @@ According to the PHP manual:
     </item>
     
     <item>
-      <title>Program For Sharing Files At Lanparties - UtFiles</title>
+      <title>UtFiles</title>
       <link>https://deciacco.github.io/posts/utfiles/</link>
       <pubDate>Mon, 19 Feb 2007 00:00:00 +0000</pubDate>
       
@@ -97,7 +115,7 @@ It&amp;rsquo;s basically a file sorting utility that takes files from a specifie
     </item>
     
     <item>
-      <title>Program For Extracting HTML - GetHtml</title>
+      <title>GetHtml</title>
       <link>https://deciacco.github.io/posts/gethtml/</link>
       <pubDate>Fri, 15 Dec 2006 00:00:00 +0000</pubDate>
       
@@ -108,7 +126,7 @@ Below is the main code of the application. Look at the links provided in the rea
     </item>
     
     <item>
-      <title>Program For Testing SMTP Servers - SmtpTester</title>
+      <title>SmtpTester</title>
       <link>https://deciacco.github.io/posts/smtptester/</link>
       <pubDate>Mon, 30 Oct 2006 00:00:00 +0000</pubDate>
       
