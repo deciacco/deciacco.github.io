@@ -50,7 +50,8 @@ You can simply download the installer and run it on your computer.</description>
       <guid>https://deciacco.github.io/posts/lblprint/</guid>
       <description>This is a very simple label printer application.
 Here is how it works:
-The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated. On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container.</description>
+The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated.
+On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container.</description>
     </item>
     
     <item>

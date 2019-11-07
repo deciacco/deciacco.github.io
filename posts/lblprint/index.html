@@ -14,12 +14,14 @@
 <meta name="twitter:title" content=" Program For Printing Labels - LblPrint"/>
 <meta name="twitter:description" content="This is a very simple label printer application.
 Here is how it works:
-The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated. On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container."/>
+The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated.
+On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container."/>
 
     <meta property="og:title" content=" Program For Printing Labels - LblPrint" />
 <meta property="og:description" content="This is a very simple label printer application.
 Here is how it works:
-The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated. On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container." />
+The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated.
+On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/lblprint/" />
 <meta property="article:published_time" content="2008-03-13T00:00:00+00:00" />
@@ -29,7 +31,6 @@ The user enters a search term, then clicks the search button. The program connec
   </head>
   <body>
     <header class="app-header">
-
       <h1>eugenio c.</h1>
       <p class="site-description">my stuff online</p>
       <div class="app-header-social">
@@ -82,9 +83,15 @@ The user enters a search term, then clicks the search button. The program connec
 
 <p>Here is how it works:</p>
 
-<p>The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated. On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container. On each change of the modifier the preview is automatically updated. The user then clicks the print button and the label is sent to the label printer and the cursor is automatically placed in the search box.</p>
+<p>The user enters a search term, then clicks the search button. The program connects to the Sql Server 2000 database, retrieves the data, and populates the data grid. The user then selects the record desired and the label preview is generated.</p>
 
-<p>Prior to printing, the user can can select the desired printer and paper size using the Print Setup button. Being able to select or change printer settings is very important, because some of the users use this application through a terminal server session. The label printer is attached to their local workstation and gets mapped from the terminal server back to their PC when they log on. Since the name of the printer is not known until after the user logs on, it would be difficult to hardcode the printer in the report file. By being able to make printer changes at runtime, it makes it easy for the user to chooses his or her printer after they log on. They only do this the first time, as once the settings are changed, they are saved in the lbx file until the next time they need to be updated.</p>
+<p>On every record selection the preview is automatically generated. The user can then select a modifier by clicking on one of the radio buttons to the right of the preview container. On each change of the modifier the preview is automatically updated as well.</p>
+
+<p>When the label is ready, the user clicks the print button and the label is sent to the  printer and the cursor is automatically placed in the search box.</p>
+
+<p>Prior to printing, the user can can select the desired printer and paper size using the Print Setup button.</p>
+
+<p>Being able to select or change printer settings is very important because some of the users use this application through a terminal server session. The label printer is attached to their local workstation and gets mapped from the terminal server back to their PC when they log on. Since the name of the printer is not known until after login, it would be difficult to hardcode the printer in the report file. Once the settings are changed, they are saved in the lbx file until the next time it needs to be updated.</p>
 
 <p>For more information on the reporting capabilities of VFP 9, please check out this great article:</p>
 
@@ -92,7 +99,7 @@ The user enters a search term, then clicks the search button. The program connec
 
 <p>Also, take a look at the SYS(1037) function in the FoxPro help file.</p>
 
-<p>Here are some screenshots of the program.</p>
+<p>Here is a screenshots of the program.</p>
 
 <p><img src="/resources/lblprint.png" alt="" /></p>
 
