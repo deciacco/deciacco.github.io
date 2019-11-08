@@ -6,18 +6,21 @@
     <description>Recent content in Python on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deciacco.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>&lt;&lt;Place Holder&gt;&gt; Comcast Modem Power Level Monitor</title>
+      <title>Comcast Modem Power Level Monitor</title>
       <link>https://deciacco.github.io/posts/comcastmodemmonitor/</link>
-      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/posts/comcastmodemmonitor/</guid>
-      <description></description>
+      <description>Below you&amp;rsquo;ll find some scripts to monitor a Comcast modem&amp;rsquo;s power levels to help troubleshoot line problems.
+Windows Subsystem for Linux Built-in linux system in Windows 10.
+Start Cron &amp;amp; SSH at Windows Startup Short batch file startup.bat used by a scheduled task in Windows to start the ssh and cron daemons in WSL. This is useful in case the host comptuer is restarted. (Windows Updates restarts mainly&amp;hellip;)
+@echo off wsl -u root service ssh start wsl -u root service cron start exit SSH Having SSH installed in WSL makes it a lot easier to connect in and work on the script, check logs, etc.</description>
     </item>
     
   </channel>
