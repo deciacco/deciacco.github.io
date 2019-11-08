@@ -24,12 +24,13 @@ Start Cron &amp;amp; SSH at Windows Startup Short batch file startup.bat used by
     </item>
     
     <item>
-      <title>&lt;&lt;Place Holder&gt;&gt; Private GitHub Repo and Autohokey</title>
+      <title>Private GitHub Repo and Autohokey</title>
       <link>https://deciacco.github.io/posts/ahkgithubprivate/</link>
-      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/posts/ahkgithubprivate/</guid>
-      <description></description>
+      <description>How to connect to GitHub Private Repository to download files.
+#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &amp;#34;https://api.github.com/repos/&amp;lt;username&amp;gt;/&amp;lt;repository&amp;gt;/releases&amp;#34; global g_file := &amp;#34;filename.zip&amp;#34; global g_saveto := A_Desktop . &amp;#34;/&amp;#34; . g_file global g_token := &amp;#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&amp;#34; ; &amp;lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&amp;#34;WinHttp.WinHttpRequest.5.1&amp;#34;) ; Lets get our &amp;#34;navigator&amp;#34; request.Open(&amp;#34;GET&amp;#34;, g_url , false) request.SetRequestHeader(&amp;#34;Authorization&amp;#34;, &amp;#34;token &amp;#34; . g_token) request.Send() ; Get the releases information if (request.</description>
     </item>
     
     <item>

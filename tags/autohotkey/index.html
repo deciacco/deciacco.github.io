@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://deciacco.github.io/tags/autohotkey/" />
 
-<meta property="og:updated_time" content="2019-11-06T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-05-06T00:00:00+00:00" />
 
 
   </head>
@@ -52,12 +52,18 @@
     <ul class="posts-list">
       
         <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://deciacco.github.io/posts/ahkgithubprivate/">&lt;&lt;Place Holder&gt;&gt; Private GitHub Repo and Autohokey</a>
+          <a class="posts-list-item-title" href="https://deciacco.github.io/posts/ahkgithubprivate/">Private GitHub Repo and Autohokey</a>
           <span class="posts-list-item-description">
-            Nov 6, 2019
+            May 6, 2019
           </span>
           <span class="post-list-item-summary">
-              
+              How to connect to GitHub Private Repository to download files.
+#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp.WinHttpRequest.5.1&#34;) ; Lets get our &#34;navigator&#34; request.Open(&#34;GET&#34;, g_url , false) request.SetRequestHeader(&#34;Authorization&#34;, &#34;token &#34; . g_token) request.Send() ; Get the releases information if (request.
+          </span>
+          
+          
+          <span class="post-list-item-more">
+            <a href="/posts/ahkgithubprivate/">Read More…</a>
           </span>
           
         </li>
