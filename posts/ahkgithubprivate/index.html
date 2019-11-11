@@ -12,12 +12,14 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Private GitHub Repo and Autohokey"/>
-<meta name="twitter:description" content="How to connect to GitHub Private Repository to download files.
-#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp.WinHttpRequest.5.1&#34;) ; Lets get our &#34;navigator&#34; request.Open(&#34;GET&#34;, g_url , false) request.SetRequestHeader(&#34;Authorization&#34;, &#34;token &#34; . g_token) request.Send() ; Get the releases information if (request."/>
+<meta name="twitter:description" content="How to connect to a GitHub Private Repository to download files.
+This can be useful if you want to automatically update your application to the latest version release.
+#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file ; You need to generate this in your github account global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp."/>
 
     <meta property="og:title" content="Private GitHub Repo and Autohokey" />
-<meta property="og:description" content="How to connect to GitHub Private Repository to download files.
-#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp.WinHttpRequest.5.1&#34;) ; Lets get our &#34;navigator&#34; request.Open(&#34;GET&#34;, g_url , false) request.SetRequestHeader(&#34;Authorization&#34;, &#34;token &#34; . g_token) request.Send() ; Get the releases information if (request." />
+<meta property="og:description" content="How to connect to a GitHub Private Repository to download files.
+This can be useful if you want to automatically update your application to the latest version release.
+#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file ; You need to generate this in your github account global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/ahkgithubprivate/" />
 <meta property="article:published_time" content="2019-05-06T00:00:00+00:00" />
@@ -75,7 +77,9 @@
           <a class="tag" href="https://deciacco.github.io/tags/autohotkey/">Autohotkey</a><a class="tag" href="https://deciacco.github.io/tags/github/">GitHub</a></div></div>
     </header>
     <div class="post-content">
-      <p>How to connect to GitHub Private Repository to download files.</p>
+      <p>How to connect to a GitHub Private Repository to download files.</p>
+
+<p>This can be useful if you want to automatically update your application to the latest version release.</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">#<span style="color:#40ffff">SingleInstance</span>, <span style="color:#40ffff">force</span>
 #<span style="color:#40ffff">NoEnv</span>
 
@@ -87,6 +91,8 @@
 <span style="color:#40ffff">global</span> <span style="color:#40ffff">g_url</span> <span style="color:#ed9d13">:=</span> <span style="color:#ed9d13">&#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34;</span>
 <span style="color:#40ffff">global</span> <span style="color:#40ffff">g_file</span> <span style="color:#ed9d13">:=</span> <span style="color:#ed9d13">&#34;filename.zip&#34;</span>
 <span style="color:#40ffff">global</span> <span style="color:#40ffff">g_saveto</span> <span style="color:#ed9d13">:=</span> <span style="color:#40ffff">A_Desktop</span> <span style="color:#6ab825;font-weight:bold">. </span><span style="color:#ed9d13">&#34;/&#34;</span> <span style="color:#6ab825;font-weight:bold">. </span><span style="color:#40ffff">g_file</span>
+
+<span style="color:#999;font-style:italic">; You need to generate this in your github account</span>
 <span style="color:#40ffff">global</span> <span style="color:#40ffff">g_token</span> <span style="color:#ed9d13">:=</span> <span style="color:#ed9d13">&#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34;</span> <span style="color:#999;font-style:italic">; &lt;-- not a real token, demo purposes</span>
 
 <span style="color:#999;font-style:italic">;------------------------------------------------------------------</span>

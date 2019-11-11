@@ -76,8 +76,9 @@ Start Cron &amp; SSH at Windows Startup Short batch file startup.bat used by a s
             May 6, 2019
           </span>
           <span class="post-list-item-summary">
-              How to connect to GitHub Private Repository to download files.
-#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp.WinHttpRequest.5.1&#34;) ; Lets get our &#34;navigator&#34; request.Open(&#34;GET&#34;, g_url , false) request.SetRequestHeader(&#34;Authorization&#34;, &#34;token &#34; . g_token) request.Send() ; Get the releases information if (request.
+              How to connect to a GitHub Private Repository to download files.
+This can be useful if you want to automatically update your application to the latest version release.
+#SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &#34;https://api.github.com/repos/&lt;username&gt;/&lt;repository&gt;/releases&#34; global g_file := &#34;filename.zip&#34; global g_saveto := A_Desktop . &#34;/&#34; . g_file ; You need to generate this in your github account global g_token := &#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&#34; ; &lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&#34;WinHttp.
           </span>
           
           
