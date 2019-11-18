@@ -3,7 +3,7 @@
   <head>
     <title>Comcast Modem Power Level Monitor // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="generator" content="Hugo 0.57.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -22,8 +22,8 @@ The power of this tool becomes apparent when you use the data gathered to mainta
 For example, for my business, everytime I show packet loss in my firewall I can corelate it to abnormal power levels in the modem. This is critical, not only to know that the problem lies outside of my control, but also to aide the Comcast technitians in fixing the issue." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/comcastmodemmonitor/" />
-<meta property="article:published_time" content="2019-11-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-09T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-11-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-12T00:00:00+00:00" />
 
 
   </head>
@@ -61,7 +61,7 @@ For example, for my business, everytime I show packet loss in my firewall I can 
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Nov 9, 2019
+          Nov 12, 2019
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
@@ -370,89 +370,89 @@ retrycount = <span style="color:#3677a9">0</span>
 <span style="color:#999;font-style:italic"># Date: 09.16.2019</span>
 
 <span style="color:#999;font-style:italic"># Load libraries</span>
-<span style="color:#447fcf">library</span>(ggplot2, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
-<span style="color:#447fcf">library</span>(scales, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
-<span style="color:#447fcf">library</span>(ggrepel, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
-<span style="color:#447fcf">library</span>(lubridate, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
-<span style="color:#447fcf">library</span>(dplyr, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+<span style="color:#6ab825;font-weight:bold">library</span>(ggplot2, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+<span style="color:#6ab825;font-weight:bold">library</span>(scales, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+<span style="color:#6ab825;font-weight:bold">library</span>(ggrepel, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+<span style="color:#6ab825;font-weight:bold">library</span>(lubridate, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
+<span style="color:#6ab825;font-weight:bold">library</span>(dplyr, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
 
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 <span style="color:#999;font-style:italic"># Get the data, clean it up and get it ready for use in the graph.</span>
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 
 <span style="color:#999;font-style:italic"># Read in the modem power levels from the text file.</span>
-pwr &lt;- <span style="color:#447fcf">read.table</span>(<span style="color:#ed9d13">&#34;cm_modem_pwr_levels.txt&#34;</span>)
+pwr &lt;- read.table(<span style="color:#ed9d13">&#34;cm_modem_pwr_levels.txt&#34;</span>)
 
-pwr = pwr<span style="color:#447fcf">[c</span>(<span style="color:#3677a9">-3</span>,<span style="color:#3677a9">-5</span>,<span style="color:#3677a9">-6</span>,<span style="color:#3677a9">-8</span>)] <span style="color:#999;font-style:italic"># Remove uneeded columns.</span>
+pwr = pwr[<span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">-3</span>,<span style="color:#3677a9">-5</span>,<span style="color:#3677a9">-6</span>,<span style="color:#3677a9">-8</span>)] <span style="color:#999;font-style:italic"># Remove uneeded columns.</span>
 
-<span style="color:#447fcf">colnames</span>(pwr) = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#34;Date&#34;</span>,<span style="color:#ed9d13">&#34;Time&#34;</span>,<span style="color:#ed9d13">&#34;UP&#34;</span>,<span style="color:#ed9d13">&#34;DW&#34;</span>) <span style="color:#999;font-style:italic"># Let&#39;s give the columns some names.</span>
+<span style="color:#6ab825">colnames</span>(pwr) = <span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#ed9d13">&#34;Date&#34;</span>,<span style="color:#ed9d13">&#34;Time&#34;</span>,<span style="color:#ed9d13">&#34;UP&#34;</span>,<span style="color:#ed9d13">&#34;DW&#34;</span>) <span style="color:#999;font-style:italic"># Let&#39;s give the columns some names.</span>
 
-pwr$DateTime &lt;- <span style="color:#447fcf">paste</span>(pwr$Date, pwr$Time) <span style="color:#999;font-style:italic"># Create a new timstamp column.</span>
+pwr$DateTime &lt;- <span style="color:#6ab825">paste</span>(pwr$Date, pwr$Time) <span style="color:#999;font-style:italic"># Create a new timstamp column.</span>
 
 <span style="color:#999;font-style:italic"># Create a new column used for the facets. Basically to show the Days on the graph.</span>
-pwr$Dow &lt;- <span style="color:#447fcf">strptime</span>(pwr$DateTime, <span style="color:#ed9d13">&#34;%Y-%m-%d&#34;</span>)
-pwr$Dow &lt;- <span style="color:#447fcf">format</span>(pwr$Dow, <span style="color:#ed9d13">&#34;%m-%d %a&#34;</span>)
+pwr$Dow &lt;- <span style="color:#6ab825">strptime</span>(pwr$DateTime, <span style="color:#ed9d13">&#34;%Y-%m-%d&#34;</span>)
+pwr$Dow &lt;- <span style="color:#6ab825">format</span>(pwr$Dow, <span style="color:#ed9d13">&#34;%m-%d %a&#34;</span>)
 
-pwr = pwr<span style="color:#447fcf">[c</span>(<span style="color:#3677a9">-1</span>,<span style="color:#3677a9">-2</span>)] <span style="color:#999;font-style:italic"># Some more cleanup.</span>
+pwr = pwr[<span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">-1</span>,<span style="color:#3677a9">-2</span>)] <span style="color:#999;font-style:italic"># Some more cleanup.</span>
 
 <span style="color:#999;font-style:italic"># Make that column an actual date time field</span>
-pwr$DateTime &lt;- <span style="color:#447fcf">strptime</span>(pwr$DateTime, <span style="color:#ed9d13">&#34;%Y-%m-%d %H:%M:%S&#34;</span>)
-pwr$DateTime &lt;- <span style="color:#447fcf">as.POSIXct</span>(pwr$DateTime, tz = <span style="color:#ed9d13">&#34;America/Chicago&#34;</span>) <span style="color:#999;font-style:italic"># Convert to POSIXct type</span>
+pwr$DateTime &lt;- <span style="color:#6ab825">strptime</span>(pwr$DateTime, <span style="color:#ed9d13">&#34;%Y-%m-%d %H:%M:%S&#34;</span>)
+pwr$DateTime &lt;- <span style="color:#6ab825">as.POSIXct</span>(pwr$DateTime, tz = <span style="color:#ed9d13">&#34;America/Chicago&#34;</span>) <span style="color:#999;font-style:italic"># Convert to POSIXct type</span>
 
-pwr &lt;- pwr[pwr$DateTime &gt;= <span style="color:#447fcf">as.POSIXct</span>(<span style="color:#447fcf">Sys.Date</span>()<span style="color:#3677a9">-10</span>),] <span style="color:#999;font-style:italic"># Limit the data.</span>
+pwr &lt;- pwr[pwr$DateTime &gt;= <span style="color:#6ab825">as.POSIXct</span>(<span style="color:#6ab825">Sys.Date</span>()<span style="color:#3677a9">-10</span>),] <span style="color:#999;font-style:italic"># Limit the data.</span>
 
 <span style="color:#999;font-style:italic"># When did the modem signal go outside of the acceptable range?</span>
-pwrovr &lt;- pwr<span style="color:#447fcf">[which</span>(pwr[,<span style="color:#3677a9">1</span>] &gt; <span style="color:#3677a9">49</span> | pwr[,<span style="color:#3677a9">1</span>] &lt; <span style="color:#3677a9">35</span> ),]
+pwrovr &lt;- pwr[<span style="color:#6ab825">which</span>(pwr[,<span style="color:#3677a9">1</span>] &gt; <span style="color:#3677a9">49</span> | pwr[,<span style="color:#3677a9">1</span>] &lt; <span style="color:#3677a9">35</span> ),]
 
 <span style="color:#999;font-style:italic"># Dataframe for ranges</span>
-dmax &lt;- pwr %&gt;% <span style="color:#447fcf">group_by</span>(Dow) %&gt;% <span style="color:#447fcf">summarise</span>(Max = <span style="color:#447fcf">max</span>(DateTime))
-dmin &lt;- pwr %&gt;% <span style="color:#447fcf">group_by</span>(Dow) %&gt;% <span style="color:#447fcf">summarise</span>(Min = <span style="color:#447fcf">min</span>(DateTime))
-dminmax &lt;- <span style="color:#447fcf">merge</span>(dmax,dmin,by = <span style="color:#ed9d13">&#34;Dow&#34;</span>)
+dmax &lt;- pwr %&gt;% group_by(Dow) %&gt;% summarise(Max = <span style="color:#6ab825">max</span>(DateTime))
+dmin &lt;- pwr %&gt;% group_by(Dow) %&gt;% summarise(Min = <span style="color:#6ab825">min</span>(DateTime))
+dminmax &lt;- <span style="color:#6ab825">merge</span>(dmax,dmin,by = <span style="color:#ed9d13">&#34;Dow&#34;</span>)
 
 <span style="color:#999;font-style:italic"># Put in variables so we dont have to repeat code</span>
-dta = <span style="color:#447fcf">as.POSIXct</span>(<span style="color:#447fcf">Sys.Date</span>())
-dtw = <span style="color:#447fcf">format</span>(<span style="color:#447fcf">as.POSIXct</span>(<span style="color:#447fcf">Sys.Date</span>()), <span style="color:#ed9d13">&#34;%m-%d %a&#34;</span>)
+dta = <span style="color:#6ab825">as.POSIXct</span>(<span style="color:#6ab825">Sys.Date</span>())
+dtw = <span style="color:#6ab825">format</span>(<span style="color:#6ab825">as.POSIXct</span>(<span style="color:#6ab825">Sys.Date</span>()), <span style="color:#ed9d13">&#34;%m-%d %a&#34;</span>)
 
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 <span style="color:#999;font-style:italic"># Beginning of the UPSTREAM graph script.</span>
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 
 <span style="color:#999;font-style:italic"># Dataframe for text labels for ranges</span>
-text_ann &lt;- <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">49</span>, DW = <span style="color:#3677a9">5</span>,
+text_ann &lt;- <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">49</span>, DW = <span style="color:#3677a9">5</span>,
   lab = <span style="color:#ed9d13">&#34;Packet Loss\nBegins: +49&#34;</span>, DateTime = dta, Dow = dtw)
 
-text_ann &lt;- <span style="color:#447fcf">rbind</span>(text_ann, 
-  <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">35</span>, DW = <span style="color:#3677a9">5</span>, 
+text_ann &lt;- <span style="color:#6ab825">rbind</span>(text_ann, 
+  <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">35</span>, DW = <span style="color:#3677a9">5</span>, 
     lab = <span style="color:#ed9d13">&#34;Recommended:\n+ 35 - 47&#34;</span>, DateTime = dta, Dow = dtw))
 
-<span style="color:#447fcf">hour</span>(text_ann$DateTime) = <span style="color:#3677a9">2</span> <span style="color:#999;font-style:italic">#position of text within facet</span>
+hour(text_ann$DateTime) = <span style="color:#3677a9">2</span> <span style="color:#999;font-style:italic">#position of text within facet</span>
 
 <span style="color:#999;font-style:italic"># Create the plot</span>
-gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447fcf">aes</span>(DateTime, UP)) +
-  <span style="color:#447fcf">geom_point</span>( <span style="color:#999;font-style:italic"># Points on a graph seem to work best for this type data.</span>
+gg &lt;- ggplot(pwr, aes(DateTime, UP)) +
+  geom_point( <span style="color:#999;font-style:italic"># Points on a graph seem to work best for this type data.</span>
     color = <span style="color:#ed9d13">&#34;black&#34;</span>,
     size = <span style="color:#3677a9">.1</span>
   ) + 
-  <span style="color:#447fcf">facet_grid</span>( <span style="color:#999;font-style:italic"># This gives the days in a nice column.</span>
-    col = <span style="color:#447fcf">vars</span>(Dow),
-    labeller = <span style="color:#447fcf">labeller</span>(Dow = <span style="color:#447fcf">label_wrap_gen</span>(<span style="color:#3677a9">5</span>)), <span style="color:#999;font-style:italic"># Word rap the labels.</span>
+  facet_grid( <span style="color:#999;font-style:italic"># This gives the days in a nice column.</span>
+    col = vars(Dow),
+    labeller = labeller(Dow = label_wrap_gen(<span style="color:#3677a9">5</span>)), <span style="color:#999;font-style:italic"># Word rap the labels.</span>
     space = <span style="color:#ed9d13">&#39;free&#39;</span>, 
     scales = <span style="color:#ed9d13">&#39;free&#39;</span>, 
-    switch = <span style="color:#ed9d13">&#39;x&#39;</span>
+    <span style="color:#6ab825;font-weight:bold">switch</span> = <span style="color:#ed9d13">&#39;x&#39;</span>
   ) +
-  <span style="color:#447fcf">labs</span>( <span style="color:#999;font-style:italic"># Needs some good titles and labels to make it easier to understand.</span>
+  labs( <span style="color:#999;font-style:italic"># Needs some good titles and labels to make it easier to understand.</span>
     title=<span style="color:#ed9d13">&#34;Cable Modem Upstream Power&#34;</span>, 
     subtitle=<span style="color:#ed9d13">&#34;Comcast Business Internet&#34;</span>, 
     y=<span style="color:#ed9d13">&#34;Upstream Power Level (dBmV)&#34;</span>, 
     x=<span style="color:#ed9d13">&#34;Time (Date &amp; Hour in 24Hr format)&#34;</span>, 
-    caption= <span style="color:#447fcf">paste</span>( <span style="color:#999;font-style:italic"># Timestamp the graph.</span>
+    caption= <span style="color:#6ab825">paste</span>( <span style="color:#999;font-style:italic"># Timestamp the graph.</span>
       <span style="color:#ed9d13">&#34;International Assurance of TN, Inc. IT Department -&#34;</span>,
-      <span style="color:#447fcf">Sys.time</span>()
+      <span style="color:#6ab825">Sys.time</span>()
     )
   ) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">35</span>, 
@@ -461,9 +461,9 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;green&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">47</span>, 
@@ -472,60 +472,60 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;red&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">geom_text</span>( <span style="color:#999;font-style:italic"># add labels for the ranges</span>
+  geom_text( <span style="color:#999;font-style:italic"># add labels for the ranges</span>
     data = text_ann, 
-    <span style="color:#447fcf">aes</span>(x=DateTime, y=UP, label=lab), 
+    aes(x=DateTime, y=UP, label=lab), 
     vjust=<span style="color:#3677a9">-.2</span>,
     hjust=<span style="color:#3677a9">0</span>,
     size=<span style="color:#3677a9">2.5</span>,
     color= <span style="color:#ed9d13">&#34;black&#34;</span>
   ) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">49</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">47</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">35</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
-  <span style="color:#447fcf">coord_cartesian</span>( <span style="color:#999;font-style:italic"># Set the y scale. The range of modem signal levels.</span>
-    ylim = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">60</span>)
+  geom_hline(yintercept=<span style="color:#3677a9">49</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">47</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">35</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
+  coord_cartesian( <span style="color:#999;font-style:italic"># Set the y scale. The range of modem signal levels.</span>
+    ylim = <span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">60</span>)
   ) +
-  <span style="color:#447fcf">scale_y_continuous</span>( <span style="color:#999;font-style:italic"># Set where the lines show on the graph.</span>
-    minor_breaks = <span style="color:#447fcf">seq</span>(<span style="color:#3677a9">0</span> , <span style="color:#3677a9">60</span>, <span style="color:#3677a9">1</span>), 
-    breaks = <span style="color:#447fcf">seq</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">60</span>, <span style="color:#3677a9">10</span>)
+  scale_y_continuous( <span style="color:#999;font-style:italic"># Set where the lines show on the graph.</span>
+    minor_breaks = <span style="color:#6ab825">seq</span>(<span style="color:#3677a9">0</span> , <span style="color:#3677a9">60</span>, <span style="color:#3677a9">1</span>), 
+    breaks = <span style="color:#6ab825">seq</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">60</span>, <span style="color:#3677a9">10</span>)
   ) +
-  <span style="color:#447fcf">scale_x_datetime</span>( <span style="color:#999;font-style:italic"># Set the x scale based on the hour of the day.</span>
-    breaks = <span style="color:#447fcf">pretty_breaks</span>(), <span style="color:#999;font-style:italic"># Makes the hours fit nicely in a day.</span>
-    expand = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">0</span>), <span style="color:#999;font-style:italic"># Brings the panel/facets together, seamless transition from day to day.</span>
-    labels = <span style="color:#447fcf">date_format</span>(<span style="color:#ed9d13">&#34;%H&#34;</span>, tz = <span style="color:#447fcf">Sys.timezone</span>(location = <span style="color:#6ab825;font-weight:bold">TRUE</span>)), 
+  scale_x_datetime( <span style="color:#999;font-style:italic"># Set the x scale based on the hour of the day.</span>
+    breaks = pretty_breaks(), <span style="color:#999;font-style:italic"># Makes the hours fit nicely in a day.</span>
+    expand = <span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">0</span>), <span style="color:#999;font-style:italic"># Brings the panel/facets together, seamless transition from day to day.</span>
+    labels = date_format(<span style="color:#ed9d13">&#34;%H&#34;</span>, tz = <span style="color:#6ab825">Sys.timezone</span>(location = <span style="color:#6ab825;font-weight:bold">TRUE</span>)), 
     date_breaks = <span style="color:#ed9d13">&#34;2 hour&#34;</span>,
     date_minor_breaks = <span style="color:#ed9d13">&#34;1 hour&#34;</span>
   ) + 
-  <span style="color:#447fcf">theme_bw</span>() + <span style="color:#999;font-style:italic"># Start off with a base theme, then modify it.</span>
-  <span style="color:#447fcf">theme</span>(
-    panel.border = <span style="color:#447fcf">element_rect</span>(
+  theme_bw() + <span style="color:#999;font-style:italic"># Start off with a base theme, then modify it.</span>
+  theme(
+    panel.border = element_rect(
       color = <span style="color:#ed9d13">&#34;dark gray&#34;</span>),
-    panel.spacing.x = <span style="color:#447fcf">unit</span>(<span style="color:#3677a9">0</span>,<span style="color:#ed9d13">&#34;line&#34;</span>),
+    panel.spacing.x = unit(<span style="color:#3677a9">0</span>,<span style="color:#ed9d13">&#34;line&#34;</span>),
     strip.placement = <span style="color:#ed9d13">&#34;outside&#34;</span>,
-    strip.text.x = <span style="color:#447fcf">element_text</span>(
+    strip.text.x = element_text(
       size = <span style="color:#3677a9">6</span>
     ),
-    panel.grid.major = <span style="color:#447fcf">element_line</span>(
+    panel.grid.major = element_line(
       color = <span style="color:#ed9d13">&#34;light gray&#34;</span>),
-    panel.grid.minor = <span style="color:#447fcf">element_line</span>(
+    panel.grid.minor = element_line(
       color = <span style="color:#ed9d13">&#34;light gray&#34;</span>
     ),
-    axis.text.x = <span style="color:#447fcf">element_text</span>( <span style="color:#999;font-style:italic"># Hour of the day</span>
+    axis.text.x = element_text( <span style="color:#999;font-style:italic"># Hour of the day</span>
       size = <span style="color:#3677a9">6</span>,
       angle = <span style="color:#3677a9">90</span>,
       vjust = <span style="color:#3677a9">0.5</span>,
       hjust = <span style="color:#3677a9">0.5</span>),
-    axis.line = <span style="color:#447fcf">element_line</span>( <span style="color:#999;font-style:italic"># Make the axis stand out.</span>
+    axis.line = element_line( <span style="color:#999;font-style:italic"># Make the axis stand out.</span>
       color = <span style="color:#ed9d13">&#34;darkblue&#34;</span>, 
       size = <span style="color:#3677a9">1</span>, 
       linetype = <span style="color:#ed9d13">&#34;solid&#34;</span>)
   ) 
 
-<span style="color:#447fcf">if </span>(<span style="color:#447fcf">dim</span>(pwrovr)[1] != <span style="color:#3677a9">0</span>) { <span style="color:#999;font-style:italic"># Make sure we have out of range plots before adding them </span>
+<span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#6ab825">dim</span>(pwrovr)[<span style="color:#3677a9">1</span>] != <span style="color:#3677a9">0</span>) { <span style="color:#999;font-style:italic"># Make sure we have out of range plots before adding them </span>
   gg = gg +
-    <span style="color:#447fcf">geom_text_repel</span>( <span style="color:#999;font-style:italic"># Label the out-of-range plots</span>
-      <span style="color:#447fcf">aes</span>(label = <span style="color:#447fcf">paste</span>(<span style="color:#447fcf">hour</span>(DateTime),<span style="color:#ed9d13">&#34;:&#34;</span>, <span style="color:#447fcf">minute</span>(DateTime),<span style="color:#ed9d13">&#34;-&#34;</span>,UP)), 
+    geom_text_repel( <span style="color:#999;font-style:italic"># Label the out-of-range plots</span>
+      aes(label = <span style="color:#6ab825">paste</span>(hour(DateTime),<span style="color:#ed9d13">&#34;:&#34;</span>, minute(DateTime),<span style="color:#ed9d13">&#34;-&#34;</span>,UP)), 
       pwrovr,
       size = <span style="color:#3677a9">2</span>,
       color = <span style="color:#ed9d13">&#34;red&#34;</span>
@@ -533,7 +533,7 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
 }
 
 <span style="color:#999;font-style:italic"># Save the graph to a JPEG file. High resolution allows more clarity and printability.</span>
-<span style="color:#447fcf">ggsave</span>(<span style="color:#ed9d13">&#34;cm_modem_up_pwr_levels.jpg&#34;</span>, 
+ggsave(<span style="color:#ed9d13">&#34;cm_modem_up_pwr_levels.jpg&#34;</span>, 
        width = <span style="color:#3677a9">14</span>, 
        height = <span style="color:#3677a9">8.5</span>, 
        dpi = <span style="color:#3677a9">320</span>,
@@ -544,73 +544,73 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 
 <span style="color:#999;font-style:italic"># Dataframe for text labels for  ranges</span>
-text_ann2 &lt;- <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">-6</span>, DW = <span style="color:#3677a9">5</span>,
+text_ann2 &lt;- <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">-6</span>, DW = <span style="color:#3677a9">5</span>,
   lab = <span style="color:#ed9d13">&#34;Recommended:\n-7 to 7&#34;</span>, DateTime = dta, Dow = dtw)
 
-text_ann2 &lt;- <span style="color:#447fcf">rbind</span>(text_ann2, 
-  <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">-9</span>, DW = <span style="color:#3677a9">5</span>, 
+text_ann2 &lt;- <span style="color:#6ab825">rbind</span>(text_ann2, 
+  <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">-9</span>, DW = <span style="color:#3677a9">5</span>, 
     lab = <span style="color:#ed9d13">&#34;Acceptable:\n+- 7 to 10&#34;</span>, DateTime = dta, Dow = dtw))
 
-text_ann2 &lt;- <span style="color:#447fcf">rbind</span>(text_ann2, 
-  <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">-14</span>, DW = <span style="color:#3677a9">5</span>, 
+text_ann2 &lt;- <span style="color:#6ab825">rbind</span>(text_ann2, 
+  <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">-14</span>, DW = <span style="color:#3677a9">5</span>, 
     lab = <span style="color:#ed9d13">&#34;Maximum:\n+- 10 to 15 &#34;</span>, DateTime = dta, Dow = dtw))
 
-text_ann2 &lt;- <span style="color:#447fcf">rbind</span>(text_ann2, 
-  <span style="color:#447fcf">data.frame</span>(UP = <span style="color:#3677a9">-18</span>, DW = <span style="color:#3677a9">5</span>, 
+text_ann2 &lt;- <span style="color:#6ab825">rbind</span>(text_ann2, 
+  <span style="color:#6ab825;font-weight:bold">data.frame</span>(UP = <span style="color:#3677a9">-18</span>, DW = <span style="color:#3677a9">5</span>, 
     lab = <span style="color:#ed9d13">&#34;Out of Spec:\n&gt; +-15 &#34;</span>, DateTime = dta, Dow = dtw))
 
-<span style="color:#447fcf">hour</span>(text_ann2$DateTime) = <span style="color:#3677a9">2</span> <span style="color:#999;font-style:italic">#position of text within facet</span>
+hour(text_ann2$DateTime) = <span style="color:#3677a9">2</span> <span style="color:#999;font-style:italic">#position of text within facet</span>
 
 <span style="color:#999;font-style:italic"># Filter into a new table the out-of-range instances.</span>
-pwrovr &lt;- pwr<span style="color:#447fcf">[which</span>(pwr[,<span style="color:#3677a9">2</span>] &gt; <span style="color:#3677a9">10</span> | pwr[,<span style="color:#3677a9">2</span>] &lt; <span style="color:#3677a9">-10</span> ),]
+pwrovr &lt;- pwr[<span style="color:#6ab825">which</span>(pwr[,<span style="color:#3677a9">2</span>] &gt; <span style="color:#3677a9">10</span> | pwr[,<span style="color:#3677a9">2</span>] &lt; <span style="color:#3677a9">-10</span> ),]
 
 <span style="color:#999;font-style:italic"># Generate the downstream graph. Identical to upstream but with different ranges.</span>
-gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447fcf">aes</span>(DateTime, DW)) +
-  <span style="color:#447fcf">geom_point</span>(
+gg &lt;- ggplot(pwr, aes(DateTime, DW)) +
+  geom_point(
     color = <span style="color:#ed9d13">&#34;black&#34;</span>,
     size = <span style="color:#3677a9">.1</span>
   ) +
-  <span style="color:#447fcf">facet_grid</span>(
-    col = <span style="color:#447fcf">vars</span>(Dow),
-    labeller = <span style="color:#447fcf">labeller</span>(Dow = <span style="color:#447fcf">label_wrap_gen</span>(<span style="color:#3677a9">5</span>)),
+  facet_grid(
+    col = vars(Dow),
+    labeller = labeller(Dow = label_wrap_gen(<span style="color:#3677a9">5</span>)),
     space = <span style="color:#ed9d13">&#39;free&#39;</span>, 
     scales = <span style="color:#ed9d13">&#39;free&#39;</span>, 
-    switch = <span style="color:#ed9d13">&#39;x&#39;</span>
+    <span style="color:#6ab825;font-weight:bold">switch</span> = <span style="color:#ed9d13">&#39;x&#39;</span>
   ) +
-  <span style="color:#447fcf">coord_cartesian</span>(
-    ylim = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">-30</span>, <span style="color:#3677a9">20</span>)
+  coord_cartesian(
+    ylim = <span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">-30</span>, <span style="color:#3677a9">20</span>)
   ) +
-  <span style="color:#447fcf">scale_y_continuous</span>(
-    minor_breaks = <span style="color:#447fcf">seq</span>(<span style="color:#3677a9">-30</span> , <span style="color:#3677a9">20</span>, <span style="color:#3677a9">1</span>), 
-    breaks = <span style="color:#447fcf">seq</span>(<span style="color:#3677a9">-30</span>, <span style="color:#3677a9">20</span>, <span style="color:#3677a9">10</span>)
+  scale_y_continuous(
+    minor_breaks = <span style="color:#6ab825">seq</span>(<span style="color:#3677a9">-30</span> , <span style="color:#3677a9">20</span>, <span style="color:#3677a9">1</span>), 
+    breaks = <span style="color:#6ab825">seq</span>(<span style="color:#3677a9">-30</span>, <span style="color:#3677a9">20</span>, <span style="color:#3677a9">10</span>)
   ) +
-  <span style="color:#447fcf">labs</span>(
+  labs(
     title=<span style="color:#ed9d13">&#34;Cable Modem Downstream Power&#34;</span>,
     subtitle=<span style="color:#ed9d13">&#34;Comcast Business Internet&#34;</span>,
     y=<span style="color:#ed9d13">&#34;Downstream Power Level (dBmV)&#34;</span>,
     x=<span style="color:#ed9d13">&#34;Time (Date &amp; Hour in 24Hr format)&#34;</span>,
-    caption= <span style="color:#447fcf">paste</span>(
+    caption= <span style="color:#6ab825">paste</span>(
       <span style="color:#ed9d13">&#34;International Assurance of TN, Inc. IT Department -&#34;</span>,
-      <span style="color:#447fcf">Sys.time</span>()
+      <span style="color:#6ab825">Sys.time</span>()
     )
   ) +
-  <span style="color:#447fcf">geom_text</span>( <span style="color:#999;font-style:italic"># write the labels for the ranges</span>
+  geom_text( <span style="color:#999;font-style:italic"># write the labels for the ranges</span>
     data = text_ann2, 
-    <span style="color:#447fcf">aes</span>(x=DateTime, y=UP, label=lab), 
+    aes(x=DateTime, y=UP, label=lab), 
     vjust=<span style="color:#3677a9">.3</span>,
     hjust=<span style="color:#3677a9">0</span>,
     size=<span style="color:#3677a9">2.5</span>,
     color= <span style="color:#ed9d13">&#34;black&#34;</span>
   ) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">-15</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">-10</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;yellow&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">-7</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">7</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">10</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;yellow&#34;</span>) +
-  <span style="color:#447fcf">geom_hline</span>(yintercept=<span style="color:#3677a9">15</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_hline(yintercept=<span style="color:#3677a9">-15</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">-10</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;yellow&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">-7</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">7</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;green&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">10</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;yellow&#34;</span>) +
+  geom_hline(yintercept=<span style="color:#3677a9">15</span>, linetype=<span style="color:#ed9d13">&#34;dashed&#34;</span>, color = <span style="color:#ed9d13">&#34;red&#34;</span>) +
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">-7</span>, 
@@ -619,9 +619,9 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;green&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">-10</span>, 
@@ -630,9 +630,9 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;yellow&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">7</span>, 
@@ -641,9 +641,9 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;yellow&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-   <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+   geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">-15</span>, 
@@ -652,9 +652,9 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;red&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">geom_rect</span>( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
+  geom_rect( <span style="color:#999;font-style:italic"># color the acceptable range so it stands out.</span>
     data = dminmax, 
-    <span style="color:#447fcf">aes</span>(
+    aes(
       xmin = Min, 
       xmax = Max, 
       ymin = <span style="color:#3677a9">10</span>, 
@@ -663,42 +663,42 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
     fill=<span style="color:#ed9d13">&#34;red&#34;</span>, 
     inherit.aes = <span style="color:#6ab825;font-weight:bold">FALSE</span>
   ) +
-  <span style="color:#447fcf">scale_x_datetime</span>(
-    breaks = <span style="color:#447fcf">pretty_breaks</span>(),
-    expand = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">0</span>),
-    labels = <span style="color:#447fcf">date_format</span>(<span style="color:#ed9d13">&#34;%H&#34;</span>, tz = <span style="color:#447fcf">Sys.timezone</span>(location = <span style="color:#6ab825;font-weight:bold">TRUE</span>)),
+  scale_x_datetime(
+    breaks = pretty_breaks(),
+    expand = <span style="color:#6ab825;font-weight:bold">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">0</span>),
+    labels = date_format(<span style="color:#ed9d13">&#34;%H&#34;</span>, tz = <span style="color:#6ab825">Sys.timezone</span>(location = <span style="color:#6ab825;font-weight:bold">TRUE</span>)),
     date_breaks = <span style="color:#ed9d13">&#34;2 hour&#34;</span>,
     date_minor_breaks = <span style="color:#ed9d13">&#34;1 hour&#34;</span>
   ) +
-  <span style="color:#447fcf">theme_bw</span>() +
-  <span style="color:#447fcf">theme</span>(
-    panel.border = <span style="color:#447fcf">element_rect</span>(
+  theme_bw() +
+  theme(
+    panel.border = element_rect(
       colour = <span style="color:#ed9d13">&#34;dark gray&#34;</span>),
-    panel.spacing.x = <span style="color:#447fcf">unit</span>(<span style="color:#3677a9">0</span>,<span style="color:#ed9d13">&#34;line&#34;</span>),
+    panel.spacing.x = unit(<span style="color:#3677a9">0</span>,<span style="color:#ed9d13">&#34;line&#34;</span>),
     strip.placement = <span style="color:#ed9d13">&#34;outside&#34;</span>,
-    strip.text.x = <span style="color:#447fcf">element_text</span>(
+    strip.text.x = element_text(
       size = <span style="color:#3677a9">6</span>
     ),
-    panel.grid.major = <span style="color:#447fcf">element_line</span>(
+    panel.grid.major = element_line(
       colour = <span style="color:#ed9d13">&#34;light gray&#34;</span>),
-    panel.grid.minor = <span style="color:#447fcf">element_line</span>(
+    panel.grid.minor = element_line(
       color = <span style="color:#ed9d13">&#34;light gray&#34;</span>
     ),
-    axis.text.x = <span style="color:#447fcf">element_text</span>(
+    axis.text.x = element_text(
       size = <span style="color:#3677a9">6</span>,
       angle = <span style="color:#3677a9">90</span>,
       vjust = <span style="color:#3677a9">0.5</span>,
       hjust = <span style="color:#3677a9">0.5</span>),
-    axis.line = <span style="color:#447fcf">element_line</span>(
+    axis.line = element_line(
       colour = <span style="color:#ed9d13">&#34;darkblue&#34;</span>, 
       size = <span style="color:#3677a9">1</span>, 
       linetype = <span style="color:#ed9d13">&#34;solid&#34;</span>)
   )
 
-<span style="color:#447fcf">if </span>(<span style="color:#447fcf">dim</span>(pwrovr)[1] != <span style="color:#3677a9">0</span>) {  <span style="color:#999;font-style:italic"># Make sure we have out of range before plotting</span>
+<span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#6ab825">dim</span>(pwrovr)[<span style="color:#3677a9">1</span>] != <span style="color:#3677a9">0</span>) {  <span style="color:#999;font-style:italic"># Make sure we have out of range before plotting</span>
   gg = gg +
-    <span style="color:#447fcf">geom_text_repel</span>( <span style="color:#999;font-style:italic"># Label the out-of-range plots</span>
-      <span style="color:#447fcf">aes</span>(label = <span style="color:#447fcf">paste</span>(DateTime, <span style="color:#ed9d13">&#34;-&#34;</span>, DW, <span style="color:#ed9d13">&#34;dBmV&#34;</span>)),
+    geom_text_repel( <span style="color:#999;font-style:italic"># Label the out-of-range plots</span>
+      aes(label = <span style="color:#6ab825">paste</span>(DateTime, <span style="color:#ed9d13">&#34;-&#34;</span>, DW, <span style="color:#ed9d13">&#34;dBmV&#34;</span>)),
       pwrovr,
       size = <span style="color:#3677a9">2</span>,
       color = <span style="color:#ed9d13">&#34;red&#34;</span>
@@ -706,7 +706,7 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
 }
 
 <span style="color:#999;font-style:italic"># Save graph to file.</span>
-<span style="color:#447fcf">ggsave</span>(<span style="color:#ed9d13">&#34;cm_modem_dwn_pwr_levels.jpg&#34;</span>, 
+ggsave(<span style="color:#ed9d13">&#34;cm_modem_dwn_pwr_levels.jpg&#34;</span>, 
        width = <span style="color:#3677a9">14</span>, 
        height = <span style="color:#3677a9">8.5</span>, 
        dpi = <span style="color:#3677a9">320</span>,
