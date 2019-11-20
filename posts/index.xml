@@ -6,10 +6,21 @@
     <description>Recent content in Posts on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deciacco.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comcast Modem Power Level Monitor</title>
+      <link>https://deciacco.github.io/posts/comcastmodemmonitor/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/comcastmodemmonitor/</guid>
+      <description>Below you&amp;rsquo;ll find scripts to monitor a Comcast modem&amp;rsquo;s power levels to help troubleshoot line problems.
+The power of this tool becomes apparent when you use the data gathered to maintain an event journal of everything that happens related to your connection.
+For example, for my business, everytime I show packet loss in my firewall I can corelate it to abnormal power levels in the modem. This is critical, not only to know that the problem lies outside of my control, but also to aide the Comcast technitians in fixing the issue.</description>
+    </item>
     
     <item>
       <title>Private GitHub Repo and Autohokey</title>

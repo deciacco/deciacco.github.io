@@ -22,8 +22,8 @@ The power of this tool becomes apparent when you use the data gathered to mainta
 For example, for my business, everytime I show packet loss in my firewall I can corelate it to abnormal power levels in the modem. This is critical, not only to know that the problem lies outside of my control, but also to aide the Comcast technitians in fixing the issue." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/comcastmodemmonitor/" />
-<meta property="article:published_time" content="2019-11-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-12T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-11-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-19T00:00:00+00:00" />
 
 
   </head>
@@ -61,7 +61,7 @@ For example, for my business, everytime I show packet loss in my firewall I can 
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Nov 12, 2019
+          Nov 19, 2019
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
@@ -176,6 +176,7 @@ exit</code></pre></div>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">requests</span>
 
 DATAFILE = <span style="color:#ed9d13">&#39;cm_modem_pwr_levels.txt&#39;</span>
+WAIT_TIME = <span style="color:#3677a9">180</span>
 
 <span style="color:#999;font-style:italic"># ********************************************************************************</span>
 <span style="color:#999;font-style:italic"># Function Declerations</span>
@@ -258,7 +259,6 @@ modemin = False
 url = <span style="color:#ed9d13">&#34;http://10.1.10.1/comcast_network.php&#34;</span>
 
 getdata = True
-retrycount = <span style="color:#3677a9">0</span>
 
 <span style="color:#999;font-style:italic"># Let&#39;s start the data loop</span>
 <span style="color:#6ab825;font-weight:bold">while</span> getdata:
@@ -331,26 +331,18 @@ retrycount = <span style="color:#3677a9">0</span>
                  avg_u_pwr,
                  avg_d_pwr))
 
-        retrycount = <span style="color:#3677a9">0</span>
-        logging.info(<span style="color:#ed9d13">&#34;Waiting 60 seconds.&#34;</span>)
-        time.sleep(<span style="color:#3677a9">60</span>)
+        logging.info(<span style="color:#ed9d13">&#34;Waiting </span><span style="color:#ed9d13">%i</span><span style="color:#ed9d13"> seconds.&#34;</span> % (WAIT_TIME))
+        time.sleep(WAIT_TIME)
 
-    <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">IndexError</span>:
-        logging.error(<span style="color:#ed9d13">&#34;Data not found!&#34;</span>)
-        logging.error(<span style="color:#ed9d13">&#34;Retry: </span><span style="color:#ed9d13">%i</span><span style="color:#ed9d13">&#34;</span> % (retrycount))
-
-        <span style="color:#6ab825;font-weight:bold">if</span> (retrycount &lt;= <span style="color:#3677a9">2</span>):
-            time.sleep(<span style="color:#3677a9">10</span>)
-            retrycount += <span style="color:#3677a9">1</span>
-            <span style="color:#6ab825;font-weight:bold">continue</span>
-        <span style="color:#6ab825;font-weight:bold">else</span>:
-            logging.debug(r.content)
-            send_text(<span style="color:#ed9d13">&#34;Index Error!&#34;</span>)
-            getdata = False
     <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">Exception</span> <span style="color:#6ab825;font-weight:bold">as</span> e:
         logging.error(e)
-        logging.debug(r.content)
+
         send_text(<span style="color:#ed9d13">&#34;Exception!&#34;</span>)
+
+        <span style="color:#6ab825;font-weight:bold">with</span> <span style="color:#24909d">open</span>(ownp + <span style="color:#ed9d13">&#39;/content.html&#39;</span>, <span style="color:#ed9d13">&#39;w+&#39;</span>) <span style="color:#6ab825;font-weight:bold">as</span> h:
+            h.write(r.text)
+
+        <span style="color:#999;font-style:italic"># Exit loop, cron will restart</span>
         getdata = False</code></pre></div>
 <h2 id="sample-graphs">Sample Graphs</h2>
 
