@@ -3,37 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://deciacco.github.io/posts/comcastmodemmonitor/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
+    <loc>https://deciacco.github.io/tags/autohotkey/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deciacco.github.io/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/posts/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/tags/python/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/tags/r/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/tags/</loc>
-    <lastmod>2019-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deciacco.github.io/tags/autohotkey/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,7 +18,17 @@
   </url>
   
   <url>
+    <loc>https://deciacco.github.io/posts/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deciacco.github.io/posts/ahkgithubprivate/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/tags/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
   
