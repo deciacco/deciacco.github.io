@@ -397,7 +397,7 @@ pwr = pwr[<span style="color:#6ab825;font-weight:bold">c</span>(<span style="col
 pwr$DateTime &lt;- <span style="color:#6ab825">strptime</span>(pwr$DateTime, <span style="color:#ed9d13">&#34;%Y-%m-%d %H:%M:%S&#34;</span>)
 pwr$DateTime &lt;- <span style="color:#6ab825">as.POSIXct</span>(pwr$DateTime, tz = <span style="color:#ed9d13">&#34;America/Chicago&#34;</span>) <span style="color:#999;font-style:italic"># Convert to POSIXct type</span>
 
-pwr &lt;- pwr[pwr$DateTime &gt;= <span style="color:#6ab825">as.POSIXct</span>(<span style="color:#6ab825">Sys.Date</span>()<span style="color:#3677a9">-10</span>),] <span style="color:#999;font-style:italic"># Limit the data.</span>
+pwr &lt;- pwr[pwr$DateTime &gt;= <span style="color:#6ab825">as.POSIXct</span>(<span style="color:#6ab825">Sys.Date</span>()-consts$days),] <span style="color:#999;font-style:italic"># Limit the data.</span>
 
 <span style="color:#999;font-style:italic"># When did the modem signal go outside of the acceptable range?</span>
 pwrovr &lt;- pwr[<span style="color:#6ab825">which</span>(pwr[,<span style="color:#3677a9">1</span>] &gt; <span style="color:#3677a9">49</span> | pwr[,<span style="color:#3677a9">1</span>] &lt; <span style="color:#3677a9">35</span> ),]
