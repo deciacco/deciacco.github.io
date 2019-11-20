@@ -368,6 +368,12 @@ getdata = True
 <span style="color:#6ab825;font-weight:bold">library</span>(lubridate, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
 <span style="color:#6ab825;font-weight:bold">library</span>(dplyr, warn.conflicts = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
 
+consts &lt;- <span style="color:#6ab825;font-weight:bold">list</span>(img_w = <span style="color:#3677a9">14</span>,
+    img_h = <span style="color:#3677a9">8.5</span>,
+    img_dpi = <span style="color:#3677a9">320</span>,
+    img_q = <span style="color:#3677a9">30</span>,
+    days = <span style="color:#3677a9">6</span>)
+
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 <span style="color:#999;font-style:italic"># Get the data, clean it up and get it ready for use in the graph.</span>
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
@@ -526,10 +532,11 @@ gg &lt;- ggplot(pwr, aes(DateTime, UP)) +
 
 <span style="color:#999;font-style:italic"># Save the graph to a JPEG file. High resolution allows more clarity and printability.</span>
 ggsave(<span style="color:#ed9d13">&#34;cm_modem_up_pwr_levels.jpg&#34;</span>, 
-       width = <span style="color:#3677a9">14</span>, 
-       height = <span style="color:#3677a9">8.5</span>, 
-       dpi = <span style="color:#3677a9">320</span>,
-       quality = <span style="color:#3677a9">30</span>)
+       width = consts$img_w, 
+       height = consts$img_h, 
+       dpi = consts$img_dpi,
+       quality = consts$img_q,
+       limitsize = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
 
 <span style="color:#999;font-style:italic"># ***************************************************************************************</span>
 <span style="color:#999;font-style:italic"># Beginning of the DOWNSTREAM graph script.</span>
@@ -699,10 +706,11 @@ gg &lt;- ggplot(pwr, aes(DateTime, DW)) +
 
 <span style="color:#999;font-style:italic"># Save graph to file.</span>
 ggsave(<span style="color:#ed9d13">&#34;cm_modem_dwn_pwr_levels.jpg&#34;</span>, 
-       width = <span style="color:#3677a9">14</span>, 
-       height = <span style="color:#3677a9">8.5</span>, 
-       dpi = <span style="color:#3677a9">320</span>,
-       quality = <span style="color:#3677a9">30</span>)</code></pre></div>
+       width = consts$img_w, 
+       height = consts$img_h, 
+       dpi = consts$img_dpi,
+       quality = consts$img_q,
+       limitsize = <span style="color:#6ab825;font-weight:bold">FALSE</span>)</code></pre></div>
     </div>
     <div class="post-footer">
       
