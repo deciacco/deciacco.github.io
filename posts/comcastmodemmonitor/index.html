@@ -105,12 +105,12 @@ exit</code></pre></div>
 <h3 id="cron">Cron</h3>
 
 <ul>
-<li>Run the graph generating script every 5 minutes.</li>
+<li>Run the graph generating script every hour.</li>
 
-<li><p>At one minute intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</p>
+<li><p>At 5 min intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</p>
 
-<pre><code>*/5 * * * * /home/user/scripts/comcast/cm_run.sh
-*/1 * * * * /home/user/scripts/comcast/keep_alive.sh
+<pre><code>0 * * * * /home/user/scripts/comcast/cm_run.sh
+*/5 * * * * /home/user/scripts/comcast/keep_alive.sh
 </code></pre></li>
 </ul>
 
@@ -133,9 +133,9 @@ exit</code></pre></div>
 
 <p>Poll the modem every minute and log the upstream (U) and downstream (D) powerlevels.</p>
 
-<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.)</p>
+<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <a href="https://www.dslreports.com/faq/16085" target="_blank"><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a></a></p>
 
-<p><a href="https://www.dslreports.com/faq/16085" target="_blank"><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a></a></p>
+<h3 id="sample-data">Sample Data</h3>
 
 <pre><code>2019-09-16 01:30:17 U 43.78 dBmV D 3.97 dBmV
 2019-09-16 01:31:18 U 43.78 dBmV D 3.97 dBmV
