@@ -29,7 +29,7 @@ For example, for my business, everytime I show packet loss in my firewall I can 
       
       <guid>https://deciacco.github.io/posts/ahkgithubprivate/</guid>
       <description>How to connect to a GitHub Private Repository to download files.
-This can be useful if you want to automatically update your application to the latest version release.
+This can be useful if you want to automatically update your application to the latest release.
 #SingleInstance, force #NoEnv #Include %A_ScriptDir%\..\json\JSON.ahk ;https://github.com/cocobelgica/AutoHotkey-JSON ;------------------------------------------------------------------ ;GLOBALS global g_url := &amp;#34;https://api.github.com/repos/&amp;lt;username&amp;gt;/&amp;lt;repository&amp;gt;/releases&amp;#34; global g_file := &amp;#34;filename.zip&amp;#34; global g_saveto := A_Desktop . &amp;#34;/&amp;#34; . g_file ; You need to generate this in your github account global g_token := &amp;#34;74jf8gh7ihdg9orlkk948rjfugnry369jgirn857&amp;#34; ; &amp;lt;-- not a real token, demo purposes ;------------------------------------------------------------------ ;MAIN CODE r := false request := comobjcreate(&amp;#34;WinHttp.</description>
     </item>
     
