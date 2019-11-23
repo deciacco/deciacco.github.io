@@ -107,10 +107,10 @@ exit</code></pre></div>
 <ul>
 <li>Run the graph generating script every hour.</li>
 
-<li><p>At 5 min intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</p>
+<li><p>At 1 min intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</p>
 
 <pre><code>0 * * * * /home/user/scripts/comcast/cm_run.sh
-*/5 * * * * /home/user/scripts/comcast/keep_alive.sh
+*/1 * * * * /home/user/scripts/comcast/keep_alive.sh
 </code></pre></li>
 </ul>
 
@@ -176,7 +176,7 @@ exit</code></pre></div>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">requests</span>
 
 DATAFILE = <span style="color:#ed9d13">&#39;cm_modem_pwr_levels.txt&#39;</span>
-WAIT_TIME = <span style="color:#3677a9">180</span>
+WAIT_TIME = <span style="color:#3677a9">60</span>
 
 <span style="color:#999;font-style:italic"># ********************************************************************************</span>
 <span style="color:#999;font-style:italic"># Function Declerations</span>
