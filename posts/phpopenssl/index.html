@@ -3,7 +3,7 @@
   <head>
     <title>PHP, OpenSSL and ftp_ssl_connect() on Win32 // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.65.2" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -14,12 +14,14 @@
 <meta name="twitter:title" content="PHP, OpenSSL and ftp_ssl_connect() on Win32"/>
 <meta name="twitter:description" content="For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
- ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed."/>
+When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
+&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!"/>
 
     <meta property="og:title" content="PHP, OpenSSL and ftp_ssl_connect() on Win32" />
 <meta property="og:description" content="For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
- ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed." />
+When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
+&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/phpopenssl/" />
 <meta property="article:published_time" content="2007-10-12T00:00:00+00:00" />
@@ -77,128 +79,66 @@ According to the PHP manual:
           <a class="tag" href="https://deciacco.github.io/tags/php/">PHP</a><a class="tag" href="https://deciacco.github.io/tags/openssl/">OpenSSL</a><a class="tag" href="https://deciacco.github.io/tags/c/">C</a></div></div>
     </header>
     <div class="post-content">
-      
-
-<p>For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the <a href="http://us.php.net/ftp_ssl_connect">http://us.php.net/ftp_ssl_connect</a> function.</p>
-
+      <p>For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the <a href="http://us.php.net/ftp_ssl_connect">http://us.php.net/ftp_ssl_connect</a> function.</p>
 <p>According to the PHP manual:</p>
-
-<blockquote>
-ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it's undefined and you've compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.
-</blockquote>
-
+<!-- raw HTML omitted -->
 <p>When I first saw this I was disappointed.  I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.</p>
-
 <p>&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!</p>
-
-<hr />
-
-<h2 id="part-1-compiling-php">PART 1 - COMPILING PHP</h2>
-
+<hr>
+<h2 id="part-1---compiling-php">PART 1 - COMPILING PHP</h2>
 <p>UPDATE: 2010-05-27 - Please see this link for compiling on <a href="http://wiki.php.net/internals/windows/stepbystepbuild">http://wiki.php.net/internals/windows/stepbystepbuild</a></p>
-
 <h3 id="install-visual-c-6-visual-c-express-or-visual-studio-2005-are-ok-too">Install Visual C++ 6 (Visual C++ Express OR Visual Studio 2005 are OK too)</h3>
-
 <p>Luckily I already had a copy of C++ 6 left over from my college days. Only problem I had was to find the cd. <em>With some minor changes this will also work for VC++ Express/Visual Studio 2005.</em> I chose to use version 6 because using the newer versions requires you distribute other files along with PHP. If all you have is VCE or VS2k5 go ahead and work with that, I will show you where the differences are.</p>
-
-<h3 id="download-php-5-2-source">Download PHP 5.2 Source</h3>
-
-<p>The sources from the <strong>PHP</strong> snapshots worked for me. I downloaded <strong>php-5.2-dev (tar.gz) (8.9M)</strong> at the time of this writing. Link to the snapshots page: <a href="http://snaps.php.net/">http://snaps.php.net/</a></p>
-
+<h3 id="download-php-52-source">Download PHP 5.2 Source</h3>
+<p>The sources from the <strong>PHP</strong> snapshots worked for me. I downloaded <!-- raw HTML omitted -->php-5.2-dev (tar.gz) (8.9M)<!-- raw HTML omitted --> at the time of this writing. Link to the snapshots page: <a href="http://snaps.php.net/">http://snaps.php.net/</a></p>
 <h3 id="download-needed-libraries">Download Needed Libraries</h3>
-
 <p>From what I&rsquo;ve been able to find, Edin Kadribašic seems to have a nice zip file with everything in it. I downloaded <em>zip.zip</em> from his site. Link to Edin&rsquo;s files: <a href="http://files.edin.dk/">http://files.edin.dk/</a></p>
-
 <p>You need to go into subfolder <code>/php/win32</code> and click on <em>zip.zip</em>. (If this link is down try this one: <a href="http://perisama.net/">http://perisama.net/</a> )</p>
-
 <h3 id="create-a-working-directory">Create a Working Directory</h3>
-
 <p>I did the following:</p>
-
 <ul>
 <li>Created directory <code>c:\work\</code></li>
 <li>Extracted source to <code>c:\work\php5\</code></li>
 <li>Extracted <em>php_build</em> from <em>zip.zip</em> to <code>c:\work\php_build\</code></li>
 </ul>
-
 <p>This is what it looked like after this step:</p>
-
 <pre><code>c:\work
 |---php5
 |---php_build
-</code></pre>
-
-<h3 id="set-environment-variables">Set Environment Variables</h3>
-
+</code></pre><h3 id="set-environment-variables">Set Environment Variables</h3>
 <h4 id="version-6">Version 6:</h4>
-
 <p>I added these lines to <code>C:\Program Files\Microsoft Visual Studio\VC98\Bin\vcvars32.bat</code>.</p>
-
 <pre><code>set PATH=%PATH%;C:\work\php_build\bin;
 set BISON_SIMPLE=C:\work\php_build\bin\bison.simple
 %SystemRoot%\system32\cmd.exe &lt;-- Makes things a little easier, but it's not required.
-</code></pre>
-
-<h4 id="versions-6">Versions &gt; 6:</h4>
-
+</code></pre><h4 id="versions--6">Versions &gt; 6:</h4>
 <p>Add the <strong>first two lines</strong> above to <code>C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat</code>.</p>
-
 <p>I put them under the line starting</p>
-
 <pre><code> @set LIBPATH=C:\WINDOWS\Microsoft.NET.
-</code></pre>
-
-<h3 id="open-up-a-command-prompt">Open Up a Command Prompt</h3>
-
+</code></pre><h3 id="open-up-a-command-prompt">Open Up a Command Prompt</h3>
 <h4 id="version-6-1">Version 6:</h4>
-
 <p>I created a shortcut to the <code>vcvars32.bat</code> file and whenever I needed to get into the development environment with the proper variables set, I simply double clicked it to launch a command window. (That is what the third line above is for.)</p>
-
-<h4 id="versions-6-1">Versions &gt; 6:</h4>
-
+<h4 id="versions--6-1">Versions &gt; 6:</h4>
 <p>There should be a shortcut  created with your install. For Visual Studio 2005 there is shortcut named Visual Studio 2005 Command Prompt.</p>
-
 <h3 id="switch-to-the-php-source-directory">Switch to the PHP Source Directory</h3>
-
 <p>Basically, this command at the prompt assuming you have the same directory structure:</p>
-
 <pre><code>cd /d c:\work\php5
-</code></pre>
-
-<h3 id="run-buildconf">Run Buildconf</h3>
-
+</code></pre><h3 id="run-buildconf">Run Buildconf</h3>
 <p>This command at the prompt:</p>
-
 <pre><code>C:\work\php5&gt;buildconf
-</code></pre>
-
-<h3 id="run-configure-js">Run Configure.js</h3>
-
+</code></pre><h3 id="run-configurejs">Run Configure.js</h3>
 <p>PHP configuration line. More information <a href="http://us2.php.net/configure">http://us2.php.net/configure</a></p>
-
 <p>This command at the prompt:</p>
-
 <pre><code>C:\work\php5&gt; cscript /nologo configure.js --with-openssl
-</code></pre>
-
-<h3 id="run-nmake">Run nmake</h3>
-
+</code></pre><h3 id="run-nmake">Run nmake</h3>
 <p>This command at the prompt:</p>
-
 <pre><code>C:\work\php5&gt; nmake
-</code></pre>
-
-<p>This part takes a little while depending on the speed of your pc.</p>
-
+</code></pre><p>This part takes a little while depending on the speed of your pc.</p>
 <p>At the end of the process I got a build complete message. Something that I wasn&rsquo;t sure about here, were all the warnings that were generated during the compile. Most of them were about type conversion and possible loss of data. I would think that these need to be fixed or maybe there is a compiler switch to turn them off. Since PHP worked anyway, I ignored them and continued&hellip;
 <em>Update: 10/30/2007 - Apparently these warnings are ok. <a href="http://elizabethmariesmith.com/2006/11/how-to-compile-php52-and-php-gtk2-on-windows-using-visual-c-express/#comment-44543">Dreaming of Dawn</a></em></p>
-
-<h2 id="part-2-patching-php">PART 2 - PATCHING PHP</h2>
-
+<h2 id="part-2---patching-php">PART 2 - PATCHING PHP</h2>
 <p>After compiling PHP I was able to use the <em>ftp_ssl_connect()</em> function without getting that awful function undefined message. I set out to use my new function and custom built PHP, only to discover that there was yet another problem&hellip;</p>
-
 <p>It is important to note that all of the testing was done with <a href="https://www.serv-u.com/">Serv-U FTP Server</a>. I don&rsquo;t know if this error would occur with other servers.</p>
-
 <p>Here is the piece of code I&rsquo;ve been using for my initial testing. Keep in mind that this was code ran from the command line:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#cd2828;font-weight:bold">&lt;?php</span>
 <span style="color:#40ffff">$ftp_server</span> = <span style="color:#ed9d13">&#39;server.onlan.local&#39;</span>;
@@ -226,15 +166,10 @@ set BISON_SIMPLE=C:\work\php_build\bin\bison.simple
 	<span style="color:#6ab825;font-weight:bold">echo</span> <span style="color:#ed9d13">&#39;no workie\n&#39;</span>;
 }
 <span style="color:#cd2828;font-weight:bold">?&gt;</span>
-</code></pre></div>
-<p>When I ran this code with PHP after the initial compile it executed with the fallowing output:</p>
-
+</code></pre></div><p>When I ran this code with PHP after the initial compile it executed with the fallowing output:</p>
 <pre><code>PHP Warning:  ftp_login(): SSL/TLS handshake failed in C:\Documents and Settings\user\Desktop\php_with_ftp_ssl_connect\ftpssltest.php on line 11
 PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\Documents and Settings\user\Desktop\php_with_ftp_ssl_connect\ftpssltest.php on line 11
-</code></pre>
-
-<p>It connected to the server with <em>ftp_ssl_connect()</em>, but then failed when it was time to authenticate with <em>ftp_login()</em>. Below is a portion of the FTP server log with this session.</p>
-
+</code></pre><p>It connected to the server with <em>ftp_ssl_connect()</em>, but then failed when it was time to authenticate with <em>ftp_login()</em>. Below is a portion of the FTP server log with this session.</p>
 <pre><code>[6] Thu 11Oct07 08:14:29 - (000125) 234 AUTH command OK. Initializing SSL connection.
 [7] Thu 11Oct07 08:14:29 - Sock ID=595 setsockopt(260,IPPROTO_TCP,TCP_NODELAY,0x010AD03C,4) --&gt; 0 (OK)
 [7] Thu 11Oct07 08:14:29 - Sock ID=595 RB_READ Stat=OK
@@ -252,33 +187,28 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 [7] Thu 11Oct07 08:14:30 - Sock ID=595 SSL_accept(0x012091B0) --&gt; -1 (SSL_ERROR_SSL - internal error)
 [5] Thu 11Oct07 08:14:30 - Unable to establish SSL connection (internal error)
 [6] Thu 11Oct07 08:14:30 - (000125) 431 Unable to negotiate secure command connection.
-</code></pre>
-
-<p>As you can see it failed with <em>SSL_ERROR_SSL - wrong version number</em>. I still don&rsquo;t know what this means, but searching online ultimately lead me to the PHP bugs site. There I did a search for <em>ftp_ssl_connect()</em> and found two interesting bugs:</p>
-
+</code></pre><p>As you can see it failed with <em>SSL_ERROR_SSL - wrong version number</em>. I still don&rsquo;t know what this means, but searching online ultimately lead me to the PHP bugs site. There I did a search for <em>ftp_ssl_connect()</em> and found two interesting bugs:</p>
 <ol>
 <li><a href="http://bugs.php.net/bug.php?id=36103">http://bugs.php.net/bug.php?id=36103</a>  #36103</li>
 <li><a href="http://bugs.php.net/bug.php?id=41021">http://bugs.php.net/bug.php?id=41021</a>  #41021</li>
 </ol>
-
 <p>In bug #36103 there is a <a href="http://tony2001.phpclub.net/dev/tmp/bug36103.diff">link to a patch</a> by tony2001 that looked promising.</p>
-
-<p>I opened up <code>c:\Work\php5\ext\ftp\ftp.c</code>. Right after the opening bracket of the <em>ftp_login()</em> function I replaced these lines of code:</p>
+<p>I opened up <code>c:\Work\php5\ext\ftp\ftp.c</code>. Right after the opening bracket of the <!-- raw HTML omitted -->ftp_login()<!-- raw HTML omitted --> function I replaced these lines of code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	SSL_CTX	*ctx = <span style="color:#24909d">NULL</span>;
-<span style="color:#cd2828;font-weight:bold">#endif</span></code></pre></div>
-<p>with these lines:</p>
+<span style="color:#cd2828;font-weight:bold">#endif
+</span></code></pre></div><p>with these lines:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	<span style="color:#6ab825;font-weight:bold">int</span> errcode;
 	SSL_CTX	*ctx = <span style="color:#24909d">NULL</span>;
-<span style="color:#cd2828;font-weight:bold">#endif</span></code></pre></div>
-<p>Then, in the same function, I replaced these lines of code:</p>
+<span style="color:#cd2828;font-weight:bold">#endif
+</span></code></pre></div><p>Then, in the same function, I replaced these lines of code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">if</span> (SSL_connect(ftp-&gt;ssl_handle) &lt;= <span style="color:#3677a9">0</span>) {
 	php_error_docref(<span style="color:#24909d">NULL</span> TSRMLS_CC, E_WARNING, <span style="color:#a61717;background-color:#e3d2d2">&#39;</span>SSL/TLS handshake failed<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>);
 	SSL_shutdown(ftp-&gt;ssl_handle);
 	<span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
-}</code></pre></div>
-<p>with these lines of code:</p>
+}
+</code></pre></div><p>with these lines of code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">do</span> {
 	errcode = SSL_connect(ftp-&gt;ssl_handle);
 	<span style="color:#6ab825;font-weight:bold">switch</span> (SSL_get_error (ftp-&gt;ssl_handle, errcode)) {
@@ -297,9 +227,8 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 			<span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
 			<span style="color:#6ab825;font-weight:bold">break</span>;
 	}
-} <span style="color:#6ab825;font-weight:bold">while</span>(errcode == <span style="color:#3677a9">0</span> &amp;&amp; !SSL_is_init_finished(ftp-&gt;ssl_handle));</code></pre></div>
-<p>I recompiled and executed the same code with the patched PHP and I was able to get a little further. Here is the FTP server log with this patch in effect:</p>
-
+} <span style="color:#6ab825;font-weight:bold">while</span>(errcode == <span style="color:#3677a9">0</span> &amp;&amp; !SSL_is_init_finished(ftp-&gt;ssl_handle));
+</code></pre></div><p>I recompiled and executed the same code with the patched PHP and I was able to get a little further. Here is the FTP server log with this patch in effect:</p>
 <pre><code>[6] Thu 11Oct07 09:22:54 - (000126) 234 AUTH command OK. Initializing SSL connection.
 [7] Thu 11Oct07 09:22:54 - Sock ID=596 setsockopt(260,IPPROTO_TCP,TCP_NODELAY,0x010AD03C,4) --&gt; 0 (OK)
 [7] Thu 11Oct07 09:22:54 - Sock ID=596 RB_READ Stat=OK
@@ -386,28 +315,24 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 [7] Thu 11Oct07 09:23:18 - Sock ID=597 shutdown(548,1) --&gt; 0 (OK)
 [7] Thu 11Oct07 09:23:18 - Sock ID=597 closesocket(548) --&gt; 0 (OK)
 [6] Thu 11Oct07 09:23:18 - (000126) 522 SSL/TLS lib refuses to initiate secure data connection.
-</code></pre>
-
-<p>As you can see, this time the SSL connection was initialized, the private data connection was opened, the user was successfully authenticated, <em>Pasv</em> mode was set, and the command LIST to get a directory listing was sent. Unfortunately, that is where the script failed.</p>
-
+</code></pre><p>As you can see, this time the SSL connection was initialized, the private data connection was opened, the user was successfully authenticated, <em>Pasv</em> mode was set, and the command LIST to get a directory listing was sent. Unfortunately, that is where the script failed.</p>
 <p>At this point I wasn&rsquo;t sure what to do, but I decided I&rsquo;d give <code>ftp.c</code> another look just in case I had missed something. I started at the top of the file and worked my way down. At first it didn&rsquo;t occur to me, but then I realized that the <em>ftp_login()</em> function might not be the only place where this patch was needed. Sure enough, towards the bottom of the file, I found another function: <em>data_accept()</em>. This made perfect sense, since after the LIST command is sent to the ftp server the actual information is sent through the data channel which is handled by this function.</p>
-
 <p>In the data_accept() function I replaced this code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	SSL_CTX		*ctx;
-<span style="color:#cd2828;font-weight:bold">#endif</span></code></pre></div>
-<p>with this code:</p>
+<span style="color:#cd2828;font-weight:bold">#endif
+</span></code></pre></div><p>with this code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	<span style="color:#6ab825;font-weight:bold">int</span> errcode;
 	SSL_CTX		*ctx;
-<span style="color:#cd2828;font-weight:bold">#endif</span></code></pre></div>
-<p>Then, in the same function, I replaced this code:</p>
+<span style="color:#cd2828;font-weight:bold">#endif
+</span></code></pre></div><p>Then, in the same function, I replaced this code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">if</span> (SSL_connect(data-&gt;ssl_handle) &lt;= <span style="color:#3677a9">0</span>) {
 	php_error_docref(<span style="color:#24909d">NULL</span> TSRMLS_CC, E_WARNING, <span style="color:#a61717;background-color:#e3d2d2">&#39;</span>data_accept: SSL/TLS handshake failed<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>);
 	SSL_shutdown(data-&gt;ssl_handle);
 	<span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
-}</code></pre></div>
-<p>with these lines of code: (Please note that it is slightly different than the previous patch.)</p>
+}
+</code></pre></div><p>with these lines of code: (Please note that it is slightly different than the previous patch.)</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">do</span> {
 	errcode = SSL_connect(data-&gt;ssl_handle);
 	<span style="color:#6ab825;font-weight:bold">switch</span> (SSL_get_error (data-&gt;ssl_handle, errcode)) {
@@ -426,25 +351,20 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 			<span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#3677a9">0</span>;
 			<span style="color:#6ab825;font-weight:bold">break</span>;
 	}
-} <span style="color:#6ab825;font-weight:bold">while</span>(errcode == <span style="color:#3677a9">0</span> &amp;&amp; !SSL_is_init_finished(data-&gt;ssl_handle));</code></pre></div>
-<p>After this last patch, I once again recompiled the source and ran the script. This time everything worked as expected, but after some testing I found another issue.</p>
-
+} <span style="color:#6ab825;font-weight:bold">while</span>(errcode == <span style="color:#3677a9">0</span> &amp;&amp; !SSL_is_init_finished(data-&gt;ssl_handle));
+</code></pre></div><p>After this last patch, I once again recompiled the source and ran the script. This time everything worked as expected, but after some testing I found another issue.</p>
 <p>Every few directory listings that I pulled down, the connection to the server would be lost. After further investigation I discovered that the cause of this was long directory listings in PASV mode. Every time I pulled a directory listing with more than approximately 5 to 10 files or folders everything was fine, but as soon as the listing contained more than that the connection would unexpectedly close.</p>
-
-<p><strong><em>Start Update: 10/30/2007</em></strong>
-<span style="text-decoration: line-through;">I again set out to find the problem. Since this only happened when the directory listing was long, I knew it had something to do with data not fitting inside a container. I started looking for areas in the code where this would be the case, and the first one that I found that made sense to me was this line of code: <em>data = ecalloc(1, sizeof(*data));</em> in the <em>ftp_getdata()</em> function located in the ftp.c file. <em>*data</em> is of type <em>databuf_t</em> which is defined in the ftp.h file. I changed the size of this buffer to twice the size from 4096 to 8192. (I was surprised to find out that there was a comment in the code that stated this buffer size should be editable at runtime.) After I recompiled, the error was gone and everything seemed to work normally.</span></p>
-
-<p><span style="text-decoration: line-through;">After further testing I discovered that I didn&rsquo;t need to have the buffer be twice the size, but simply one byte bigger. From 4096 to 4097. (This is very odd, and I&rsquo;m sure there is a way to fix this in the code, but I just don&rsquo;t know where)</span></p>
-
+<p><em><strong>Start Update: 10/30/2007</strong></em>
+<!-- raw HTML omitted -->I again set out to find the problem. Since this only happened when the directory listing was long, I knew it had something to do with data not fitting inside a container. I started looking for areas in the code where this would be the case, and the first one that I found that made sense to me was this line of code: <!-- raw HTML omitted -->data = ecalloc(1, sizeof(<em>data));<!-- raw HTML omitted --> in the <!-- raw HTML omitted -->ftp_getdata()<!-- raw HTML omitted --> function located in the ftp.c file. <!-- raw HTML omitted --></em>data<!-- raw HTML omitted --> is of type <!-- raw HTML omitted -->databuf_t<!-- raw HTML omitted --> which is defined in the ftp.h file. I changed the size of this buffer to twice the size from 4096 to 8192. (I was surprised to find out that there was a comment in the code that stated this buffer size should be editable at runtime.) After I recompiled, the error was gone and everything seemed to work normally.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->After further testing I discovered that I didn&rsquo;t need to have the buffer be twice the size, but simply one byte bigger. From 4096 to 4097. (This is very odd, and I&rsquo;m sure there is a way to fix this in the code, but I just don&rsquo;t know where)<!-- raw HTML omitted --></p>
 <p>After some testing I discovered that the above is wrong. Changing the buffer caused my SSL communication to break, but because the server was set to handle both ssl or non-ssl connections I did not notice it. I changed the buffer back to the original size of 4096, and I was able to trace the problem to something else:</p>
-
 <p>In the <em>my_recv()</em> function at added these lines of code at the beginning of the function:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	<span style="color:#6ab825;font-weight:bold">int</span> no_error;
-<span style="color:#cd2828;font-weight:bold">#endif</span></code></pre></div>
-<p>and replaced this line of code:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">nr_bytes = SSL_read(ftp-&gt;data-&gt;ssl_handle, buf, len);</code></pre></div>
-<p>with these lines:</p>
+<span style="color:#cd2828;font-weight:bold">#endif
+</span></code></pre></div><p>and replaced this line of code:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">nr_bytes = SSL_read(ftp-&gt;data-&gt;ssl_handle, buf, len);
+</code></pre></div><p>with these lines:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">no_error = <span style="color:#3677a9">1</span>; <span style="color:#999;font-style:italic">// there is no error
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">do</span>{
 	nr_bytes = SSL_read(ftp-&gt;data-&gt;ssl_handle, buf, len);
@@ -463,35 +383,35 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 			no_error = <span style="color:#3677a9">0</span>; <span style="color:#999;font-style:italic">//major error, get out
 </span><span style="color:#999;font-style:italic"></span>			<span style="color:#6ab825;font-weight:bold">break</span>;
 	}
-}<span style="color:#6ab825;font-weight:bold">while</span>(nr_bytes &lt; <span style="color:#3677a9">0</span> &amp;&amp; no_error);</code></pre></div>
-<p>After <em>SSL_read()</em> was executed I got -1 as the return. A call to <em>SSL_get_error()</em> returned <em>SSL_ERROR_WANT_READ</em>. From what I&rsquo;ve been able to find online and the OpenSSL documentation, when this happens, you need to retry the <em>SSL_read()</em> function. After a few retries, the function succeeded and was able to get the data.</p>
-
+}<span style="color:#6ab825;font-weight:bold">while</span>(nr_bytes &lt; <span style="color:#3677a9">0</span> &amp;&amp; no_error);
+</code></pre></div><p>After <em>SSL_read()</em> was executed I got -1 as the return. A call to <em>SSL_get_error()</em> returned <em>SSL_ERROR_WANT_READ</em>. From what I&rsquo;ve been able to find online and the OpenSSL documentation, when this happens, you need to retry the <em>SSL_read()</em> function. After a few retries, the function succeeded and was able to get the data.</p>
 <p>(I&rsquo;ve done some testing and this patch seems to be working reliably.)
-<strong><em>End Update: 10/30/2007</em></strong></p>
-
+<em><strong>End Update: 10/30/2007</strong></em></p>
 <p>I ran a session with Ghisler&rsquo;s <a href="http://www.ghisler.com/">Total Commander</a> which uses the same OpenSSL libraries to make a secure FTP connection, and the server logs looked almost identical to the log generated when connecting with PHP.</p>
-
 <p>Here are the main concerns I have:</p>
-
 <h2 id="php-compile">PHP Compile</h2>
-
 <ol>
-<li><p>What other configuration lines do I really need to get a production ready PHP like what you get from the main PHP downloads site with OpenSSL support included? Is <em>&ndash;with-openssl</em> enough?</p></li>
-
-<li><p>Why do I get all those warnings when compiling PHP?
-<em>Update: 10/30/2007 - Apparently these warnings are ok. <a href="http://elizabethmariesmith.com/2006/11/how-to-compile-php52-and-php-gtk2-on-windows-using-visual-c-express/#comment-44543">Dreaming of Dawn</a></em></p></li>
+<li>
+<p>What other configuration lines do I really need to get a production ready PHP like what you get from the main PHP downloads site with OpenSSL support included? Is <em>&ndash;with-openssl</em> enough?</p>
+</li>
+<li>
+<p>Why do I get all those warnings when compiling PHP?
+<em>Update: 10/30/2007 - Apparently these warnings are ok. <a href="http://elizabethmariesmith.com/2006/11/how-to-compile-php52-and-php-gtk2-on-windows-using-visual-c-express/#comment-44543">Dreaming of Dawn</a></em></p>
+</li>
 </ol>
-
 <h2 id="php-patch">PHP Patch</h2>
-
 <ol>
-<li><p>Why hasn&rsquo;t Tony&rsquo;s patch made it into the official release? (Perhaps I can add mine as well&hellip;)</p></li>
-
-<li><p>Why are there several SSL_ERROR_WANT_READ errors? These show up in both the PHP and the Total Commander FTP logs.
-<em>Update: 10/30/2007 - SSL_ERROR_WANT_READ is normal. It just means &ldquo;there is no data available yet.&rdquo;</em></p></li>
-
-<li><p>While changing the data buffer works, I wonder what other side effects it may have on functionality. Why is increasing it by one byte enough?
-<em>Update: 10/30/2007 - Changing the data buffer breaks SSL communication.</em></p></li>
+<li>
+<p>Why hasn&rsquo;t Tony&rsquo;s patch made it into the official release? (Perhaps I can add mine as well&hellip;)</p>
+</li>
+<li>
+<p>Why are there several SSL_ERROR_WANT_READ errors? These show up in both the PHP and the Total Commander FTP logs.
+<em>Update: 10/30/2007 - SSL_ERROR_WANT_READ is normal. It just means &ldquo;there is no data available yet.&quot;</em></p>
+</li>
+<li>
+<p>While changing the data buffer works, I wonder what other side effects it may have on functionality. Why is increasing it by one byte enough?
+<em>Update: 10/30/2007 - Changing the data buffer breaks SSL communication.</em></p>
+</li>
 </ol>
 
     </div>

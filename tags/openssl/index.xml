@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenSSL on deciacco</title>
@@ -19,7 +19,8 @@
       <guid>https://deciacco.github.io/posts/phpopenssl/</guid>
       <description>For quite some time I&amp;rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
- ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed.</description>
+When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
+&amp;hellip;Well, it&amp;rsquo;s not perfect, but I have been able to get it to work, and I&amp;rsquo;ve even been able to patch up the PHP code itself!</description>
     </item>
     
   </channel>
