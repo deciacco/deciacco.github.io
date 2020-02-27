@@ -3,7 +3,7 @@
   <head>
     <title>Comcast Modem Power Level Monitor // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.65.2" />
+    <meta name="generator" content="Hugo 0.59.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -77,45 +77,66 @@ For example, for my business, everytime I show packet loss in my firewall I can 
           <a class="tag" href="https://deciacco.github.io/tags/python/">Python</a><a class="tag" href="https://deciacco.github.io/tags/r/">R</a></div></div>
     </header>
     <div class="post-content">
-      <p>Below you&rsquo;ll find scripts to monitor a Comcast modem&rsquo;s power levels to help troubleshoot line problems.</p>
+      
+
+<p>Below you&rsquo;ll find scripts to monitor a Comcast modem&rsquo;s power levels to help troubleshoot line problems.</p>
+
 <p>The power of this tool becomes apparent when you use the data gathered to maintain an event journal of everything that happens related to your connection.</p>
+
 <p>For example, for my business, everytime I show packet loss in my firewall I can corelate it to abnormal power levels in the modem. This is critical, not only to know that the problem lies outside of my control, but also to aide the Comcast technitians in fixing the issue. The graphs are especially usefull to show connection issues over time.</p>
+
 <h2 id="windows-subsystem-for-linux">Windows Subsystem for Linux</h2>
+
 <p>Built-in linux system in Windows 10. You can run these scripts on any linux based system, but this was readily available and already on our existing network.</p>
-<h3 id="start-cron--ssh-at-windows-startup">Start Cron &amp; SSH at Windows Startup</h3>
+
+<h3 id="start-cron-ssh-at-windows-startup">Start Cron &amp; SSH at Windows Startup</h3>
+
 <p>Short batch file <code>startup.bat</code> used by a scheduled task in Windows to start the ssh and cron daemons in WSL. This is useful in case the host comptuer is restarted. (Windows Updates restarts mainly&hellip;)</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">@<span style="color:#6ab825;font-weight:bold">echo</span> off
 
 wsl -u root service ssh start
 wsl -u root service cron start
 
-<span style="color:#6ab825;font-weight:bold">exit</span>
-</code></pre></div><h3 id="ssh">SSH</h3>
+exit</code></pre></div>
+<h3 id="ssh">SSH</h3>
+
 <p>Having SSH installed in WSL makes it a lot easier to connect in and work on the script, check logs, etc.</p>
+
 <h3 id="cron">Cron</h3>
+
 <ul>
 <li>Run the graph generating script every hour.</li>
-<li>At 1 min intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</li>
-</ul>
+
+<li><p>At 1 min intervals, check the python script hasn&rsquo;t errored out. If it&rsquo;s not running, start it.</p>
+
 <pre><code>0 * * * * /home/user/scripts/comcast/cm_run.sh
 */1 * * * * /home/user/scripts/comcast/keep_alive.sh
-</code></pre><h3 id="cm_rushsh">cm_rush.sh</h3>
+</code></pre></li>
+</ul>
+
+<h3 id="cm-rush-sh">cm_rush.sh</h3>
+
 <p>Simple script to run the graph generating code. Could run R script directly from cron, but this allows other scripts to be called if needed.</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/bash
 </span><span style="color:#cd2828;font-weight:bold"></span>
-~/scripts/comcast/comcastplot.R
-</code></pre></div><h3 id="keep_alivesh">keep_alive.sh</h3>
+~/scripts/comcast/comcastplot.R</code></pre></div>
+<h3 id="keep-alive-sh">keep_alive.sh</h3>
+
 <p>Script to check if the python code is running. If it isn&rsquo;t, it will restart it.</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/bash
 </span><span style="color:#cd2828;font-weight:bold"></span>
 <span style="color:#6ab825;font-weight:bold">if</span> ! pgrep -f <span style="color:#ed9d13">&#39;cmpwrlevel2.py&#39;</span>
 <span style="color:#6ab825;font-weight:bold">then</span>
     nohup <span style="color:#6ab825;font-weight:bold">$(</span>which python3<span style="color:#6ab825;font-weight:bold">)</span> ~/scripts/comcast/cmpwrlevel2.py &amp;
-<span style="color:#6ab825;font-weight:bold">fi</span>
-</code></pre></div><h2 id="modem-power-levels">Modem Power Levels</h2>
+<span style="color:#6ab825;font-weight:bold">fi</span></code></pre></div>
+<h2 id="modem-power-levels">Modem Power Levels</h2>
+
 <p>Poll the modem every minute and log the upstream (U) and downstream (D) powerlevels.</p>
-<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <!-- raw HTML omitted --><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a><!-- raw HTML omitted --></p>
+
+<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <a href="https://www.dslreports.com/faq/16085" target="_blank"><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a></a></p>
+
 <h3 id="sample-data">Sample Data</h3>
+
 <pre><code>2019-09-16 01:30:17 U 43.78 dBmV D 3.97 dBmV
 2019-09-16 01:31:18 U 43.78 dBmV D 3.97 dBmV
 2019-09-16 01:32:18 U 43.78 dBmV D 3.97 dBmV
@@ -125,7 +146,10 @@ wsl -u root service cron start
 2019-09-16 01:36:18 U 43.78 dBmV D 4.00 dBmV
 2019-09-16 01:37:18 U 43.78 dBmV D 3.98 dBmV
 2019-09-16 01:38:17 U 43.78 dBmV D 3.97 dBmV
-</code></pre><h2 id="get-data-with-python">Get Data With Python</h2>
+</code></pre>
+
+<h2 id="get-data-with-python">Get Data With Python</h2>
+
 <p>Script to get the data. The modem is quite &ldquo;finicky&rdquo;.</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic">#!/usr/bin/python3</span>
 
@@ -319,27 +343,37 @@ getdata = True
             h.write(r.text)
 
         <span style="color:#999;font-style:italic"># Exit loop, cron will restart</span>
-        getdata = False
+        getdata = False</code></pre></div>
+<h2 id="sample-graphs">Sample Graphs</h2>
 
-</code></pre></div><h2 id="sample-graphs">Sample Graphs</h2>
 <h3 id="downstream-power-levels">Downstream Power Levels</h3>
-<p><img src="/resources/cm_modem_dwn_pwr_levels.jpg" alt=""></p>
+
+<p><img src="/resources/cm_modem_dwn_pwr_levels.jpg" alt="" /></p>
+
 <h3 id="upstream-power-levels">Upstream Power Levels</h3>
-<p><img src="/resources/cm_modem_up_pwr_levels.jpg" alt=""></p>
+
+<p><img src="/resources/cm_modem_up_pwr_levels.jpg" alt="" /></p>
+
 <h3 id="historical-graphs">Historical Graphs</h3>
+
 <p>This is where you can really show line issues over time. You can see why we had random drops
 at the begging of the graph. Some variance is expected on power levels, especially due to
 temperature, but no mor than 2-3 decibels.</p>
+
 <p>You can see where Comast finally fixed the issue. You can also see where we added back our splitter
 for the TV.</p>
+
 <p>Note: the gaps in the line is missing data. The modem sometimes does not repond to web requests.
 After some time, it will now allow web logins, yet somehow, with the python script and reusing cookies
 we are allowed in to collect data. Some times the page will refresh without the signal levels. Other
 times, during line problems the page will not be available.</p>
-<p><!-- raw HTML omitted -->Click here to see the full image&hellip;<!-- raw HTML omitted -->
-<img src="/resources/history_down.jpg" alt=""></p>
-<p><!-- raw HTML omitted -->Click here to see the full image&hellip;<!-- raw HTML omitted -->
-<img src="/resources/history_up.jpg" alt=""></p>
+
+<p><a href="/resources/history_down.jpg" target="_blank">Click here to see the full image&hellip;</a>
+<img src="/resources/history_down.jpg" alt="" /></p>
+
+<p><a href="/resources/history_up.jpg" target="_blank">Click here to see the full image&hellip;</a>
+<img src="/resources/history_up.jpg" alt="" /></p>
+
 <h2 id="generate-graphs-with-r">Generate Graphs With R</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#999;font-style:italic">#!/usr/bin/env Rscript</span>
 
@@ -696,9 +730,7 @@ gg &lt;- <span style="color:#447fcf">ggplot</span>(pwr, <span style="color:#447f
        height = consts$img_h, 
        dpi = consts$img_dpi,
        quality = consts$img_q,
-       limitsize = <span style="color:#6ab825;font-weight:bold">FALSE</span>)
-
-</code></pre></div>
+       limitsize = <span style="color:#6ab825;font-weight:bold">FALSE</span>)</code></pre></div>
     </div>
     <div class="post-footer">
       

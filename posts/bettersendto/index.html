@@ -3,7 +3,7 @@
   <head>
     <title>A Better &#34;Send to Mail Recipient&#34; With Outlook // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.65.2" />
+    <meta name="generator" content="Hugo 0.59.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -76,36 +76,37 @@ While a plain text email is ok, and probably the way all email should be, most o
     </header>
     <div class="post-content">
       <p>Sometimes when sending files through email, you want to be able to simply right-click on the file and select <em>Send to mail recipient</em> form the context menu. If you are an Outlook 2003 or 2007 user, you might have noticed that when you do this, Outlook generates a plain text email with your files attached.</p>
+
 <p>While a plain text email is ok, and probably the way all email should be, most of us have been spoiled with html email that allows fancy formatting and we want to keep this functionality when we right-click to send attachments. With this nice formatting ability we also have the added bonus that our signatures get automatically appended to the end of the e-mail.</p>
+
 <p>Below are a few steps to create a new <em>Send To Mail Recipient</em> context menu shortcut that address these issues:</p>
+
 <ol>
-<li>
-<p><em>Right-Click</em> the START button and select Explore</p>
-</li>
-<li>
-<p>Select the <em>Send To</em> folder from the folder list on the left.</p>
+<li><em>Right-Click</em> the START button and select Explore</li>
+
+<li><p>Select the <em>Send To</em> folder from the folder list on the left.</p>
+
 <p><strong>Vista Users:</strong>
 The <em>Send To</em> folder is located under: <code>%APPDATA%\Microsoft\Windows\SendTo</code>
-Everything else should work the same.</p>
-</li>
-<li>
-<p><em>Right-Click</em> anywhere in the white space to the right and select <em>New</em>, then <em>Shortcut</em></p>
-</li>
-<li>
-<p>In the <em>Type the location of the item:</em> box, type in the following lines based on the version of Outlook you are using</p>
+Everything else should work the same.</p></li>
+
+<li><p><em>Right-Click</em> anywhere in the white space to the right and select <em>New</em>, then <em>Shortcut</em></p></li>
+
+<li><p>In the <em>Type the location of the item:</em> box, type in the following lines based on the version of Outlook you are using</p>
+
 <p><strong>Outlook 2003</strong>:
-<em>&ldquo;C:Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE&rdquo; /c ipm.note</em></p>
+  <em>&ldquo;C:Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE&rdquo; /c ipm.note</em></p>
+
 <p><strong>Outlook 2007</strong>:
-<em>&ldquo;C:Program Files\Microsoft Office\OFFICE12\OUTLOOK.EXE&rdquo; /a</em></p>
-</li>
-<li>
-<p>In the <em>Type a name for this shortcut:</em> box type in: <em>Outlook Mail Recipient</em></p>
-</li>
-<li>
-<p>Now when you right click on items to send as attachments you will have a new option. By selecting <em>Outlook Mail Recipient</em> you will get your new email in the default email format you have selected in Outlook and, if you have configured your signature for a new email, you will have it as well.</p>
-</li>
+  <em>&ldquo;C:Program Files\Microsoft Office\OFFICE12\OUTLOOK.EXE&rdquo; /a</em></p></li>
+
+<li><p>In the <em>Type a name for this shortcut:</em> box type in: <em>Outlook Mail Recipient</em></p></li>
+
+<li><p>Now when you right click on items to send as attachments you will have a new option. By selecting <em>Outlook Mail Recipient</em> you will get your new email in the default email format you have selected in Outlook and, if you have configured your signature for a new email, you will have it as well.</p></li>
 </ol>
+
 <p><strong>UPDATE: 02/10/2009</strong> - It look like this method won&rsquo;t work when selecting multiple files. For a possible workaround try the following:</p>
+
 <p>Create a file sendto.js with the following code and save it somewhere on your system. For this example the file is saved to c:\sendto.js.</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#6ab825;font-weight:bold">try</span>
 {
@@ -134,8 +135,11 @@ Everything else should work the same.</p>
 {
     outlookApp = <span style="color:#6ab825;font-weight:bold">null</span>;
 }
-</code></pre></div><p>Follow the steps in the tutorial above, but in step 4 type this in the box instead: <em>%windir%\system32\wscript.exe &ldquo;C:\sendto.js&rdquo;</em></p>
+</code></pre></div>
+<p>Follow the steps in the tutorial above, but in step 4 type this in the box instead: <em>%windir%\system32\wscript.exe &ldquo;C:\sendto.js&rdquo;</em></p>
+
 <p><strong>Note:</strong> Use the &ldquo;Change Icon&rdquo; button on the same screen to manually change the icon and use the icons in the Outlook.exe file, otherwise you will get the wscript.exe icon.</p>
+
 <p><strong>Vista:</strong> To get to the <em>Send To</em> folder, you&rsquo;ll need to open up an Explorer window, and then paste the following into the address bar: <em>%APPDATA%\Microsoft\Windows\SendTo</em></p>
 
     </div>

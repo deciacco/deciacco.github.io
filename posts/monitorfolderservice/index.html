@@ -3,7 +3,7 @@
   <head>
     <title>Monitor Folder Service With PHP (Almost) // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.65.2" />
+    <meta name="generator" content="Hugo 0.59.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -74,21 +74,34 @@
     </header>
     <div class="post-content">
       <p>At the office we use a RICOH Aficio 1045 Copier. One of the features of this copier is that it also doubles as a scanner. To scan a document an employee goes to the copier, puts the copier in scanner mode, selects their mailbox from a list and then scans the document. The scanner then sends the scanned information to the scanner software running on one of our servers where the actual file is created and placed in the user&rsquo;s virtual mailbox. (We use pdf as the default.)</p>
+
 <p>Each user&rsquo;s virtual mailbox has a folder associated with it, and this folder is located in each user&rsquo;s personal folder on the server. Most of our employees have workstations and their &ldquo;My Documents&rdquo; folder is mapped to their personal folder on the server. By the time they get back to their desk, all they have to do is go into their &ldquo;My Documents&rdquo; folder and the scanned document is already there.</p>
+
 <p>The problem is with notebook users who don&rsquo;t have a mapped &ldquo;My Documents&rdquo;. If it were mapped, they would not be able to take their documents with them whenever they left the office. So, how can notebook users also retrieve their scanned documents from their &ldquo;My Documents&rdquo; folder?</p>
+
 <p>Basically, all that is needed is some kind of mechanism to monitor a user&rsquo;s virtual mailbox, and when a new file is placed there, copy it down to the user&rsquo;s &ldquo;My Documents&rdquo; folder on the notebook.</p>
+
 <p><strong>PHP Solution:</strong></p>
+
 <p>Install PHP on your server/workstation that will be used to run this. (Google &ldquo;PHP Install&rdquo; for more info&hellip;) Php doesn&rsquo;t have a built in way of creating Windows services, hence the &ldquo;almost&rdquo; in the title. So you can use two nice utilities called INSTSRV.EXE and SRVANY.EXE that come with the Windows Resource Kit.</p>
+
 <p>You can download it from here: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=17657">Windows 2003 Resource Kit Tools</a></p>
+
 <p>Once you&rsquo;ve installed the kit you can use something similar to the following to install the service.</p>
+
 <pre><code>C:\Program Files\Windows Resource Kits\Tools&gt;instsrv scansmon &quot;d:\Program Files\Windows Resource Kits\Tools\srvany.exe&quot;
-</code></pre><p>SRVANY does all the work and Windows sees it as the service. SRVANY will look in the registry for the EXE file to use for the service. The EXE name, the starting directory, and any optional parameters should be in the registry as follows:</p>
+</code></pre>
+
+<p>SRVANY does all the work and Windows sees it as the service. SRVANY will look in the registry for the EXE file to use for the service. The EXE name, the starting directory, and any optional parameters should be in the registry as follows:</p>
+
 <pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\
 Services\scansmon\Parameters]
 &quot;AppDirectory&quot;=&quot;D:\\Scripts\\Scansmon&quot;
 &quot;Application&quot;=&quot;php -q D:\\Scripts\\Scansmon\\scansmon.php3&quot;
 &quot;AppParameters&quot;=&quot;&quot;
-</code></pre><p>NOTE: You can copy/paste the lines above to a file named scansmon.reg (change the paths as necessary and make sure to include the double back-slashes) and double click the .reg file to add these entries to the registry. Php itself is the EXE that it runs. scansmon.php3 has the following code in it. (you will need to modify it for your network)</p>
+</code></pre>
+
+<p>NOTE: You can copy/paste the lines above to a file named scansmon.reg (change the paths as necessary and make sure to include the double back-slashes) and double click the .reg file to add these entries to the registry. Php itself is the EXE that it runs. scansmon.php3 has the following code in it. (you will need to modify it for your network)</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#cd2828;font-weight:bold">&lt;?php</span>
 set_time_limit(<span style="color:#3677a9">0</span>);
 

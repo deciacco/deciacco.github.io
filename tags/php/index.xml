@@ -27,7 +27,7 @@
       
       <guid>https://deciacco.github.io/posts/phpimagemailer/</guid>
       <description>Here is a small utility to more easily email photos with Microsoft Outlook. Basically, it allows you to embed images in the body of the email message so that it is easier for the recipient to view the files.
-Download the file using the link below. Once downloaded, install it by double-clicking it. To use the program, simply highlight the photos you wish to send, then right-click one of the highlighted images and select &amp;ldquo;&amp;ldquo;Send-To&amp;rdquo;&amp;rdquo; then &amp;ldquo;&amp;ldquo;Image Mailer for Outlook&amp;rdquo;&amp;quot;.</description>
+Download the file using the link below. Once downloaded, install it by double-clicking it. To use the program, simply highlight the photos you wish to send, then right-click one of the highlighted images and select &amp;ldquo;&amp;ldquo;Send-To&amp;rdquo;&amp;rdquo; then &amp;ldquo;&amp;ldquo;Image Mailer for Outlook&amp;rdquo;&amp;ldquo;.</description>
     </item>
     
     <item>
@@ -49,8 +49,9 @@ You can simply download the installer and run it on your computer.</description>
       <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/posts/phpftpbackuptool/</guid>
-      <description>UPDATE 2019-11-07: This is a tool I used for work many years ago. At the time I was not happy with what was available to do backups for my company. This tool allowed our critical files to be automatically sent off-site on a nightly basis. Things have come a long way since then!You can take a look at the documenation here:
-Documentation Link(Use the dropdown in the top, right to switch between the two objects.</description>
+      <description>UPDATE 2019-11-07: This is a tool I used for work many years ago. At the time I was not happy with what was available to do backups for my company. This tool allowed our critical files to be automatically sent off-site on a nightly basis. Things have come a long way since then!
+You can take a look at the documenation here:
+Documentation Link (Use the dropdown in the top, right to switch between the two objects.</description>
     </item>
     
     <item>
@@ -61,8 +62,7 @@ Documentation Link(Use the dropdown in the top, right to switch between the two 
       <guid>https://deciacco.github.io/posts/phpopenssl/</guid>
       <description>For quite some time I&amp;rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
-When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
-&amp;hellip;Well, it&amp;rsquo;s not perfect, but I have been able to get it to work, and I&amp;rsquo;ve even been able to patch up the PHP code itself!</description>
+ ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed.</description>
     </item>
     
   </channel>

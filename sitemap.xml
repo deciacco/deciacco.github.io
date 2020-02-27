@@ -98,11 +98,6 @@
   </url>
   
   <url>
-    <loc>https://deciacco.github.io/tags/c/</loc>
-    <lastmod>2007-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://deciacco.github.io/tags/c#/</loc>
     <lastmod>2007-10-19T00:00:00+00:00</lastmod>
   </url>
@@ -125,6 +120,11 @@
   <url>
     <loc>https://deciacco.github.io/tags/sql/</loc>
     <lastmod>2007-10-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deciacco.github.io/tags/c/</loc>
+    <lastmod>2007-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
