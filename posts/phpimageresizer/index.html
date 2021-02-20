@@ -3,7 +3,7 @@
   <head>
     <title>Image Resizer - Php Application for Windows (Almost) // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -25,9 +25,10 @@ The original image remains intact as a new, resized version is created.
 Installing
 You can simply download the installer and run it on your computer." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deciacco.github.io/posts/phpimageresizer/" />
-<meta property="article:published_time" content="2008-04-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2008-04-03T00:00:00+00:00" />
+<meta property="og:url" content="https://deciacco.github.io/posts/phpimageresizer/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2008-04-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2008-04-03T00:00:00&#43;00:00" />
+
 
 
   </head>
@@ -82,63 +83,48 @@ You can simply download the installer and run it on your computer." />
     </header>
     <div class="post-content">
       <p>Small utility to quickly and easily resize images. Written in PHP, and while PHP is mostly a &ldquo;Web&rdquo; language, it actually worked out quite nicely.</p>
-
 <p>You simply right-click an image or a folder containing images and select the appropriate command. Currently, the program supports JPEG, GIF, and PNG images.</p>
-
 <p>The original image remains intact as a new, resized version is created.</p>
-
 <p><strong>Installing</strong></p>
-
 <p>You can simply download the installer and run it on your computer. After the install, you will have an Image Resizer folder in your Start Menu as well as some new context menu (right-click) entries.</p>
-
 <p><strong>Launching</strong></p>
-
 <p>To start the program simply right-click on an image file and select &ldquo;Resize Image&rdquo;. If you want to resize multiple files, right-click on the folder containing the images and select &ldquo;Run Image Resizer On&rdquo;.</p>
-
 <p><strong>Program Settings</strong></p>
-
 <p>When you launch Image Resizer, it needs some information from you. You can specify this information in one of two ways:</p>
-
 <ul>
-<li><p>First, you can run it in interactive mode, where it will require you to input the settings every time. This is good when you require different image sizes often.</p></li>
-
-<li><p>Second, you can run Image Resizer in silent mode where you predefine the settings in the settings file. (The settings file is located in the program directory and shortcut to it is created in the program group in the Start Menu.) This is especially useful if you use Image Resizer to resize images before you send them in an email.</p></li>
+<li>
+<p>First, you can run it in interactive mode, where it will require you to input the settings every time. This is good when you require different image sizes often.</p>
+</li>
+<li>
+<p>Second, you can run Image Resizer in silent mode where you predefine the settings in the settings file. (The settings file is located in the program directory and shortcut to it is created in the program group in the Start Menu.) This is especially useful if you use Image Resizer to resize images before you send them in an email.</p>
+</li>
 </ul>
-
 <p>Below are the required entries:</p>
-
 <ol>
 <li>Target Size
-
 <ul>
 <li>The maximum height or width in pixels the re-sized image can be. The aspect ratio will not change, therefore whichever side of the image is the longest will need to be the side to fit within the target size.</li>
-</ul></li>
+</ul>
+</li>
 <li>Resized Image Postfix
-
 <ul>
 <li>Something to append to the end of the re-sized file&rsquo;s name.</li>
 <li>Example: By taking the default value of &ldquo;_resized&rdquo;, the image &ldquo;silvesterkitty.jpg&rdquo; will be copied and resized to &ldquo;silvesterkitty_resized.jpg&rdquo;.</li>
-</ul></li>
+</ul>
+</li>
 <li>Quality
-
 <ul>
 <li>The quality of the resized image. The higher the quality means the less atifacting will occure on the image and the final result is a more crisp looking image at the cost of higher file size.</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
 <p><strong>*Note:</strong> To run image resizer in Silent mode, open the settings file and set &ldquo;Silent&rdquo; equal to 1.</p>
-
 <p><strong>**Note:</strong> Image Resizer always reads the values from the settings file, whether in interactive or silent mode. If in interactive mode, the values from the settings are used as the defaults.</p>
-
 <p><strong>Uninstalling</strong></p>
-
 <p>To uninstall, use the Windows uninstall utility from the control panel. All files, shortcuts, and registry entries are removed.</p>
-
 <p><strong>Revision History</strong></p>
-
 <ul>
 <li>0.1.3 - 03/03/2009
-
 <ul>
 <li>added the ability to run on a single file or by selecting multiple files</li>
 <li>removed the ability to drag and drop; not needed as right-click is sufficient</li>
@@ -146,22 +132,22 @@ You can simply download the installer and run it on your computer." />
 <li>renamed the ini file shortcut in the program group to make more sense</li>
 <li>added documentation to the settings file</li>
 <li>fixed bug in installer when installing on Vista 32bit that caused the wrong registry entry to be installed which in turn caused the program to not lauch from the context menu</li>
-</ul></li>
+</ul>
+</li>
 <li>0.1.2 - 02/16/2009
-
 <ul>
 <li>added installer</li>
 <li>changed the resizing algorithm</li>
 <li>no longer uses width and height, but uses a target size</li>
-</ul></li>
+</ul>
+</li>
 <li>0.1.1 - 04/03/2008
-
 <ul>
 <li>cleaned up the registry entry to launch the php file itself instead of cmd.exe</li>
 <li>the &ldquo;Run Image Resizer On&rdquo; context menu extension does not show when right-clicking the Recycle Bin</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p><a href="https://github.com/deciacco/imageresizer">Repository</a></p>
 
     </div>

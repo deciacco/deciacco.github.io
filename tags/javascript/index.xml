@@ -6,11 +6,7 @@
     <description>Recent content in Javascript on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Jan 2009 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deciacco.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 03 Jan 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://deciacco.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Better &#34;Send to Mail Recipient&#34; With Outlook</title>
       <link>https://deciacco.github.io/posts/bettersendto/</link>

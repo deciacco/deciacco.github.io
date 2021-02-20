@@ -3,7 +3,7 @@
   <head>
     <title>Python // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -19,7 +19,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://deciacco.github.io/tags/python/" />
 
-<meta property="og:updated_time" content="2019-11-19T00:00:00+00:00" />
 
 
   </head>
@@ -50,6 +49,22 @@
       
   <article>
     <ul class="posts-list">
+      
+        <li class="posts-list-item">
+          <a class="posts-list-item-title" href="https://deciacco.github.io/posts/pollvote/">Poll Vote</a>
+          <span class="posts-list-item-description">
+            Nov 15, 2020
+          </span>
+          <span class="post-list-item-summary">
+              Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.path.abspath(os.path.dirname(sys.argv[0])) LOGFILE = &#39;/media/sf_data/scriptsout/vote/vote.txt&#39; # Setup Logging logging.basicConfig( format=&#39;%(asctime)s:%(levelname)s:%(message)s&#39;, level=logging.INFO, filename=LOGFILE) # Storage for the useragent strings from file # facilitates picking at random useragents = [] # Make it look like a real browser headers = { &#34;Accept&#34;: &#34;text/html,application/xhtml+xml,application/xml; \ q=0.
+          </span>
+          
+          
+          <span class="post-list-item-more">
+            <a href="/posts/pollvote/">Read More…</a>
+          </span>
+          
+        </li>
       
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="https://deciacco.github.io/posts/comcastmodemmonitor/">Comcast Modem Power Level Monitor</a>

@@ -6,11 +6,7 @@
     <description>Recent content in SQL on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Oct 2007 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deciacco.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 16 Oct 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://deciacco.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BatchRun</title>
       <link>https://deciacco.github.io/posts/batchrun/</link>

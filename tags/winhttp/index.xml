@@ -6,11 +6,7 @@
     <description>Recent content in WinHTTP on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Dec 2006 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deciacco.github.io/tags/winhttp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Dec 2006 00:00:00 +0000</lastBuildDate><atom:link href="https://deciacco.github.io/tags/winhttp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GetHtml</title>
       <link>https://deciacco.github.io/posts/gethtml/</link>

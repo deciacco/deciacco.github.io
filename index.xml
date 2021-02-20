@@ -6,10 +6,15 @@
     <description>Recent content on deciacco</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deciacco.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://deciacco.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poll Vote</title>
+      <link>https://deciacco.github.io/posts/pollvote/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deciacco.github.io/posts/pollvote/</guid>
+      <description>Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.path.abspath(os.path.dirname(sys.argv[0])) LOGFILE = &amp;#39;/media/sf_data/scriptsout/vote/vote.txt&amp;#39; # Setup Logging logging.basicConfig( format=&amp;#39;%(asctime)s:%(levelname)s:%(message)s&amp;#39;, level=logging.INFO, filename=LOGFILE) # Storage for the useragent strings from file # facilitates picking at random useragents = [] # Make it look like a real browser headers = { &amp;#34;Accept&amp;#34;: &amp;#34;text/html,application/xhtml+xml,application/xml; \ q=0.</description>
+    </item>
     
     <item>
       <title>Comcast Modem Power Level Monitor</title>
@@ -49,7 +54,7 @@ This can be useful if you want to automatically update your application to the l
       
       <guid>https://deciacco.github.io/posts/phpimagemailer/</guid>
       <description>Here is a small utility to more easily email photos with Microsoft Outlook. Basically, it allows you to embed images in the body of the email message so that it is easier for the recipient to view the files.
-Download the file using the link below. Once downloaded, install it by double-clicking it. To use the program, simply highlight the photos you wish to send, then right-click one of the highlighted images and select &amp;ldquo;&amp;ldquo;Send-To&amp;rdquo;&amp;rdquo; then &amp;ldquo;&amp;ldquo;Image Mailer for Outlook&amp;rdquo;&amp;ldquo;.</description>
+Download the file using the link below. Once downloaded, install it by double-clicking it. To use the program, simply highlight the photos you wish to send, then right-click one of the highlighted images and select &amp;ldquo;&amp;ldquo;Send-To&amp;rdquo;&amp;rdquo; then &amp;ldquo;&amp;ldquo;Image Mailer for Outlook&amp;rdquo;&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -93,9 +98,8 @@ On every record selection the preview is automatically generated. The user can t
       <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
       
       <guid>https://deciacco.github.io/posts/phpftpbackuptool/</guid>
-      <description>UPDATE 2019-11-07: This is a tool I used for work many years ago. At the time I was not happy with what was available to do backups for my company. This tool allowed our critical files to be automatically sent off-site on a nightly basis. Things have come a long way since then!
-You can take a look at the documenation here:
-Documentation Link (Use the dropdown in the top, right to switch between the two objects.</description>
+      <description>UPDATE 2019-11-07: This is a tool I used for work many years ago. At the time I was not happy with what was available to do backups for my company. This tool allowed our critical files to be automatically sent off-site on a nightly basis. Things have come a long way since then!You can take a look at the documenation here:
+Documentation Link(Use the dropdown in the top, right to switch between the two objects.</description>
     </item>
     
     <item>
@@ -127,7 +131,8 @@ Repository</description>
       <guid>https://deciacco.github.io/posts/phpopenssl/</guid>
       <description>For quite some time I&amp;rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
- ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.  When I first saw this I was disappointed.</description>
+When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
+&amp;hellip;Well, it&amp;rsquo;s not perfect, but I have been able to get it to work, and I&amp;rsquo;ve even been able to patch up the PHP code itself!</description>
     </item>
     
     <item>
