@@ -51,12 +51,14 @@
     <ul class="posts-list">
       
         <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://deciacco.github.io/posts/pollvote/">Poll Vote</a>
+          <a class="posts-list-item-title" href="https://deciacco.github.io/posts/pollvote/">Poll Vote - Object Oriented Programming</a>
           <span class="posts-list-item-description">
             Nov 15, 2020
           </span>
           <span class="post-list-item-summary">
-              Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.path.abspath(os.path.dirname(sys.argv[0])) LOGFILE = &#39;/media/sf_data/scriptsout/vote/vote.txt&#39; # Setup Logging logging.basicConfig( format=&#39;%(asctime)s:%(levelname)s:%(message)s&#39;, level=logging.INFO, filename=LOGFILE) # Storage for the useragent strings from file # facilitates picking at random useragents = [] # Make it look like a real browser headers = { &#34;Accept&#34;: &#34;text/html,application/xhtml+xml,application/xml; \ q=0.
+              Poll Voter is a &ldquo;Bot&rdquo; that automatically votes for a certain, user specified option on an online poll artificially changing the results.
+The original code is below with the refactored version in OOP.
+Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.
           </span>
           
           

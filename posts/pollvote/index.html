@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Poll Vote // deciacco</title>
+    <title>Poll Vote - Object Oriented Programming // deciacco</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,11 +11,15 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Poll Vote"/>
-<meta name="twitter:description" content="Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.path.abspath(os.path.dirname(sys.argv[0])) LOGFILE = &#39;/media/sf_data/scriptsout/vote/vote.txt&#39; # Setup Logging logging.basicConfig( format=&#39;%(asctime)s:%(levelname)s:%(message)s&#39;, level=logging.INFO, filename=LOGFILE) # Storage for the useragent strings from file # facilitates picking at random useragents = [] # Make it look like a real browser headers = { &#34;Accept&#34;: &#34;text/html,application/xhtml&#43;xml,application/xml; \ q=0."/>
+<meta name="twitter:title" content="Poll Vote - Object Oriented Programming"/>
+<meta name="twitter:description" content="Poll Voter is a &ldquo;Bot&rdquo; that automatically votes for a certain, user specified option on an online poll artificially changing the results.
+The original code is below with the refactored version in OOP.
+Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os."/>
 
-    <meta property="og:title" content="Poll Vote" />
-<meta property="og:description" content="Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os.path.abspath(os.path.dirname(sys.argv[0])) LOGFILE = &#39;/media/sf_data/scriptsout/vote/vote.txt&#39; # Setup Logging logging.basicConfig( format=&#39;%(asctime)s:%(levelname)s:%(message)s&#39;, level=logging.INFO, filename=LOGFILE) # Storage for the useragent strings from file # facilitates picking at random useragents = [] # Make it look like a real browser headers = { &#34;Accept&#34;: &#34;text/html,application/xhtml&#43;xml,application/xml; \ q=0." />
+    <meta property="og:title" content="Poll Vote - Object Oriented Programming" />
+<meta property="og:description" content="Poll Voter is a &ldquo;Bot&rdquo; that automatically votes for a certain, user specified option on an online poll artificially changing the results.
+The original code is below with the refactored version in OOP.
+Poll Vote Code #!/usr/bin/env python3 # Load libraries import logging import random import datetime import os import sys import time import json import requests from torpy import TorClient from torpy.http.adapter import TorHttpAdapter from bs4 import BeautifulSoup as BeaSoup # Constants RETRIES = 3 OWNP = os." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/pollvote/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-15T00:00:00&#43;00:00" />
@@ -51,7 +55,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Poll Vote</h1>
+      <h1 class ="post-title">Poll Vote - Object Oriented Programming</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -74,7 +78,9 @@
           <a class="tag" href="https://deciacco.github.io/tags/python/">Python</a><a class="tag" href="https://deciacco.github.io/tags/hacking/">Hacking</a></div></div>
     </header>
     <div class="post-content">
-      <h2 id="poll-vote-code">Poll Vote Code</h2>
+      <p>Poll Voter is a &ldquo;Bot&rdquo; that automatically votes for a certain, user specified option on an online poll artificially changing the results.</p>
+<p>The original code is below with the refactored version in OOP.</p>
+<h2 id="poll-vote-code">Poll Vote Code</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic">#!/usr/bin/env python3</span>
 
 <span style="color:#999;font-style:italic"># Load libraries</span>
@@ -267,6 +273,9 @@ url_template = (
     main()
 </code></pre></div><h2 id="poll-vote-code-oop">Poll Vote Code (OOP)</h2>
 <h3 id="main-votepy">Main (vote.py)</h3>
+<ul>
+<li>Main entry point/start of program</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic">#!/usr/bin/env python3</span>
 
 <span style="color:#999;font-style:italic"># Load libraries</span>
@@ -297,7 +306,10 @@ logging.basicConfig(
 <span style="color:#999;font-style:italic"># *****************************************************************************</span>
 <span style="color:#6ab825;font-weight:bold">if</span> __name__ == <span style="color:#ed9d13">&#34;__main__&#34;</span>:
     main()
-</code></pre></div><h3 id="voterpy">(voter.py)</h3>
+</code></pre></div><h3 id="autovoter-voterpy">AutoVoter (voter.py)</h3>
+<ul>
+<li>&ldquo;Generic&rdquo; Class to inherit from with common code.</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># Load libraries</span>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">logging</span>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">random</span>
@@ -354,7 +366,10 @@ logger = logging.getLogger(__name__)
     <span style="color:#ffa500">@abstractmethod</span>
     <span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">getVotes</span>(self):
         <span style="color:#6ab825;font-weight:bold">pass</span>
-</code></pre></div><h3 id="pollfmpy">(pollfm.py)</h3>
+</code></pre></div><h3 id="pollfmvoter-pollfmpy">PollFMVoter (pollfm.py)</h3>
+<ul>
+<li>More specific class, inherits from AutoVoter and implements specifics.</li>
+</ul>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#999;font-style:italic"># Load libraries</span>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">logging</span>
 <span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">random</span>
