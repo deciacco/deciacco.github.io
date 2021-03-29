@@ -3,7 +3,7 @@
   <head>
     <title>PHP, OpenSSL and ftp_ssl_connect() on Win32 // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="generator" content="Hugo 0.82.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -14,14 +14,12 @@
 <meta name="twitter:title" content="PHP, OpenSSL and ftp_ssl_connect() on Win32"/>
 <meta name="twitter:description" content="For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
-When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
-&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!"/>
+ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.When I first saw this I was disappointed."/>
 
     <meta property="og:title" content="PHP, OpenSSL and ftp_ssl_connect() on Win32" />
 <meta property="og:description" content="For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the http://us.php.net/ftp_ssl_connect function.
 According to the PHP manual:
-When I first saw this I was disappointed. I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.
-&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!" />
+ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it&#39;s undefined and you&#39;ve compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.When I first saw this I was disappointed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deciacco.github.io/posts/phpopenssl/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2007-10-12T00:00:00&#43;00:00" />
@@ -82,7 +80,9 @@ When I first saw this I was disappointed. I thought I would never be able to com
     <div class="post-content">
       <p>For quite some time I&rsquo;ve been wanting to compile PHP for the sole purpose of using the <a href="http://us.php.net/ftp_ssl_connect">http://us.php.net/ftp_ssl_connect</a> function.</p>
 <p>According to the PHP manual:</p>
-<!-- raw HTML omitted -->
+<blockquote>
+ftp_ssl_connect() is only available if OpenSSL support is enabled into your version of PHP. If it's undefined and you've compiled FTP support then this is why. For Windows you must compile your own PHP binaries to support this function.
+</blockquote>
 <p>When I first saw this I was disappointed.  I thought I would never be able to compile PHP myself. It just felt like a daunting task to get my system configured correctly.</p>
 <p>&hellip;Well, it&rsquo;s not perfect, but I have been able to get it to work, and I&rsquo;ve even been able to patch up the PHP code itself!</p>
 <hr>
@@ -91,7 +91,7 @@ When I first saw this I was disappointed. I thought I would never be able to com
 <h3 id="install-visual-c-6-visual-c-express-or-visual-studio-2005-are-ok-too">Install Visual C++ 6 (Visual C++ Express OR Visual Studio 2005 are OK too)</h3>
 <p>Luckily I already had a copy of C++ 6 left over from my college days. Only problem I had was to find the cd. <em>With some minor changes this will also work for VC++ Express/Visual Studio 2005.</em> I chose to use version 6 because using the newer versions requires you distribute other files along with PHP. If all you have is VCE or VS2k5 go ahead and work with that, I will show you where the differences are.</p>
 <h3 id="download-php-52-source">Download PHP 5.2 Source</h3>
-<p>The sources from the <strong>PHP</strong> snapshots worked for me. I downloaded <!-- raw HTML omitted -->php-5.2-dev (tar.gz) (8.9M)<!-- raw HTML omitted --> at the time of this writing. Link to the snapshots page: <a href="http://snaps.php.net/">http://snaps.php.net/</a></p>
+<p>The sources from the <strong>PHP</strong> snapshots worked for me. I downloaded <strong>php-5.2-dev (tar.gz) (8.9M)</strong> at the time of this writing. Link to the snapshots page: <a href="http://snaps.php.net/">http://snaps.php.net/</a></p>
 <h3 id="download-needed-libraries">Download Needed Libraries</h3>
 <p>From what I&rsquo;ve been able to find, Edin Kadribašic seems to have a nice zip file with everything in it. I downloaded <em>zip.zip</em> from his site. Link to Edin&rsquo;s files: <a href="http://files.edin.dk/">http://files.edin.dk/</a></p>
 <p>You need to go into subfolder <code>/php/win32</code> and click on <em>zip.zip</em>. (If this link is down try this one: <a href="http://perisama.net/">http://perisama.net/</a> )</p>
@@ -194,7 +194,7 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 <li><a href="http://bugs.php.net/bug.php?id=41021">http://bugs.php.net/bug.php?id=41021</a>  #41021</li>
 </ol>
 <p>In bug #36103 there is a <a href="http://tony2001.phpclub.net/dev/tmp/bug36103.diff">link to a patch</a> by tony2001 that looked promising.</p>
-<p>I opened up <code>c:\Work\php5\ext\ftp\ftp.c</code>. Right after the opening bracket of the <!-- raw HTML omitted -->ftp_login()<!-- raw HTML omitted --> function I replaced these lines of code:</p>
+<p>I opened up <code>c:\Work\php5\ext\ftp\ftp.c</code>. Right after the opening bracket of the <em>ftp_login()</em> function I replaced these lines of code:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT
 </span><span style="color:#cd2828;font-weight:bold"></span>	SSL_CTX	*ctx = <span style="color:#24909d">NULL</span>;
 <span style="color:#cd2828;font-weight:bold">#endif
@@ -356,8 +356,8 @@ PHP Warning:  ftp_login(): AUTH command OK. Initializing SSL connection. in C:\D
 </code></pre></div><p>After this last patch, I once again recompiled the source and ran the script. This time everything worked as expected, but after some testing I found another issue.</p>
 <p>Every few directory listings that I pulled down, the connection to the server would be lost. After further investigation I discovered that the cause of this was long directory listings in PASV mode. Every time I pulled a directory listing with more than approximately 5 to 10 files or folders everything was fine, but as soon as the listing contained more than that the connection would unexpectedly close.</p>
 <p><em><strong>Start Update: 10/30/2007</strong></em>
-<!-- raw HTML omitted -->I again set out to find the problem. Since this only happened when the directory listing was long, I knew it had something to do with data not fitting inside a container. I started looking for areas in the code where this would be the case, and the first one that I found that made sense to me was this line of code: <!-- raw HTML omitted -->data = ecalloc(1, sizeof(*data));<!-- raw HTML omitted --> in the <!-- raw HTML omitted -->ftp_getdata()<!-- raw HTML omitted --> function located in the ftp.c file. <!-- raw HTML omitted -->*data<!-- raw HTML omitted --> is of type <!-- raw HTML omitted -->databuf_t<!-- raw HTML omitted --> which is defined in the ftp.h file. I changed the size of this buffer to twice the size from 4096 to 8192. (I was surprised to find out that there was a comment in the code that stated this buffer size should be editable at runtime.) After I recompiled, the error was gone and everything seemed to work normally.<!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->After further testing I discovered that I didn&rsquo;t need to have the buffer be twice the size, but simply one byte bigger. From 4096 to 4097. (This is very odd, and I&rsquo;m sure there is a way to fix this in the code, but I just don&rsquo;t know where)<!-- raw HTML omitted --></p>
+<span style="text-decoration: line-through;">I again set out to find the problem. Since this only happened when the directory listing was long, I knew it had something to do with data not fitting inside a container. I started looking for areas in the code where this would be the case, and the first one that I found that made sense to me was this line of code: <em>data = ecalloc(1, sizeof(*data));</em> in the <em>ftp_getdata()</em> function located in the ftp.c file. <em>*data</em> is of type <em>databuf_t</em> which is defined in the ftp.h file. I changed the size of this buffer to twice the size from 4096 to 8192. (I was surprised to find out that there was a comment in the code that stated this buffer size should be editable at runtime.) After I recompiled, the error was gone and everything seemed to work normally.</span></p>
+<p><span style="text-decoration: line-through;">After further testing I discovered that I didn&rsquo;t need to have the buffer be twice the size, but simply one byte bigger. From 4096 to 4097. (This is very odd, and I&rsquo;m sure there is a way to fix this in the code, but I just don&rsquo;t know where)</span></p>
 <p>After some testing I discovered that the above is wrong. Changing the buffer caused my SSL communication to break, but because the server was set to handle both ssl or non-ssl connections I did not notice it. I changed the buffer back to the original size of 4096, and I was able to trace the problem to something else:</p>
 <p>In the <em>my_recv()</em> function at added these lines of code at the beginning of the function:</p>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#cd2828;font-weight:bold">#if HAVE_OPENSSL_EXT

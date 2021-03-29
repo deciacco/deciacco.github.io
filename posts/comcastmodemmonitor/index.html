@@ -3,7 +3,7 @@
   <head>
     <title>Comcast Modem Power Level Monitor // deciacco</title>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="generator" content="Hugo 0.82.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="eugenio c." />
     <meta name="description" content="" />
@@ -115,7 +115,7 @@ wsl -u root service cron start
 <span style="color:#6ab825;font-weight:bold">fi</span>
 </code></pre></div><h2 id="modem-power-levels">Modem Power Levels</h2>
 <p>Poll the modem every minute and log the upstream (U) and downstream (D) powerlevels.</p>
-<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <!-- raw HTML omitted --><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a><!-- raw HTML omitted --></p>
+<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <a href="https://www.dslreports.com/faq/16085" target="_blank"><a href="https://www.dslreports.com/faq/16085">https://www.dslreports.com/faq/16085</a></a></p>
 <h3 id="sample-data">Sample Data</h3>
 <pre><code>2019-09-16 01:30:17 U 43.78 dBmV D 3.97 dBmV
 2019-09-16 01:31:18 U 43.78 dBmV D 3.97 dBmV
@@ -337,9 +337,9 @@ for the TV.</p>
 After some time, it will now allow web logins, yet somehow, with the python script and reusing cookies
 we are allowed in to collect data. Some times the page will refresh without the signal levels. Other
 times, during line problems the page will not be available.</p>
-<p><!-- raw HTML omitted -->Click here to see the full image&hellip;<!-- raw HTML omitted -->
+<p><a href="/resources/history_down.jpg" target="_blank">Click here to see the full image&hellip;</a>
 <img src="/resources/history_down.jpg" alt=""></p>
-<p><!-- raw HTML omitted -->Click here to see the full image&hellip;<!-- raw HTML omitted -->
+<p><a href="/resources/history_up.jpg" target="_blank">Click here to see the full image&hellip;</a>
 <img src="/resources/history_up.jpg" alt=""></p>
 <h2 id="generate-graphs-with-r">Generate Graphs With R</h2>
 <div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#999;font-style:italic">#!/usr/bin/env Rscript</span>
