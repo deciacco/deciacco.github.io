@@ -2,6 +2,10 @@
     border-radius: 48%;  
 }
 
+.tx-hero__image img {
+    border-radius: 50%;
+}
+
 .md-header__title {
     margin-left: 0 !important;
 }
