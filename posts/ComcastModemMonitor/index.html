@@ -1,0 +1,1531 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Comcast Modem Power Level Monitor - deciacco.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../static/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#windows-subsystem-for-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="deciacco.github.io" class="md-header__button md-logo" aria-label="deciacco.github.io" data-md-component="logo">
+      
+  <img src="../../static/img/36453844.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            deciacco.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comcast Modem Power Level Monitor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deciacco" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../PollVote/" class="md-tabs__link md-tabs__link--active">
+        Posts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="deciacco.github.io" class="md-nav__button md-logo" aria-label="deciacco.github.io" data-md-component="logo">
+      
+  <img src="../../static/img/36453844.jpeg" alt="logo">
+
+    </a>
+    deciacco.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deciacco" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Posts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Posts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PollVote/" class="md-nav__link">
+        Poll Voter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Comcast Modem Power Level Monitor
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Comcast Modem Power Level Monitor
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-subsystem-for-linux" class="md-nav__link">
+    Windows Subsystem for Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Subsystem for Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-cron-ssh-at-windows-startup" class="md-nav__link">
+    Start Cron &amp; SSH at Windows Startup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cm_rushsh" class="md-nav__link">
+    cm_rush.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep_alivesh" class="md-nav__link">
+    keep_alive.sh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modem-power-levels" class="md-nav__link">
+    Modem Power Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Modem Power Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data" class="md-nav__link">
+    Sample Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-data-with-python" class="md-nav__link">
+    Get Data With Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-graphs" class="md-nav__link">
+    Sample Graphs
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downstream-power-levels" class="md-nav__link">
+    Downstream Power Levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upstream-power-levels" class="md-nav__link">
+    Upstream Power Levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-graphs" class="md-nav__link">
+    Historical Graphs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-graphs-with-r" class="md-nav__link">
+    Generate Graphs With R
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AHKGithubPrivate/" class="md-nav__link">
+        Private GitHub Repo and Autohokey
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MonitorFolderService/" class="md-nav__link">
+        Monitor Folder Service With PHP (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPImageMailer/" class="md-nav__link">
+        Image Mailer - Php Application for Windows (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BetterSendTo/" class="md-nav__link">
+        A Better "Send to Mail Recipient" With Outlook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPImageResizer/" class="md-nav__link">
+        Image Resizer - Php Application for Windows (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LblPrint/" class="md-nav__link">
+        LblPrint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPFtpBackupTool/" class="md-nav__link">
+        PHP Ftp Backup Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DilbertSyncAsync/" class="md-nav__link">
+        C# .NET 2.0 Web Service - Sync + Async
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchRun/" class="md-nav__link">
+        Batch Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPOpenSSL/" class="md-nav__link">
+        PHP, OpenSSL and ftp_ssl_connect() on Win32
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UtFiles/" class="md-nav__link">
+        UtFiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GetHtml/" class="md-nav__link">
+        GetHtml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SmtpTester/" class="md-nav__link">
+        SmtpTester
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-subsystem-for-linux" class="md-nav__link">
+    Windows Subsystem for Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Subsystem for Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-cron-ssh-at-windows-startup" class="md-nav__link">
+    Start Cron &amp; SSH at Windows Startup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cm_rushsh" class="md-nav__link">
+    cm_rush.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keep_alivesh" class="md-nav__link">
+    keep_alive.sh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modem-power-levels" class="md-nav__link">
+    Modem Power Levels
+  </a>
+  
+    <nav class="md-nav" aria-label="Modem Power Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-data" class="md-nav__link">
+    Sample Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-data-with-python" class="md-nav__link">
+    Get Data With Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-graphs" class="md-nav__link">
+    Sample Graphs
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Graphs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downstream-power-levels" class="md-nav__link">
+    Downstream Power Levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upstream-power-levels" class="md-nav__link">
+    Upstream Power Levels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-graphs" class="md-nav__link">
+    Historical Graphs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-graphs-with-r" class="md-nav__link">
+    Generate Graphs With R
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/deciacco/edit/master/docs/posts/ComcastModemMonitor.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Comcast Modem Power Level Monitor</h1>
+
+<p>Below you'll find scripts to monitor a Comcast modem's power levels to help troubleshoot line problems.</p>
+<p>The power of this tool becomes apparent when you use the data gathered to maintain an event journal of everything that happens related to your connection.</p>
+<p>For example, for my business, everytime I show packet loss in my firewall I can corelate it to abnormal power levels in the modem. This is critical, not only to know that the problem lies outside of my control, but also to aide the Comcast technitians in fixing the issue. The graphs are especially usefull to show connection issues over time.</p>
+<h2 id="windows-subsystem-for-linux">Windows Subsystem for Linux</h2>
+<p>Built-in linux system in Windows 10. You can run these scripts on any linux based system, but this was readily available and already on our existing network.</p>
+<h3 id="start-cron-ssh-at-windows-startup">Start Cron &amp; SSH at Windows Startup</h3>
+<p>Short batch file <code>startup.bat</code> used by a scheduled task in Windows to start the ssh and cron daemons in WSL. This is useful in case the host comptuer is restarted. (Windows Updates restarts mainly...)</p>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">echo</span> off
+
+wsl -u root service ssh start
+wsl -u root service cron start
+
+<span class="k">exit</span>
+</code></pre></div>
+<h3 id="ssh">SSH</h3>
+<p>Having SSH installed in WSL makes it a lot easier to connect in and work on the script, check logs, etc.</p>
+<h3 id="cron">Cron</h3>
+<ul>
+<li>Run the graph generating script every hour.</li>
+<li>At 1 min intervals, check the python script hasn't errored out. If it's not running, start it.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>0 * * * * /home/user/scripts/comcast/cm_run.sh
+*/1 * * * * /home/user/scripts/comcast/keep_alive.sh
+</code></pre></div>
+<h3 id="cm_rushsh">cm_rush.sh</h3>
+<p>Simple script to run the graph generating code. Could run R script directly from cron, but this allows other scripts to be called if needed.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+~/scripts/comcast/comcastplot.R
+</code></pre></div>
+<h3 id="keep_alivesh">keep_alive.sh</h3>
+<p>Script to check if the python code is running. If it isn't, it will restart it.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="k">if</span> ! pgrep -f <span class="s1">&#39;cmpwrlevel2.py&#39;</span>
+<span class="k">then</span>
+    nohup <span class="k">$(</span>which python3<span class="k">)</span> ~/scripts/comcast/cmpwrlevel2.py <span class="p">&amp;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h2 id="modem-power-levels">Modem Power Levels</h2>
+<p>Poll the modem every minute and log the upstream (U) and downstream (D) powerlevels.</p>
+<p>Acceptable ranges: (Note the DOCSIS 3.1, which is neede for higher speeds has lower tolerances.) <a href="https://www.dslreports.com/faq/16085" target="_blank">https://www.dslreports.com/faq/16085</a></p>
+<h3 id="sample-data">Sample Data</h3>
+<div class="highlight"><pre><span></span><code>2019-09-16 01:30:17 U 43.78 dBmV D 3.97 dBmV
+2019-09-16 01:31:18 U 43.78 dBmV D 3.97 dBmV
+2019-09-16 01:32:18 U 43.78 dBmV D 3.97 dBmV
+2019-09-16 01:33:18 U 43.78 dBmV D 3.96 dBmV
+2019-09-16 01:34:19 U 43.78 dBmV D 3.96 dBmV
+2019-09-16 01:35:18 U 43.78 dBmV D 4.03 dBmV
+2019-09-16 01:36:18 U 43.78 dBmV D 4.00 dBmV
+2019-09-16 01:37:18 U 43.78 dBmV D 3.98 dBmV
+2019-09-16 01:38:17 U 43.78 dBmV D 3.97 dBmV
+</code></pre></div>
+<h2 id="get-data-with-python">Get Data With Python</h2>
+<p>Script to get the data. The modem is quite "finicky".</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+
+<span class="c1"># Comcast modem power levels reading script.</span>
+<span class="c1"># Author: Eugenio C.</span>
+<span class="c1"># Date: 09.16.2019</span>
+
+<span class="c1"># TODO: Rewrite this script into a module with calls to objects.</span>
+<span class="c1"># TODO: Put raw data in database. SQLite</span>
+
+<span class="c1"># Load libraries</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">DATAFILE</span> <span class="o">=</span> <span class="s1">&#39;cm_modem_pwr_levels.txt&#39;</span>
+<span class="n">WAIT_TIME</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="c1"># ********************************************************************************</span>
+<span class="c1"># Function Declerations</span>
+<span class="c1"># ********************************************************************************</span>
+
+<span class="k">def</span> <span class="nf">send_text</span><span class="p">(</span><span class="n">msg_txt</span><span class="p">):</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
+
+    <span class="n">msg</span><span class="o">.</span><span class="n">set_content</span><span class="p">(</span><span class="n">msg_txt</span><span class="p">)</span>
+
+    <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;CM Alarm&#39;</span>
+    <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;python_script@yourdomain.com&#39;</span>
+    <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;phonenumber@vtext.com&#39;</span>
+
+    <span class="n">smtp</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;email.server.address&#39;</span><span class="p">)</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">smtp</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+<span class="c1"># ********************************************************************************</span>
+<span class="c1"># Main Script</span>
+<span class="c1"># ********************************************************************************</span>
+
+<span class="n">ownp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">tdnow</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Setup Logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">:</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">ownp</span> <span class="o">+</span> <span class="s1">&#39;/cmpwrlevel2.log&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Get our &quot;browser&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="c1"># Reload cookies from previous session if they exist</span>
+<span class="k">if</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">ownp</span> <span class="o">+</span> <span class="s1">&#39;/cookiefile2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ownp</span> <span class="o">+</span> <span class="s1">&#39;/cookiefile2&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+
+<span class="c1"># Set url and authentication</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://10.1.10.1/check.php&quot;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;cusadmin&quot;</span><span class="p">,</span> <span class="c1"># Public, well known, customer-side, default credentials</span>
+    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;highspeed&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Set our regex</span>
+<span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&quot;Please Login First\!\&quot;&#39;</span>
+<span class="n">modemin</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Login loop, tries to connect to the modem.</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">modemin</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Login to set cookie</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Status Code: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)):</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Ok, we&#39;re in. Let&#39;s stay logged on and get data!&quot;</span><span class="p">)</span>
+
+            <span class="n">send_text</span><span class="p">(</span><span class="s2">&quot;Logged on!&quot;</span><span class="p">)</span>
+
+            <span class="n">modemin</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;No Luck! Let&#39;s try again in 10 seconds.&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="c1"># Save cookies</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ownp</span> <span class="o">+</span> <span class="s1">&#39;/cookiefile2&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Now we can access the page we need</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://10.1.10.1/comcast_network.php&quot;</span>
+
+<span class="n">getdata</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Let&#39;s start the data loop</span>
+<span class="k">while</span> <span class="n">getdata</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Status Code: </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+        <span class="c1"># Get the date/time close to the time we read the values</span>
+        <span class="n">currentDT</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="c1"># Get the html</span>
+        <span class="n">bs_content</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Narrow the html down to the two tables</span>
+        <span class="n">down_data</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="n">up_data</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+
+        <span class="c1"># Set our regex</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;[-0-9\.]* dBmV&quot;</span>
+
+        <span class="c1"># Get the power levels</span>
+        <span class="n">d_matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">down_data</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+        <span class="n">u_matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">up_data</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+
+        <span class="n">d_pwr_sum</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">u_pwr_sum</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># For each power level remove the label and convert to a number</span>
+        <span class="c1"># Sum up all the power levels so we can divide later for the average</span>
+        <span class="k">for</span> <span class="n">d_matchNum</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d_matches</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">d_pwr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; dBmV&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+            <span class="n">d_pwr_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_pwr</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">u_matchNum</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">u_matches</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">u_pwr</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; dBmV&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+            <span class="n">u_pwr_sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u_pwr</span><span class="p">)</span>
+
+        <span class="c1"># Print info to log file</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DW: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">d_pwr_sum</span><span class="p">))))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DW: H</span><span class="si">%.1f</span><span class="s2">, L</span><span class="si">%.1f</span><span class="s2">, M</span><span class="si">%.1f</span><span class="s2">, A</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span>
+                     <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">d_pwr_sum</span><span class="p">),</span>
+                      <span class="nb">min</span><span class="p">(</span><span class="n">d_pwr_sum</span><span class="p">),</span>
+                      <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">d_pwr_sum</span><span class="p">),</span>
+                      <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_pwr_sum</span><span class="p">)))</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;UP: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">u_pwr_sum</span><span class="p">))))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;UP: H</span><span class="si">%.1f</span><span class="s2">, L</span><span class="si">%.1f</span><span class="s2">, M</span><span class="si">%.1f</span><span class="s2">, A</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span>
+                     <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">u_pwr_sum</span><span class="p">),</span>
+                      <span class="nb">min</span><span class="p">(</span><span class="n">u_pwr_sum</span><span class="p">),</span>
+                      <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">u_pwr_sum</span><span class="p">),</span>
+                      <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">u_pwr_sum</span><span class="p">)))</span>
+
+        <span class="c1"># Calculate the averages</span>
+        <span class="n">avg_u_pwr</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">u_pwr_sum</span><span class="p">)</span>
+        <span class="n">avg_d_pwr</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_pwr_sum</span><span class="p">)</span>
+
+        <span class="c1"># If the power levels are outside of spec, send an alert text message</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">avg_u_pwr</span> <span class="o">&gt;</span> <span class="mi">49</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">avg_u_pwr</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">avg_d_pwr</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">avg_d_pwr</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">):</span>
+            <span class="n">send_text</span><span class="p">(</span><span class="s2">&quot;U</span><span class="si">%.2f</span><span class="s2"> D</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">avg_u_pwr</span><span class="p">,</span> <span class="n">avg_d_pwr</span><span class="p">))</span>
+
+        <span class="c1"># Write data to file</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Writing data to: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">DATAFILE</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">DATAFILE</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">o</span><span class="p">:</span>
+            <span class="n">o</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> U </span><span class="si">%.2f</span><span class="s2"> dBmV D </span><span class="si">%.2f</span><span class="s2"> dBmV</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="n">currentDT</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">),</span>
+                 <span class="n">avg_u_pwr</span><span class="p">,</span>
+                 <span class="n">avg_d_pwr</span><span class="p">))</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting </span><span class="si">%i</span><span class="s2"> seconds.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">WAIT_TIME</span><span class="p">))</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">WAIT_TIME</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="n">send_text</span><span class="p">(</span><span class="s2">&quot;Exception!&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ownp</span> <span class="o">+</span> <span class="s1">&#39;/content.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h</span><span class="p">:</span>
+            <span class="n">h</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="c1"># Exit loop, cron will restart</span>
+        <span class="n">getdata</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<h2 id="sample-graphs">Sample Graphs</h2>
+<h3 id="downstream-power-levels">Downstream Power Levels</h3>
+<p><img alt="" src="/resources/cm_modem_dwn_pwr_levels.jpg" /></p>
+<h3 id="upstream-power-levels">Upstream Power Levels</h3>
+<p><img alt="" src="/resources/cm_modem_up_pwr_levels.jpg" /></p>
+<h3 id="historical-graphs">Historical Graphs</h3>
+<p>This is where you can really show line issues over time. You can see why we had random drops
+at the begging of the graph. Some variance is expected on power levels, especially due to 
+temperature, but no mor than 2-3 decibels. </p>
+<p>You can see where Comast finally fixed the issue. You can also see where we added back our splitter 
+for the TV.</p>
+<p>Note: the gaps in the line is missing data. The modem sometimes does not repond to web requests. 
+After some time, it will now allow web logins, yet somehow, with the python script and reusing cookies
+we are allowed in to collect data. Some times the page will refresh without the signal levels. Other
+times, during line problems the page will not be available. </p>
+<p><a href="/resources/history_down.jpg" target="_blank">Click here to see the full image...</a>
+<img alt="" src="/resources/history_down.jpg" /></p>
+<p><a href="/resources/history_up.jpg" target="_blank">Click here to see the full image...</a>
+<img alt="" src="/resources/history_up.jpg" /></p>
+<h2 id="generate-graphs-with-r">Generate Graphs With R</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">#!/usr/bin/env Rscript</span>
+
+<span class="c1"># Comcast modem power levels plotting script.</span>
+<span class="c1"># Author: Eugenio Cilento</span>
+<span class="c1"># Date: 09.16.2019</span>
+
+<span class="c1"># Load libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">,</span> <span class="n">warn.conflicts</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">scales</span><span class="p">,</span> <span class="n">warn.conflicts</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggrepel</span><span class="p">,</span> <span class="n">warn.conflicts</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">,</span> <span class="n">warn.conflicts</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">,</span> <span class="n">warn.conflicts</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="n">consts</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">img_w</span> <span class="o">=</span> <span class="m">14</span><span class="p">,</span>
+    <span class="n">img_h</span> <span class="o">=</span> <span class="m">8.5</span><span class="p">,</span>
+    <span class="n">img_dpi</span> <span class="o">=</span> <span class="m">320</span><span class="p">,</span>
+    <span class="n">img_q</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># ***************************************************************************************</span>
+<span class="c1"># Get the data, clean it up and get it ready for use in the graph.</span>
+<span class="c1"># ***************************************************************************************</span>
+
+<span class="c1"># Read in the modem power levels from the text file.</span>
+<span class="n">pwr</span> <span class="o">&lt;-</span> <span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;cm_modem_pwr_levels.txt&quot;</span><span class="p">)</span>
+
+<span class="n">pwr</span> <span class="o">=</span> <span class="n">pwr</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">-5</span><span class="p">,</span><span class="m">-6</span><span class="p">,</span><span class="m">-8</span><span class="p">)]</span> <span class="c1"># Remove uneeded columns.</span>
+
+<span class="nf">colnames</span><span class="p">(</span><span class="n">pwr</span><span class="p">)</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Date&quot;</span><span class="p">,</span><span class="s">&quot;Time&quot;</span><span class="p">,</span><span class="s">&quot;UP&quot;</span><span class="p">,</span><span class="s">&quot;DW&quot;</span><span class="p">)</span> <span class="c1"># Let&#39;s give the columns some names.</span>
+
+<span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">pwr</span><span class="o">$</span><span class="n">Date</span><span class="p">,</span> <span class="n">pwr</span><span class="o">$</span><span class="n">Time</span><span class="p">)</span> <span class="c1"># Create a new timstamp column.</span>
+
+<span class="c1"># Create a new column used for the facets. Basically to show the Days on the graph.</span>
+<span class="n">pwr</span><span class="o">$</span><span class="n">Dow</span> <span class="o">&lt;-</span> <span class="nf">strptime</span><span class="p">(</span><span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span><span class="p">,</span> <span class="s">&quot;%Y-%m-%d&quot;</span><span class="p">)</span>
+<span class="n">pwr</span><span class="o">$</span><span class="n">Dow</span> <span class="o">&lt;-</span> <span class="nf">format</span><span class="p">(</span><span class="n">pwr</span><span class="o">$</span><span class="n">Dow</span><span class="p">,</span> <span class="s">&quot;%m-%d %a&quot;</span><span class="p">)</span>
+
+<span class="n">pwr</span> <span class="o">=</span> <span class="n">pwr</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">-2</span><span class="p">)]</span> <span class="c1"># Some more cleanup.</span>
+
+<span class="c1"># Make that column an actual date time field</span>
+<span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span> <span class="o">&lt;-</span> <span class="nf">strptime</span><span class="p">(</span><span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span><span class="p">,</span> <span class="s">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span> <span class="o">&lt;-</span> <span class="nf">as.POSIXct</span><span class="p">(</span><span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="s">&quot;America/Chicago&quot;</span><span class="p">)</span> <span class="c1"># Convert to POSIXct type</span>
+
+<span class="n">pwr</span> <span class="o">&lt;-</span> <span class="n">pwr</span><span class="p">[</span><span class="n">pwr</span><span class="o">$</span><span class="n">DateTime</span> <span class="o">&gt;=</span> <span class="nf">as.POSIXct</span><span class="p">(</span><span class="nf">Sys.Date</span><span class="p">()</span><span class="o">-</span><span class="n">consts</span><span class="o">$</span><span class="n">days</span><span class="p">),]</span> <span class="c1"># Limit the data.</span>
+
+<span class="c1"># When did the modem signal go outside of the acceptable range?</span>
+<span class="n">pwrovr</span> <span class="o">&lt;-</span> <span class="n">pwr</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="n">pwr</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="m">49</span> <span class="o">|</span> <span class="n">pwr</span><span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">35</span> <span class="p">),]</span>
+
+<span class="c1"># Dataframe for ranges</span>
+<span class="n">dmax</span> <span class="o">&lt;-</span> <span class="n">pwr</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">Dow</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarise</span><span class="p">(</span><span class="n">Max</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">DateTime</span><span class="p">))</span>
+<span class="n">dmin</span> <span class="o">&lt;-</span> <span class="n">pwr</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">Dow</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarise</span><span class="p">(</span><span class="n">Min</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">DateTime</span><span class="p">))</span>
+<span class="n">dminmax</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">dmax</span><span class="p">,</span><span class="n">dmin</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="s">&quot;Dow&quot;</span><span class="p">)</span>
+
+<span class="c1"># Put in variables so we dont have to repeat code</span>
+<span class="n">dta</span> <span class="o">=</span> <span class="nf">as.POSIXct</span><span class="p">(</span><span class="nf">Sys.Date</span><span class="p">())</span>
+<span class="n">dtw</span> <span class="o">=</span> <span class="nf">format</span><span class="p">(</span><span class="nf">as.POSIXct</span><span class="p">(</span><span class="nf">Sys.Date</span><span class="p">()),</span> <span class="s">&quot;%m-%d %a&quot;</span><span class="p">)</span>
+
+<span class="c1"># ***************************************************************************************</span>
+<span class="c1"># Beginning of the UPSTREAM graph script.</span>
+<span class="c1"># ***************************************************************************************</span>
+
+<span class="c1"># Dataframe for text labels for ranges</span>
+<span class="n">text_ann</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">49</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span>
+  <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Packet Loss\nBegins: +49&quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">)</span>
+
+<span class="n">text_ann</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">text_ann</span><span class="p">,</span> 
+  <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">35</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+    <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Recommended:\n+ 35 - 47&quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">))</span>
+
+<span class="nf">hour</span><span class="p">(</span><span class="n">text_ann</span><span class="o">$</span><span class="n">DateTime</span><span class="p">)</span> <span class="o">=</span> <span class="m">2</span> <span class="c1">#position of text within facet</span>
+
+<span class="c1"># Create the plot</span>
+<span class="n">gg</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">pwr</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">UP</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span> <span class="c1"># Points on a graph seem to work best for this type data.</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span>
+  <span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">facet_grid</span><span class="p">(</span> <span class="c1"># This gives the days in a nice column.</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nf">vars</span><span class="p">(</span><span class="n">Dow</span><span class="p">),</span>
+    <span class="n">labeller</span> <span class="o">=</span> <span class="nf">labeller</span><span class="p">(</span><span class="n">Dow</span> <span class="o">=</span> <span class="nf">label_wrap_gen</span><span class="p">(</span><span class="m">5</span><span class="p">)),</span> <span class="c1"># Word rap the labels.</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="s">&#39;free&#39;</span><span class="p">,</span> 
+    <span class="n">scales</span> <span class="o">=</span> <span class="s">&#39;free&#39;</span><span class="p">,</span> 
+    <span class="n">switch</span> <span class="o">=</span> <span class="s">&#39;x&#39;</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span> <span class="c1"># Needs some good titles and labels to make it easier to understand.</span>
+    <span class="n">title</span><span class="o">=</span><span class="s">&quot;Cable Modem Upstream Power&quot;</span><span class="p">,</span> 
+    <span class="n">subtitle</span><span class="o">=</span><span class="s">&quot;Comcast Business Internet&quot;</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s">&quot;Upstream Power Level (dBmV)&quot;</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s">&quot;Time (Date &amp; Hour in 24Hr format)&quot;</span><span class="p">,</span> 
+    <span class="n">caption</span><span class="o">=</span> <span class="nf">paste</span><span class="p">(</span> <span class="c1"># Timestamp the graph.</span>
+      <span class="s">&quot;International Assurance of TN, Inc. IT Department -&quot;</span><span class="p">,</span>
+      <span class="nf">Sys.time</span><span class="p">()</span>
+    <span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">35</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">47</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">47</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">49</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_text</span><span class="p">(</span> <span class="c1"># add labels for the ranges</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">text_ann</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">UP</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lab</span><span class="p">),</span> 
+    <span class="n">vjust</span><span class="o">=</span><span class="m">-.2</span><span class="p">,</span>
+    <span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="m">2.5</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span> <span class="s">&quot;black&quot;</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">49</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">47</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">35</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">coord_cartesian</span><span class="p">(</span> <span class="c1"># Set the y scale. The range of modem signal levels.</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">60</span><span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span> <span class="c1"># Set where the lines show on the graph.</span>
+    <span class="n">minor_breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span> <span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
+    <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_x_datetime</span><span class="p">(</span> <span class="c1"># Set the x scale based on the hour of the day.</span>
+    <span class="n">breaks</span> <span class="o">=</span> <span class="nf">pretty_breaks</span><span class="p">(),</span> <span class="c1"># Makes the hours fit nicely in a day.</span>
+    <span class="n">expand</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="c1"># Brings the panel/facets together, seamless transition from day to day.</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="nf">date_format</span><span class="p">(</span><span class="s">&quot;%H&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="nf">Sys.timezone</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)),</span> 
+    <span class="n">date_breaks</span> <span class="o">=</span> <span class="s">&quot;2 hour&quot;</span><span class="p">,</span>
+    <span class="n">date_minor_breaks</span> <span class="o">=</span> <span class="s">&quot;1 hour&quot;</span>
+  <span class="p">)</span> <span class="o">+</span> 
+  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span> <span class="c1"># Start off with a base theme, then modify it.</span>
+  <span class="nf">theme</span><span class="p">(</span>
+    <span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;dark gray&quot;</span><span class="p">),</span>
+    <span class="n">panel.spacing.x</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="s">&quot;line&quot;</span><span class="p">),</span>
+    <span class="n">strip.placement</span> <span class="o">=</span> <span class="s">&quot;outside&quot;</span><span class="p">,</span>
+    <span class="n">strip.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">6</span>
+    <span class="p">),</span>
+    <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;light gray&quot;</span><span class="p">),</span>
+    <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;light gray&quot;</span>
+    <span class="p">),</span>
+    <span class="n">axis.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span> <span class="c1"># Hour of the day</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span>
+      <span class="n">angle</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span>
+      <span class="n">vjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span>
+      <span class="n">hjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span>
+    <span class="n">axis.line</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span> <span class="c1"># Make the axis stand out.</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;darkblue&quot;</span><span class="p">,</span> 
+      <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+      <span class="n">linetype</span> <span class="o">=</span> <span class="s">&quot;solid&quot;</span><span class="p">)</span>
+  <span class="p">)</span> 
+
+<span class="nf">if </span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">pwrovr</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">!=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1"># Make sure we have out of range plots before adding them </span>
+  <span class="n">gg</span> <span class="o">=</span> <span class="n">gg</span> <span class="o">+</span>
+    <span class="nf">geom_text_repel</span><span class="p">(</span> <span class="c1"># Label the out-of-range plots</span>
+      <span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="nf">hour</span><span class="p">(</span><span class="n">DateTime</span><span class="p">),</span><span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nf">minute</span><span class="p">(</span><span class="n">DateTime</span><span class="p">),</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="n">UP</span><span class="p">)),</span> 
+      <span class="n">pwrovr</span><span class="p">,</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Save the graph to a JPEG file. High resolution allows more clarity and printability.</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;cm_modem_up_pwr_levels.jpg&quot;</span><span class="p">,</span> 
+       <span class="n">width</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_w</span><span class="p">,</span> 
+       <span class="n">height</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_h</span><span class="p">,</span> 
+       <span class="n">dpi</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_dpi</span><span class="p">,</span>
+       <span class="n">quality</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_q</span><span class="p">,</span>
+       <span class="n">limitsize</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># ***************************************************************************************</span>
+<span class="c1"># Beginning of the DOWNSTREAM graph script.</span>
+<span class="c1"># ***************************************************************************************</span>
+
+<span class="c1"># Dataframe for text labels for  ranges</span>
+<span class="n">text_ann2</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">-6</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span>
+  <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Recommended:\n-7 to 7&quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">)</span>
+
+<span class="n">text_ann2</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">text_ann2</span><span class="p">,</span> 
+  <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">-9</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+    <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Acceptable:\n+- 7 to 10&quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">))</span>
+
+<span class="n">text_ann2</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">text_ann2</span><span class="p">,</span> 
+  <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">-14</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+    <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Maximum:\n+- 10 to 15 &quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">))</span>
+
+<span class="n">text_ann2</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">text_ann2</span><span class="p">,</span> 
+  <span class="nf">data.frame</span><span class="p">(</span><span class="n">UP</span> <span class="o">=</span> <span class="m">-18</span><span class="p">,</span> <span class="n">DW</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+    <span class="n">lab</span> <span class="o">=</span> <span class="s">&quot;Out of Spec:\n&gt; +-15 &quot;</span><span class="p">,</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">dta</span><span class="p">,</span> <span class="n">Dow</span> <span class="o">=</span> <span class="n">dtw</span><span class="p">))</span>
+
+<span class="nf">hour</span><span class="p">(</span><span class="n">text_ann2</span><span class="o">$</span><span class="n">DateTime</span><span class="p">)</span> <span class="o">=</span> <span class="m">2</span> <span class="c1">#position of text within facet</span>
+
+<span class="c1"># Filter into a new table the out-of-range instances.</span>
+<span class="n">pwrovr</span> <span class="o">&lt;-</span> <span class="n">pwr</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="n">pwr</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="m">10</span> <span class="o">|</span> <span class="n">pwr</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="m">-10</span> <span class="p">),]</span>
+
+<span class="c1"># Generate the downstream graph. Identical to upstream but with different ranges.</span>
+<span class="n">gg</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">pwr</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">DW</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">(</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">facet_grid</span><span class="p">(</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nf">vars</span><span class="p">(</span><span class="n">Dow</span><span class="p">),</span>
+    <span class="n">labeller</span> <span class="o">=</span> <span class="nf">labeller</span><span class="p">(</span><span class="n">Dow</span> <span class="o">=</span> <span class="nf">label_wrap_gen</span><span class="p">(</span><span class="m">5</span><span class="p">)),</span>
+    <span class="n">space</span> <span class="o">=</span> <span class="s">&#39;free&#39;</span><span class="p">,</span> 
+    <span class="n">scales</span> <span class="o">=</span> <span class="s">&#39;free&#39;</span><span class="p">,</span> 
+    <span class="n">switch</span> <span class="o">=</span> <span class="s">&#39;x&#39;</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">coord_cartesian</span><span class="p">(</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-30</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_y_continuous</span><span class="p">(</span>
+    <span class="n">minor_breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-30</span> <span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> 
+    <span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-30</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s">&quot;Cable Modem Downstream Power&quot;</span><span class="p">,</span>
+    <span class="n">subtitle</span><span class="o">=</span><span class="s">&quot;Comcast Business Internet&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s">&quot;Downstream Power Level (dBmV)&quot;</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s">&quot;Time (Date &amp; Hour in 24Hr format)&quot;</span><span class="p">,</span>
+    <span class="n">caption</span><span class="o">=</span> <span class="nf">paste</span><span class="p">(</span>
+      <span class="s">&quot;International Assurance of TN, Inc. IT Department -&quot;</span><span class="p">,</span>
+      <span class="nf">Sys.time</span><span class="p">()</span>
+    <span class="p">)</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_text</span><span class="p">(</span> <span class="c1"># write the labels for the ranges</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">text_ann2</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">UP</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">lab</span><span class="p">),</span> 
+    <span class="n">vjust</span><span class="o">=</span><span class="n">.</span><span class="m">3</span><span class="p">,</span>
+    <span class="n">hjust</span><span class="o">=</span><span class="m">0</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="m">2.5</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span> <span class="s">&quot;black&quot;</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">-15</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">-10</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;yellow&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">-7</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">10</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;yellow&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">-7</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">7</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">-10</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">-7</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;yellow&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">7</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">10</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;yellow&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+   <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">-15</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">-10</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_rect</span><span class="p">(</span> <span class="c1"># color the acceptable range so it stands out.</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">dminmax</span><span class="p">,</span> 
+    <span class="nf">aes</span><span class="p">(</span>
+      <span class="n">xmin</span> <span class="o">=</span> <span class="n">Min</span><span class="p">,</span> 
+      <span class="n">xmax</span> <span class="o">=</span> <span class="n">Max</span><span class="p">,</span> 
+      <span class="n">ymin</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> 
+      <span class="n">ymax</span> <span class="o">=</span> <span class="m">15</span><span class="p">),</span> 
+    <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> 
+    <span class="n">fill</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span> 
+    <span class="n">inherit.aes</span> <span class="o">=</span> <span class="kc">FALSE</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">scale_x_datetime</span><span class="p">(</span>
+    <span class="n">breaks</span> <span class="o">=</span> <span class="nf">pretty_breaks</span><span class="p">(),</span>
+    <span class="n">expand</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="nf">date_format</span><span class="p">(</span><span class="s">&quot;%H&quot;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="nf">Sys.timezone</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)),</span>
+    <span class="n">date_breaks</span> <span class="o">=</span> <span class="s">&quot;2 hour&quot;</span><span class="p">,</span>
+    <span class="n">date_minor_breaks</span> <span class="o">=</span> <span class="s">&quot;1 hour&quot;</span>
+  <span class="p">)</span> <span class="o">+</span>
+  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">theme</span><span class="p">(</span>
+    <span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span>
+      <span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;dark gray&quot;</span><span class="p">),</span>
+    <span class="n">panel.spacing.x</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="s">&quot;line&quot;</span><span class="p">),</span>
+    <span class="n">strip.placement</span> <span class="o">=</span> <span class="s">&quot;outside&quot;</span><span class="p">,</span>
+    <span class="n">strip.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">6</span>
+    <span class="p">),</span>
+    <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span>
+      <span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;light gray&quot;</span><span class="p">),</span>
+    <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;light gray&quot;</span>
+    <span class="p">),</span>
+    <span class="n">axis.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">6</span><span class="p">,</span>
+      <span class="n">angle</span> <span class="o">=</span> <span class="m">90</span><span class="p">,</span>
+      <span class="n">vjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span>
+      <span class="n">hjust</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span>
+    <span class="n">axis.line</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span>
+      <span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;darkblue&quot;</span><span class="p">,</span> 
+      <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> 
+      <span class="n">linetype</span> <span class="o">=</span> <span class="s">&quot;solid&quot;</span><span class="p">)</span>
+  <span class="p">)</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">pwrovr</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">!=</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>  <span class="c1"># Make sure we have out of range before plotting</span>
+  <span class="n">gg</span> <span class="o">=</span> <span class="n">gg</span> <span class="o">+</span>
+    <span class="nf">geom_text_repel</span><span class="p">(</span> <span class="c1"># Label the out-of-range plots</span>
+      <span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">DateTime</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="n">DW</span><span class="p">,</span> <span class="s">&quot;dBmV&quot;</span><span class="p">)),</span>
+      <span class="n">pwrovr</span><span class="p">,</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Save graph to file.</span>
+<span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;cm_modem_dwn_pwr_levels.jpg&quot;</span><span class="p">,</span> 
+       <span class="n">width</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_w</span><span class="p">,</span> 
+       <span class="n">height</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_h</span><span class="p">,</span> 
+       <span class="n">dpi</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_dpi</span><span class="p">,</span>
+       <span class="n">quality</span> <span class="o">=</span> <span class="n">consts</span><span class="o">$</span><span class="n">img_q</span><span class="p">,</span>
+       <span class="n">limitsize</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../PollVote/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Poll Voter" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Poll Voter
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../AHKGithubPrivate/" class="md-footer__link md-footer__link--next" aria-label="Next: Private GitHub Repo and Autohokey" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Private GitHub Repo and Autohokey
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

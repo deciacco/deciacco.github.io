@@ -1,0 +1,1215 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Poll Voter - deciacco.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../static/css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#poll-vote-code" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="deciacco.github.io" class="md-header__button md-logo" aria-label="deciacco.github.io" data-md-component="logo">
+      
+  <img src="../../static/img/36453844.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            deciacco.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Poll Voter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/deciacco" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Posts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="deciacco.github.io" class="md-nav__button md-logo" aria-label="deciacco.github.io" data-md-component="logo">
+      
+  <img src="../../static/img/36453844.jpeg" alt="logo">
+
+    </a>
+    deciacco.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/deciacco" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Posts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Posts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Poll Voter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Poll Voter
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#poll-vote-code" class="md-nav__link">
+    Poll Vote Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poll-vote-code-oop" class="md-nav__link">
+    Poll Vote Code (OOP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Poll Vote Code (OOP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-votepy" class="md-nav__link">
+    Main (vote.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autovoter-voterpy" class="md-nav__link">
+    AutoVoter (voter.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pollfmvoter-pollfmpy" class="md-nav__link">
+    PollFMVoter (pollfm.py)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ComcastModemMonitor/" class="md-nav__link">
+        Comcast Modem Power Level Monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AHKGithubPrivate/" class="md-nav__link">
+        Private GitHub Repo and Autohokey
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MonitorFolderService/" class="md-nav__link">
+        Monitor Folder Service With PHP (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPImageMailer/" class="md-nav__link">
+        Image Mailer - Php Application for Windows (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BetterSendTo/" class="md-nav__link">
+        A Better "Send to Mail Recipient" With Outlook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPImageResizer/" class="md-nav__link">
+        Image Resizer - Php Application for Windows (Almost)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LblPrint/" class="md-nav__link">
+        LblPrint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPFtpBackupTool/" class="md-nav__link">
+        PHP Ftp Backup Library
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DilbertSyncAsync/" class="md-nav__link">
+        C# .NET 2.0 Web Service - Sync + Async
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BatchRun/" class="md-nav__link">
+        Batch Run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PHPOpenSSL/" class="md-nav__link">
+        PHP, OpenSSL and ftp_ssl_connect() on Win32
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UtFiles/" class="md-nav__link">
+        UtFiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GetHtml/" class="md-nav__link">
+        GetHtml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SmtpTester/" class="md-nav__link">
+        SmtpTester
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#poll-vote-code" class="md-nav__link">
+    Poll Vote Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poll-vote-code-oop" class="md-nav__link">
+    Poll Vote Code (OOP)
+  </a>
+  
+    <nav class="md-nav" aria-label="Poll Vote Code (OOP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-votepy" class="md-nav__link">
+    Main (vote.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autovoter-voterpy" class="md-nav__link">
+    AutoVoter (voter.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pollfmvoter-pollfmpy" class="md-nav__link">
+    PollFMVoter (pollfm.py)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/deciacco/edit/master/docs/posts/PollVote.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Poll Voter</h1>
+
+<p>Poll Voter is a "Bot" that automatically votes for a certain, user specified option on an online poll artificially changing the results.</p>
+<p>The original code is below with the refactored version in OOP.</p>
+<h2 id="poll-vote-code">Poll Vote Code</h2>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="c1"># Load libraries</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">torpy</span> <span class="kn">import</span> <span class="n">TorClient</span>
+<span class="kn">from</span> <span class="nn">torpy.http.adapter</span> <span class="kn">import</span> <span class="n">TorHttpAdapter</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">BeaSoup</span>
+
+<span class="c1"># Constants</span>
+<span class="n">RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">OWNP</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">LOGFILE</span> <span class="o">=</span> <span class="s1">&#39;/media/sf_data/scriptsout/vote/vote.txt&#39;</span>
+
+<span class="c1"># Setup Logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">:</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">LOGFILE</span><span class="p">)</span>
+
+<span class="c1"># Storage for the useragent strings from file</span>
+<span class="c1">#   facilitates picking at random</span>
+<span class="n">useragents</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Make it look like a real browser</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;text/html,application/xhtml+xml,application/xml; </span><span class="se">\</span>
+<span class="s2">        q=0.9,image/webp,*/*;q=0.8&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate, br&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Accept-Language&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US,en;q=0.5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DNT&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># set at runtime</span>
+    <span class="s2">&quot;Upgrade-Insecure-Requests&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># set at runtime</span>
+    <span class="s2">&quot;Cache-Control&quot;</span><span class="p">:</span> <span class="s2">&quot;max-age=0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Connection&quot;</span><span class="p">:</span> <span class="s2">&quot;keep-alive&quot;</span>
+<span class="p">}</span>
+
+<span class="n">poll_id</span> <span class="o">=</span> <span class="s2">&quot;10614272&quot;</span> <span class="c1"># change for a different poll</span>
+<span class="n">poll_winner</span> <span class="o">=</span> <span class="s2">&quot;49167224&quot;</span> <span class="c1"># which item to vote for | 49167240, 49167239, 49167224</span>
+
+<span class="c1"># Poll base url</span>
+<span class="n">url_poll</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://poll.fm/&quot;</span>
+    <span class="o">+</span> <span class="n">poll_id</span>
+<span class="p">)</span>
+
+<span class="c1"># Generated URL to be submited for vote</span>
+<span class="n">url_template</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;https://poll.fm/vote?&quot;</span>
+    <span class="s2">&quot;va=</span><span class="si">{item_va}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;&amp;pt=0&quot;</span>
+    <span class="s2">&quot;&amp;r=</span><span class="si">{item_r}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;&amp;p=&quot;</span> <span class="o">+</span> <span class="n">poll_id</span> <span class="o">+</span>
+    <span class="s2">&quot;&amp;a=&quot;</span> <span class="o">+</span> <span class="n">poll_winner</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span>
+    <span class="s2">&quot;&amp;o=&quot;</span>  <span class="c1"># nothing needed here</span>
+    <span class="s2">&quot;&amp;t=</span><span class="si">{item_t}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;&amp;token=</span><span class="si">{item_token}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;&amp;pz=</span><span class="si">{item_pz}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># *****************************************************************************</span>
+<span class="c1"># Helper Functions</span>
+<span class="c1"># *****************************************************************************</span>
+
+<span class="c1"># Loads the user agents from file into the array</span>
+<span class="k">def</span> <span class="nf">get_useragents</span><span class="p">():</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading useragent strings&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">OWNP</span> <span class="o">+</span> <span class="s1">&#39;/useragent.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">useragents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">))</span>    
+
+<span class="c1"># *****************************************************************************</span>
+<span class="c1"># Main Function</span>
+<span class="c1"># *****************************************************************************</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">getdata</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">get_useragents</span><span class="p">()</span> <span class="c1"># Load user agents</span>
+        <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;Host&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;poll.fm&quot;</span>
+
+        <span class="k">while</span> <span class="n">getdata</span><span class="p">:</span> <span class="c1"># Loop until there is a problem</span>
+            <span class="n">tor</span> <span class="o">=</span> <span class="n">TorClient</span><span class="p">()</span> <span class="c1"># Let&#39;s use Tor, shall we....</span>
+
+            <span class="k">with</span> <span class="n">tor</span><span class="o">.</span><span class="n">get_guard</span><span class="p">()</span> <span class="k">as</span> <span class="n">guard</span><span class="p">:</span>
+                <span class="n">adapter</span> <span class="o">=</span> <span class="n">TorHttpAdapter</span><span class="p">(</span><span class="n">guard</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="n">RETRIES</span><span class="p">)</span>
+
+                <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+                    <span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+                    <span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;https://&#39;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+
+                    <span class="c1"># Make it look like a different browser randomly</span>
+                    <span class="c1">#   by changing the user-agent with every request</span>
+                    <span class="n">line_no</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">useragents</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">cur_useragent</span> <span class="o">=</span> <span class="n">useragents</span><span class="p">[</span><span class="n">line_no</span><span class="p">]</span>
+                    <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cur_useragent</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User-Agent set to: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">cur_useragent</span><span class="p">)</span>
+
+                    <span class="c1"># Go to poll main page to get the needed items</span>
+                    <span class="c1">#   to submit for the vote</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">url_poll</span><span class="p">)</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_poll</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s2">&quot;First response: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                            <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> 
+                            <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                            <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">url</span>
+                        <span class="p">)</span>
+                    <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+                    <span class="c1"># Get the html from the web page</span>
+                    <span class="n">bs_content</span> <span class="o">=</span> <span class="n">BeaSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+                    <span class="c1"># Get the info from the Vote button json object</span>
+                    <span class="n">button_data</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> 
+                        <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;vote-button css-vote-button pds-vote-button&quot;</span><span class="p">)</span>
+
+                    <span class="n">v_bdata</span> <span class="o">=</span> <span class="n">button_data</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data-vote&#39;</span><span class="p">)</span>
+
+                    <span class="c1"># Load as json data</span>
+                    <span class="n">bdata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">v_bdata</span><span class="p">)</span>
+
+                    <span class="c1"># Get hidden form value</span>
+                    <span class="n">v_pz</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pz&quot;</span><span class="p">})</span>
+
+                    <span class="c1"># Inject data into vote URL template</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_template</span>  <span class="c1"># reset url_vote</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_t}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_token}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_pz}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v_pz</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_r}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_va}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;at&#39;</span><span class="p">]))</span>
+
+                    <span class="c1"># Makes it look slightly more authentic, by waiting </span>
+                    <span class="c1">#  before actually submitting the vote after the</span>
+                    <span class="c1">#  initial request to the poll.</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting 2 seconds before submitting.&quot;</span><span class="p">)</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+                    <span class="c1"># Let&#39;s vote!</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">url_vote</span><span class="p">)</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_vote</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+                    <span class="c1"># Redirected response, log it</span>
+                    <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+                        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Request redirected&quot;</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+                            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                                <span class="s2">&quot;Redirected response: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                                <span class="o">%</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> 
+                                <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                                <span class="o">+</span> <span class="n">resp</span><span class="o">.</span><span class="n">url</span>
+                            <span class="p">)</span>
+
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s2">&quot;Final destination: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                            <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> 
+                            <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                            <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">url</span>
+                        <span class="p">)</span>
+
+                    <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+                    <span class="c1"># Wait a random number of seconds between 5 &amp; 20</span>
+                    <span class="c1">#  before starting again - more realistic</span>
+                    <span class="n">wait_time</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting </span><span class="si">%i</span><span class="s2"> seconds.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">wait_time</span><span class="p">))</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait_time</span><span class="p">)</span>
+
+    <span class="c1"># Any issues, log them and get out.</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="c1"># Exit loop</span>
+        <span class="n">getdata</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># *****************************************************************************</span>
+<span class="c1"># Script Starting Point</span>
+<span class="c1"># *****************************************************************************</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="poll-vote-code-oop">Poll Vote Code (OOP)</h2>
+<h3 id="main-votepy">Main (vote.py)</h3>
+<ul>
+<li>Main entry point/start of program</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="c1"># Load libraries</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">voting</span> <span class="kn">import</span> <span class="n">PollFMVoter</span>
+
+<span class="n">LOGFILE</span> <span class="o">=</span> <span class="s1">&#39;/media/sf_data/scriptsout/vote/vote.txt&#39;</span>
+
+<span class="c1"># Setup Logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">:</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">LOGFILE</span><span class="p">)</span>
+
+<span class="c1"># *****************************************************************************</span>
+<span class="c1"># Main Function</span>
+<span class="c1"># *****************************************************************************</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">myvtr</span> <span class="o">=</span> <span class="n">PollFMVoter</span><span class="p">()</span>
+    <span class="n">myvtr</span><span class="o">.</span><span class="n">poll_id</span> <span class="o">=</span> <span class="s2">&quot;10614272&quot;</span>
+    <span class="n">myvtr</span><span class="o">.</span><span class="n">poll_option</span> <span class="o">=</span> <span class="s2">&quot;49167239&quot;</span>
+    <span class="n">myvtr</span><span class="o">.</span><span class="n">getVotes</span><span class="p">()</span>
+
+<span class="c1"># *****************************************************************************</span>
+<span class="c1"># Script Starting Point</span>
+<span class="c1"># *****************************************************************************</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="autovoter-voterpy">AutoVoter (voter.py)</h3>
+<ul>
+<li>"Generic" Class to inherit from with common code.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load libraries</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span><span class="p">,</span> <span class="n">abstractproperty</span>
+
+<span class="c1"># Constants</span>
+<span class="n">OWNP</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">AutoVoter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_useragents</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url_poll</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url_template</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="c1"># Make it look like a real browser</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;text/html,application/xhtml+xml,application/xml; </span><span class="se">\</span>
+<span class="s2">                q=0.9,image/webp,*/*;q=0.8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, deflate, br&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Accept-Language&quot;</span><span class="p">:</span> <span class="s2">&quot;en-US,en;q=0.5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DNT&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Host&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># set at runtime</span>
+            <span class="s2">&quot;Upgrade-Insecure-Requests&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># set at runtime</span>
+            <span class="s2">&quot;Cache-Control&quot;</span><span class="p">:</span> <span class="s2">&quot;max-age=0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Connection&quot;</span><span class="p">:</span> <span class="s2">&quot;keep-alive&quot;</span>
+        <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__get_useragents</span><span class="p">()</span>
+
+    <span class="c1"># Loads a new, random user-agent string   </span>
+    <span class="k">def</span> <span class="nf">_set_useragent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">line_no</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_useragents</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User-agent set as: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_useragents</span><span class="p">[</span><span class="n">line_no</span><span class="p">])</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_useragents</span><span class="p">[</span><span class="n">line_no</span><span class="p">]</span>
+
+    <span class="c1"># Loads the user agents from file into the array</span>
+    <span class="k">def</span> <span class="nf">__get_useragents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading useragent strings&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">OWNP</span> <span class="o">+</span> <span class="s1">&#39;/voting/useragent.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_useragents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">))</span> 
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">__getVote</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">getVotes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div>
+<h3 id="pollfmvoter-pollfmpy">PollFMVoter (pollfm.py)</h3>
+<ul>
+<li>More specific class, inherits from AutoVoter and implements specifics.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load libraries</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">torpy</span> <span class="kn">import</span> <span class="n">TorClient</span>
+<span class="kn">from</span> <span class="nn">torpy.http.adapter</span> <span class="kn">import</span> <span class="n">TorHttpAdapter</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">BeaSoup</span>
+
+<span class="kn">from</span> <span class="nn">voting.voter</span> <span class="kn">import</span> <span class="n">AutoVoter</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">PollFMVoter</span><span class="p">(</span><span class="n">AutoVoter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">[</span><span class="s2">&quot;Host&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;poll.fm&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">poll_id</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poll_option</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poll_votes</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__vote_pointer</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__retries</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__url_poll</span> <span class="o">=</span> <span class="s2">&quot;https://poll.fm/</span><span class="si">{poll_id}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Generated URL to be submited for vote</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__url_template</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;https://poll.fm/vote?&quot;</span>
+            <span class="s2">&quot;va=</span><span class="si">{item_va}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&amp;pt=0&quot;</span>
+            <span class="s2">&quot;&amp;r=</span><span class="si">{item_r}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&amp;p=</span><span class="si">{item_pid}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&amp;a=</span><span class="si">{item_opt}</span><span class="s2">,&quot;</span>
+            <span class="s2">&quot;&amp;o=&quot;</span>  <span class="c1"># nothing needed here</span>
+            <span class="s2">&quot;&amp;t=</span><span class="si">{item_t}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&amp;token=</span><span class="si">{item_token}</span><span class="s2">&quot;</span>
+            <span class="s2">&quot;&amp;pz=</span><span class="si">{item_pz}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__getVote</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__vote_pointer</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">tor</span> <span class="o">=</span> <span class="n">TorClient</span><span class="p">()</span>
+
+            <span class="k">with</span> <span class="n">tor</span><span class="o">.</span><span class="n">get_guard</span><span class="p">()</span> <span class="k">as</span> <span class="n">guard</span><span class="p">:</span>
+                <span class="n">adapter</span> <span class="o">=</span> <span class="n">TorHttpAdapter</span><span class="p">(</span><span class="n">guard</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__retries</span><span class="p">)</span>
+
+                <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+                    <span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+                    <span class="n">s</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;https://&#39;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+
+                    <span class="c1"># Make it look like a different browser randomly</span>
+                    <span class="c1">#   by changing the user-agent with every request</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_set_useragent</span><span class="p">()</span>
+
+                    <span class="c1"># Set the poll id in the url</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">__url_poll</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__url_poll</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{poll_id}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll_id</span><span class="p">)</span>
+
+                    <span class="c1"># Go to poll main page to get the needed items</span>
+                    <span class="c1">#   to submit for the vote</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__url_poll</span><span class="p">)</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__url_poll</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s2">&quot;First response: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                            <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> 
+                            <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                            <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">url</span>
+                        <span class="p">)</span>
+                    <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+                    <span class="c1"># Get the html from the web page</span>
+                    <span class="n">bs_content</span> <span class="o">=</span> <span class="n">BeaSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+
+                    <span class="c1"># Get the info from the Vote button json object</span>
+                    <span class="n">button_data</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> 
+                        <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;vote-button css-vote-button pds-vote-button&quot;</span><span class="p">)</span>
+
+                    <span class="n">v_bdata</span> <span class="o">=</span> <span class="n">button_data</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data-vote&#39;</span><span class="p">)</span>
+
+                    <span class="c1"># Load as json data</span>
+                    <span class="n">bdata</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">v_bdata</span><span class="p">)</span>
+
+                    <span class="c1"># Get hidden form value</span>
+                    <span class="n">v_pz</span> <span class="o">=</span> <span class="n">bs_content</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;pz&quot;</span><span class="p">})</span>
+
+                    <span class="c1"># Inject data into vote URL template</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__url_template</span>  <span class="c1"># reset url_vote</span>
+
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_pid}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll_id</span><span class="p">)</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_opt}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll_option</span><span class="p">)</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_t}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_token}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_pz}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">v_pz</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_r}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]))</span>
+                    <span class="n">url_vote</span> <span class="o">=</span> <span class="n">url_vote</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{item_va}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">bdata</span><span class="p">[</span><span class="s1">&#39;at&#39;</span><span class="p">]))</span>
+
+                    <span class="c1"># Makes it look slightly more authentic, by waiting </span>
+                    <span class="c1">#  before actually submitting the vote after the</span>
+                    <span class="c1">#  initial request to the poll.</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting 2 seconds before submitting.&quot;</span><span class="p">)</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+                    <span class="c1"># Let&#39;s vote!</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Submitting vote </span><span class="si">%i</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                                    <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vote_pointer</span><span class="p">,</span> <span class="n">url_vote</span><span class="p">))</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_vote</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">)</span>
+
+                    <span class="c1"># Redirected response, log it</span>
+                    <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Request redirected&quot;</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                                <span class="s2">&quot;Redirected response: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                                <span class="o">%</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> 
+                                <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                                <span class="o">+</span> <span class="n">resp</span><span class="o">.</span><span class="n">url</span>
+                            <span class="p">)</span>
+
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                            <span class="s2">&quot;Final destination: </span><span class="si">%s</span><span class="s2">&quot;</span> 
+                            <span class="o">%</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> 
+                            <span class="o">+</span> <span class="s2">&quot; &quot;</span> 
+                            <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">url</span>
+                        <span class="p">)</span>
+
+                    <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__vote_pointer</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll_votes</span><span class="p">):</span> 
+                        <span class="c1"># Wait a random number of seconds between 5 &amp; 20</span>
+                        <span class="c1">#  before starting again - more realistic</span>
+                        <span class="n">wait_time</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting </span><span class="si">%i</span><span class="s2"> seconds.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">wait_time</span><span class="p">))</span>
+                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait_time</span><span class="p">)</span>
+
+        <span class="c1"># Any issues, log them and get out</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span>
+
+
+    <span class="k">def</span> <span class="nf">getVotes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">getdata</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__vote_pointer</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># No sense in doing anything without a poll id </span>
+        <span class="c1">#   and an option to vote for</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poll_option</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll_id</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># If set to 0, run continuously</span>
+                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poll_votes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="k">while</span> <span class="n">getdata</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__getVote</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span> 
+                    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poll_votes</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__getVote</span><span class="p">()</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">getdata</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Please set Poll ID &amp; Option.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ComcastModemMonitor/" class="md-footer__link md-footer__link--next" aria-label="Next: Comcast Modem Power Level Monitor" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Comcast Modem Power Level Monitor
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
