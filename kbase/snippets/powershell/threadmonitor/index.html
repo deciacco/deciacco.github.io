@@ -1,0 +1,282 @@
+<!-- Elements added to main will be displayed on all pages --> <!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link href=../copyfilesremote/ rel=prev><link href=../../../../tags/ rel=next><link rel=icon href=../../../../assets/images/favicon.png><meta name=generator content="mkdocs-1.5.3, mkdocs-material-9.5.13"><title>Thread Monitor - deciacco.github.io</title><link rel=stylesheet href=../../../../assets/stylesheets/main.7e359304.min.css><link rel=stylesheet href=../../../../assets/stylesheets/palette.06af60db.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../../../static/css/extra.css><script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../../../.. title=deciacco.github.io class="md-header__button md-logo" aria-label=deciacco.github.io data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> deciacco.github.io </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Thread Monitor </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=indigo data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg> </label> </form> <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/deciacco title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../../../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../../../posts/JvmStuckThread/ class=md-tabs__link> Articles </a> </li> <li class=md-tabs__item> <a href=../../../../posts/PHPImageMailer/ class=md-tabs__link> Tools </a> </li> <li class="md-tabs__item md-tabs__item--active"> <a href=../../../ class=md-tabs__link> KB </a> </li> <li class=md-tabs__item> <a href=../../../../tags/ class=md-tabs__link> Tags </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../../../.. title=deciacco.github.io class="md-nav__button md-logo" aria-label=deciacco.github.io data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg> </a> deciacco.github.io </label> <div class=md-nav__source> <a href=https://github.com/deciacco title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../.. class=md-nav__link> <span class=md-ellipsis> Home </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2> <label class=md-nav__link for=__nav_2 id=__nav_2_label tabindex=0> <span class=md-ellipsis> Articles </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Articles </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../../posts/JvmStuckThread/ class=md-nav__link> <span class=md-ellipsis> Jvm Stuck Threads </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/UpDownScript/ class=md-nav__link> <span class=md-ellipsis> Monitor Service & Restart </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/RSyncEsxi/ class=md-nav__link> <span class=md-ellipsis> Rsync In ESXI </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/SqlInjectionBehavior/ class=md-nav__link> <span class=md-ellipsis> Finding Sql Injection Through Code Analysis </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/OpenVPNDNS/ class=md-nav__link> <span class=md-ellipsis> Make OpenVPN DNS Work </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/PollVote/ class=md-nav__link> <span class=md-ellipsis> Poll Voter </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/ComcastModemMonitor/ class=md-nav__link> <span class=md-ellipsis> Comcast Modem Power Level Monitor </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/AHKGithubPrivate/ class=md-nav__link> <span class=md-ellipsis> Private GitHub Repo and Autohokey </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/MonitorFolderService/ class=md-nav__link> <span class=md-ellipsis> Monitor Folder With PHP </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/BetterSendTo/ class=md-nav__link> <span class=md-ellipsis> A Better "Send to Mail Recipient" With Outlook </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/LblPrint/ class=md-nav__link> <span class=md-ellipsis> Label Printer (Showcase) </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/PHPFtpBackupTool/ class=md-nav__link> <span class=md-ellipsis> PHP Ftp Backup Library </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/DilbertSyncAsync/ class=md-nav__link> <span class=md-ellipsis> C# .NET 2.0 Web Service - Sync + Async </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/PHPOpenSSL/ class=md-nav__link> <span class=md-ellipsis> PHP, OpenSSL and ftp_ssl_connect() on Win32 </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/GetHtml/ class=md-nav__link> <span class=md-ellipsis> GetHtml </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/SMTPSinks/ class=md-nav__link> <span class=md-ellipsis> SMTP Sinks </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> <span class=md-ellipsis> Tools </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Tools </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_1> <label class=md-nav__link for=__nav_3_1 id=__nav_3_1_label tabindex=0> <span class=md-ellipsis> Old Programs </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_1_label aria-expanded=false> <label class=md-nav__title for=__nav_3_1> <span class="md-nav__icon md-icon"></span> Old Programs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../../posts/PHPImageMailer/ class=md-nav__link> <span class=md-ellipsis> Image Mailer </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/PHPImageResizer/ class=md-nav__link> <span class=md-ellipsis> Image Resizer </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/BatchRun/ class=md-nav__link> <span class=md-ellipsis> Batch Run </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/UtFiles/ class=md-nav__link> <span class=md-ellipsis> UTFiles </span> </a> </li> <li class=md-nav__item> <a href=../../../../posts/SmtpTester/ class=md-nav__link> <span class=md-ellipsis> SmtpTester </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4 checked> <div class="md-nav__link md-nav__container"> <a href=../../../ class="md-nav__link "> <span class=md-ellipsis> KB </span> </a> <label class="md-nav__link " for=__nav_4 id=__nav_4_label tabindex> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=true> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> KB </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../malphish/ class=md-nav__link> <span class=md-ellipsis> Phishing </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4_3> <label class=md-nav__link for=__nav_4_3 id=__nav_4_3_label tabindex=0> <span class=md-ellipsis> Pond (w Phish!) </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_4_3_label aria-expanded=false> <label class=md-nav__title for=__nav_4_3> <span class="md-nav__icon md-icon"></span> Pond (w Phish!) </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../pond/phish001/ class=md-nav__link> <span class=md-ellipsis> Example Phish 001 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish002/ class=md-nav__link> <span class=md-ellipsis> Example Phish 002 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish003/ class=md-nav__link> <span class=md-ellipsis> Example Phish 003 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish004/ class=md-nav__link> <span class=md-ellipsis> Example Phish 004 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish005/ class=md-nav__link> <span class=md-ellipsis> Example Phish 005 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish006/ class=md-nav__link> <span class=md-ellipsis> Example Phish 006 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish007/ class=md-nav__link> <span class=md-ellipsis> Example Phish 007 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish008/ class=md-nav__link> <span class=md-ellipsis> Example Phish 008 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish009/ class=md-nav__link> <span class=md-ellipsis> Example Phish 009 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish010/ class=md-nav__link> <span class=md-ellipsis> Example Phish 010 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish011/ class=md-nav__link> <span class=md-ellipsis> Example Phish 011 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish012/ class=md-nav__link> <span class=md-ellipsis> Example Phish 012 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish013/ class=md-nav__link> <span class=md-ellipsis> Example Phish 013 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish014/ class=md-nav__link> <span class=md-ellipsis> Example Phish 014 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish015/ class=md-nav__link> <span class=md-ellipsis> Example Phish 015 </span> </a> </li> <li class=md-nav__item> <a href=../../../pond/phish016/ class=md-nav__link> <span class=md-ellipsis> Example Phish 016 </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../../hipaa164/ class=md-nav__link> <span class=md-ellipsis> HIPAA Rules </span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4_5 checked> <div class="md-nav__link md-nav__container"> <a href=../../ class="md-nav__link "> <span class=md-ellipsis> Code Repository </span> </a> <label class="md-nav__link " for=__nav_4_5 id=__nav_4_5_label tabindex=0> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_4_5_label aria-expanded=true> <label class=md-nav__title for=__nav_4_5> <span class="md-nav__icon md-icon"></span> Code Repository </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4_5_2 checked> <label class=md-nav__link for=__nav_4_5_2 id=__nav_4_5_2_label tabindex=0> <span class=md-ellipsis> PowerShell </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_4_5_2_label aria-expanded=true> <label class=md-nav__title for=__nav_4_5_2> <span class="md-nav__icon md-icon"></span> PowerShell </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../largefilesize/ class=md-nav__link> <span class=md-ellipsis> Large File Sizes </span> </a> </li> <li class=md-nav__item> <a href=../copyfilesremote/ class=md-nav__link> <span class=md-ellipsis> Copy Files Remote </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Thread Monitor </span> </a> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../../../tags/ class=md-nav__link> <span class=md-ellipsis> Tags </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1>Thread Monitor</h1> <div class=highlight><pre><span></span><code><span class=c>#*=============================================================================</span>
+<span class=c>#* Script Name:  Get-ThreadCPUpct.ps1</span>
+<span class=c>#*=============================================================================</span>
+<span class=c>#* Created:     05/07/2024</span>
+<span class=c>#* Author:      First Last</span>
+<span class=c>#*=============================================================================</span>
+
+<span class=c>###############################################################################</span>
+<span class=c>#</span>
+<span class=c># DO NOT EDIT THE CODE DIRECTLY - Check it out of source control and use deploy.ps1</span>
+<span class=c>#</span>
+<span class=c>###############################################################################</span>
+
+<span class=cm>&lt;#</span>
+<span class=cm>    </span><span class=sd>.SYNOPSIS</span>
+<span class=cm>    This script provides an automated way to monitor the stuck thread of a </span>
+<span class=cm>    Tomcat instance. If a thread is found to be stuck longer than 6 hours</span>
+<span class=cm>    an email is sent, but only 1 email. Once the instance is restarted and</span>
+<span class=cm>    the thread goes away, the script will adjust.    </span>
+<span class=cm>#&gt;</span>
+
+<span class=c># Setup the log file name</span>
+<span class=nv>$todayDate</span> <span class=p>=</span> <span class=nb>Get-Date</span> <span class=n>-Format</span> <span class=s2>&quot;yyyyMMdd&quot;</span>
+<span class=nv>$Transcript</span> <span class=p>=</span> <span class=nv>$PSScriptRoot</span> <span class=p>+</span> <span class=s2>&quot;\Log_${todayDate}.txt&quot;</span>
+<span class=nv>$fromEmail</span> <span class=p>=</span> <span class=s1>&#39;monserver &lt;DoNotReply.Monserver@domain.com&gt;&#39;</span>
+<span class=nv>$toEmail</span> <span class=p>=</span> <span class=p>@(</span>
+    <span class=s2>&quot;alert.email.1@domain.com&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;alert.email.2@domain.com&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;alert.email.3@domain.com&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;alert.email.4@domain.com&quot;</span>
+    <span class=p>)</span>
+
+<span class=c># Start recording output to file</span>
+<span class=nb>Start-Transcript</span> <span class=n>-Path</span> <span class=nv>$Transcript</span> <span class=n>-Append</span>
+
+<span class=c># Define an array of remote server to query</span>
+<span class=nv>$remoteServerNames</span> <span class=p>=</span> <span class=p>@(</span>
+    <span class=s2>&quot;SERVER-01&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-02&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-03&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;SERVER-31&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-32&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-33&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;SERVER-91&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-92&quot;</span><span class=p>,</span> 
+    <span class=s2>&quot;SERVER-93&quot;</span>
+    <span class=p>)</span>
+
+<span class=nv>$ThreadAge</span> <span class=p>=</span> <span class=p>@{</span><span class=n>L</span><span class=p>=</span><span class=s2>&quot;ThreadAge&quot;</span><span class=p>;</span><span class=n>E</span><span class=p>={</span><span class=no>[Timespan]</span><span class=p>::</span><span class=n>FromMilliseconds</span><span class=p>(</span><span class=nv>$_</span><span class=p>.</span><span class=n>UserModeTime</span> <span class=p>+</span> <span class=nv>$_</span><span class=p>.</span><span class=n>KernelModeTime</span><span class=p>).</span><span class=n>ToString</span><span class=p>(</span><span class=s2>&quot;dd\:hh\:mm\:ss&quot;</span><span class=p>)}}</span>
+<span class=nv>$ThreadAgeD</span> <span class=p>=</span> <span class=p>@{</span><span class=n>L</span><span class=p>=</span><span class=s2>&quot;ThreadAgeD&quot;</span><span class=p>;</span><span class=n>E</span><span class=p>={</span><span class=no>[Timespan]</span><span class=p>::</span><span class=n>FromMilliseconds</span><span class=p>(</span><span class=nv>$_</span><span class=p>.</span><span class=n>UserModeTime</span> <span class=p>+</span> <span class=nv>$_</span><span class=p>.</span><span class=n>KernelModeTime</span><span class=p>).</span><span class=n>ToString</span><span class=p>(</span><span class=s2>&quot;dd&quot;</span><span class=p>)}}</span>
+<span class=nv>$ThreadAgeH</span> <span class=p>=</span> <span class=p>@{</span><span class=n>L</span><span class=p>=</span><span class=s2>&quot;ThreadAgeH&quot;</span><span class=p>;</span><span class=n>E</span><span class=p>={</span><span class=no>[Timespan]</span><span class=p>::</span><span class=n>FromMilliseconds</span><span class=p>(</span><span class=nv>$_</span><span class=p>.</span><span class=n>UserModeTime</span> <span class=p>+</span> <span class=nv>$_</span><span class=p>.</span><span class=n>KernelModeTime</span><span class=p>).</span><span class=n>ToString</span><span class=p>(</span><span class=s2>&quot;hh&quot;</span><span class=p>)}}</span>
+
+<span class=nv>$ThreadWaitReason</span> <span class=p>=</span> <span class=p>@{</span>
+    <span class=n>L</span> <span class=p>=</span> <span class=s1>&#39;ThreadWaitReason&#39;</span>
+    <span class=n>E</span> <span class=p>=</span> <span class=p>{</span>
+        <span class=c># property is an array, so process all values</span>
+        <span class=nv>$value</span> <span class=p>=</span> <span class=nv>$_</span><span class=p>.</span><span class=n>ThreadWaitReason</span>
+
+        <span class=k>switch</span><span class=p>(</span><span class=no>[int]</span><span class=nv>$value</span><span class=p>)</span>
+        <span class=p>{</span>
+            <span class=n>0</span>          <span class=p>{</span><span class=s1>&#39;Executive&#39;</span><span class=p>}</span>
+            <span class=n>1</span>          <span class=p>{</span><span class=s1>&#39;FreePage&#39;</span><span class=p>}</span>
+            <span class=n>2</span>          <span class=p>{</span><span class=s1>&#39;PageIn&#39;</span><span class=p>}</span>
+            <span class=n>3</span>          <span class=p>{</span><span class=s1>&#39;PoolAllocation&#39;</span><span class=p>}</span>
+            <span class=n>4</span>          <span class=p>{</span><span class=s1>&#39;ExecutionDelay&#39;</span><span class=p>}</span>
+            <span class=n>5</span>          <span class=p>{</span><span class=s1>&#39;FreePage&#39;</span><span class=p>}</span>
+            <span class=n>6</span>          <span class=p>{</span><span class=s1>&#39;PageIn&#39;</span><span class=p>}</span>
+            <span class=n>7</span>          <span class=p>{</span><span class=s1>&#39;Executive&#39;</span><span class=p>}</span>
+            <span class=n>8</span>          <span class=p>{</span><span class=s1>&#39;FreePage&#39;</span><span class=p>}</span>
+            <span class=n>9</span>          <span class=p>{</span><span class=s1>&#39;PageIn&#39;</span><span class=p>}</span>
+            <span class=n>10</span>         <span class=p>{</span><span class=s1>&#39;PoolAllocation&#39;</span><span class=p>}</span>
+            <span class=n>11</span>         <span class=p>{</span><span class=s1>&#39;ExecutionDelay&#39;</span><span class=p>}</span>
+            <span class=n>12</span>         <span class=p>{</span><span class=s1>&#39;FreePage&#39;</span><span class=p>}</span>
+            <span class=n>13</span>         <span class=p>{</span><span class=s1>&#39;PageIn&#39;</span><span class=p>}</span>
+            <span class=n>14</span>         <span class=p>{</span><span class=s1>&#39;EventPairHigh&#39;</span><span class=p>}</span>
+            <span class=n>15</span>         <span class=p>{</span><span class=s1>&#39;EventPairLow&#39;</span><span class=p>}</span>
+            <span class=n>16</span>         <span class=p>{</span><span class=s1>&#39;LPCReceive&#39;</span><span class=p>}</span>
+            <span class=n>17</span>         <span class=p>{</span><span class=s1>&#39;LPCReply&#39;</span><span class=p>}</span>
+            <span class=n>18</span>         <span class=p>{</span><span class=s1>&#39;VirtualMemory&#39;</span><span class=p>}</span>
+            <span class=n>19</span>         <span class=p>{</span><span class=s1>&#39;PageOut&#39;</span><span class=p>}</span>
+            <span class=n>20</span>         <span class=p>{</span><span class=s1>&#39;Rendezvous&#39;</span><span class=p>}</span>
+            <span class=n>21</span>         <span class=p>{</span><span class=s1>&#39;KeyedEvent&#39;</span><span class=p>}</span>
+            <span class=n>22</span>         <span class=p>{</span><span class=s1>&#39;Terminated&#39;</span><span class=p>}</span>
+            <span class=n>23</span>         <span class=p>{</span><span class=s1>&#39;ProcessInSwap&#39;</span><span class=p>}</span>
+            <span class=n>24</span>         <span class=p>{</span><span class=s1>&#39;CpuRateControl&#39;</span><span class=p>}</span>
+            <span class=n>25</span>         <span class=p>{</span><span class=s1>&#39;CalloutStack&#39;</span><span class=p>}</span>
+            <span class=n>26</span>         <span class=p>{</span><span class=s1>&#39;Kernel&#39;</span><span class=p>}</span>
+            <span class=n>27</span>         <span class=p>{</span><span class=s1>&#39;Resource&#39;</span><span class=p>}</span>
+            <span class=n>28</span>         <span class=p>{</span><span class=s1>&#39;PushLock&#39;</span><span class=p>}</span>
+            <span class=n>29</span>         <span class=p>{</span><span class=s1>&#39;Mutex&#39;</span><span class=p>}</span>
+            <span class=n>30</span>         <span class=p>{</span><span class=s1>&#39;QuantumEnd&#39;</span><span class=p>}</span>
+            <span class=n>31</span>         <span class=p>{</span><span class=s1>&#39;DispatchInt&#39;</span><span class=p>}</span>
+            <span class=n>32</span>         <span class=p>{</span><span class=s1>&#39;Preempted&#39;</span><span class=p>}</span>
+            <span class=n>33</span>         <span class=p>{</span><span class=s1>&#39;YieldExecution&#39;</span><span class=p>}</span>
+            <span class=n>34</span>         <span class=p>{</span><span class=s1>&#39;FastMutex&#39;</span><span class=p>}</span>
+            <span class=n>35</span>         <span class=p>{</span><span class=s1>&#39;GuardedMutex&#39;</span><span class=p>}</span>
+            <span class=n>36</span>         <span class=p>{</span><span class=s1>&#39;Rundown&#39;</span><span class=p>}</span>
+            <span class=n>37</span>         <span class=p>{</span><span class=s1>&#39;MaximumWaitReason&#39;</span><span class=p>}</span>
+            <span class=k>default</span>    <span class=p>{</span><span class=s2>&quot;$value&quot;</span><span class=p>}</span>
+        <span class=p>}</span>
+    <span class=p>}</span>  
+<span class=p>}</span>
+
+<span class=nv>$currSidFilePaths</span> <span class=p>=</span> <span class=p>@()</span>
+<span class=nv>$serverWaitSecs</span> <span class=p>=</span> <span class=n>5</span>
+
+<span class=c># Connect to the remote server using WMI and retrieve thread information for Tomcat</span>
+<span class=nv>$qryServer</span> <span class=p>=</span> <span class=p>@(</span>
+    <span class=s2>&quot;SELECT * &quot;</span>
+    <span class=s2>&quot;FROM Win32_PerfFormattedData_PerfProc_Thread &quot;</span>
+    <span class=s2>&quot;WHERE PercentProcessorTime &gt; 95 AND Name LIKE &#39;%Tomcat%&#39;&quot;</span>
+<span class=p>)</span> <span class=n>-Join</span> <span class=s2>&quot;&quot;</span>
+
+<span class=k>foreach</span> <span class=p>(</span><span class=nv>$remoteServer</span> <span class=k>in</span> <span class=nv>$remoteServerNames</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c># Initialize retry count</span>
+    <span class=nv>$retryCount</span> <span class=p>=</span> <span class=n>1</span>
+    <span class=nv>$errRetryCount</span> <span class=p>=</span> <span class=n>1</span>
+    <span class=nv>$maxRetries</span> <span class=p>=</span> <span class=n>3</span>
+    <span class=nv>$tCount</span> <span class=p>=</span> <span class=n>0</span>
+
+    <span class=nb>Write-Host</span> <span class=s2>&quot;</span><span class=se>`n</span><span class=s2>Checking threads on server: $remoteServer&quot;</span>
+    <span class=nb>Write-Host</span> <span class=s2>&quot;==============================================================================&quot;</span>
+
+    <span class=k>while</span> <span class=p>((</span><span class=nv>$errRetryCount</span> <span class=o>-le</span> <span class=nv>$maxRetries</span><span class=p>)</span> <span class=o>-and</span> <span class=p>(</span><span class=nv>$retryCount</span> <span class=o>-le</span> <span class=nv>$maxRetries</span><span class=p>)</span> <span class=o>-and</span> <span class=p>(</span><span class=nv>$tCount</span> <span class=o>-lt</span> <span class=n>1</span><span class=p>))</span> <span class=p>{</span>
+        <span class=k>try</span> <span class=p>{</span>
+            <span class=nb>Write-Host</span> <span class=s2>&quot;Try for threads: ${retryCount}&quot;</span>
+
+            <span class=nv>$threads</span> <span class=p>=</span> <span class=nb>Get-WmiObject</span> <span class=n>-Query</span> <span class=nv>$qryServer</span> <span class=n>-ComputerName</span> <span class=nv>$remoteServer</span> <span class=n>-ErrorAction</span> <span class=n>Stop</span>
+            <span class=nv>$errRetryCount</span> <span class=p>=</span> <span class=n>1</span> <span class=c># maxRetries errors per try</span>
+
+            <span class=nv>$tCount</span> <span class=p>=</span> <span class=nv>$threads</span> <span class=p>|</span> <span class=nb>Measure-Object</span> <span class=p>|</span> <span class=nb>Select-Object</span> <span class=n>-ExpandProperty</span> <span class=n>Count</span>
+            <span class=nb>Write-Host</span> <span class=s2>&quot;Thread count: ${tCount}&quot;</span>
+
+            <span class=k>if</span> <span class=p>(</span><span class=nv>$tCount</span> <span class=o>-lt</span> <span class=n>1</span><span class=p>)</span> <span class=p>{</span>             
+                <span class=k>if</span> <span class=p>(</span><span class=nv>$retryCount</span> <span class=o>-lt</span> <span class=nv>$maxRetries</span><span class=p>)</span> <span class=p>{</span>
+                    <span class=nb>Write-Host</span> <span class=s2>&quot;Waiting ${serverWaitSecs}s and then retrying to double-check...&quot;</span>
+                    <span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=nv>$serverWaitSecs</span>
+                    <span class=nb>Write-Host</span> <span class=s2>&quot;Retrying WMI query...&quot;</span>
+                <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                    <span class=nb>Write-Host</span> <span class=s2>&quot;Moving on...&quot;</span>
+                <span class=p>}</span>
+                <span class=nv>$retryCount</span><span class=p>++</span>
+            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+                 <span class=nb>Write-Host</span> <span class=s2>&quot;Found threads: $tCount&quot;</span>
+            <span class=p>}</span>
+
+        <span class=p>}</span> <span class=k>catch</span> <span class=p>{</span>
+            <span class=nv>$errRetryCount</span><span class=p>++</span>
+            <span class=nb>Write-Host</span> <span class=s2>&quot;Error try #${errRetryCount} failed: $_&quot;</span>
+            <span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=nv>$serverWaitSecs</span>
+        <span class=p>}</span>
+    <span class=p>}</span> 
+
+    <span class=k>if</span> <span class=p>(</span><span class=nv>$tCount</span> <span class=o>-gt</span> <span class=n>0</span><span class=p>){</span>
+        <span class=c># Iterate through each thread and get the owner process command line so we know which instance.</span>
+        <span class=k>foreach</span> <span class=p>(</span><span class=nv>$thread</span> <span class=k>in</span> <span class=nv>$threads</span><span class=p>)</span> <span class=p>{</span>
+            <span class=nv>$processId</span> <span class=p>=</span> <span class=nv>$thread</span><span class=p>.</span><span class=n>IDProcess</span>
+            <span class=nv>$threadId</span> <span class=p>=</span> <span class=nv>$thread</span><span class=p>.</span><span class=n>IDThread</span>
+            <span class=nv>$pctCPU</span> <span class=p>=</span> <span class=nv>$thread</span><span class=p>.</span><span class=n>PercentProcessorTime</span>
+
+            <span class=nv>$qryProc</span> <span class=p>=</span> <span class=p>@(</span>
+                <span class=s2>&quot;SELECT CommandLine &quot;</span>
+                <span class=s2>&quot;FROM Win32_Process &quot;</span>
+                <span class=s2>&quot;WHERE ProcessId = $processId&quot;</span>
+            <span class=p>)</span> <span class=n>-Join</span> <span class=s2>&quot;&quot;</span>
+
+            <span class=nv>$qryThread</span> <span class=p>=</span> <span class=p>@(</span>
+                <span class=s2>&quot;SELECT * &quot;</span>
+                <span class=s2>&quot;FROM Win32_Thread &quot;</span>
+                <span class=s2>&quot;WHERE Handle = $threadId&quot;</span>
+            <span class=p>)</span> <span class=n>-Join</span> <span class=s2>&quot;&quot;</span>
+
+            <span class=c># Initialize retry count</span>
+            <span class=nv>$retryCount</span> <span class=p>=</span> <span class=n>1</span>
+            <span class=nv>$maxRetries</span> <span class=p>=</span> <span class=n>3</span>
+
+            <span class=p>:</span><span class=n>triesTime</span> <span class=k>while</span> <span class=p>(</span><span class=nv>$retryCount</span> <span class=o>-le</span> <span class=nv>$maxRetries</span><span class=p>)</span> <span class=p>{</span>
+                <span class=k>try</span> <span class=p>{</span>
+                    <span class=nb>Write-Host</span> <span class=s2>&quot;Try for cpu time: ${retryCount}&quot;</span>
+                    <span class=nv>$cpuTime</span> <span class=p>=</span> <span class=nb>Get-WmiObject</span> <span class=n>-Query</span> <span class=nv>$qryThread</span> <span class=n>-ComputerName</span> <span class=nv>$remoteServer</span> <span class=n>-ErrorAction</span> <span class=n>Stop</span> <span class=p>|</span> <span class=nb>Select-Object</span> <span class=nv>$ThreadAge</span><span class=p>,</span> <span class=nv>$ThreadAgeD</span><span class=p>,</span> <span class=nv>$ThreadAgeH</span><span class=p>,</span> <span class=nv>$ThreadWaitReason</span> 
+                    <span class=k>break</span> <span class=n>triesTime</span>
+                <span class=p>}</span> <span class=k>catch</span> <span class=p>{</span>
+                    <span class=nv>$retryCount</span><span class=p>++</span>
+                    <span class=nb>Write-Error</span> <span class=s2>&quot;Attempt $retryCount failed: $_&quot;</span>
+                    <span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=nv>$serverWaitSecs</span>
+                <span class=p>}</span>
+            <span class=p>}</span>
+
+            <span class=c># Initialize retry count</span>
+            <span class=nv>$retryCount</span> <span class=p>=</span> <span class=n>1</span>
+            <span class=nv>$maxRetries</span> <span class=p>=</span> <span class=n>3</span>
+
+            <span class=p>:</span><span class=n>triesCmdL</span> <span class=k>while</span> <span class=p>(</span><span class=nv>$retryCount</span> <span class=o>-le</span> <span class=nv>$maxRetries</span><span class=p>)</span> <span class=p>{</span>
+                <span class=k>try</span> <span class=p>{</span>
+                    <span class=nb>Write-Host</span> <span class=s2>&quot;Try for command line: ${retryCount}&quot;</span>
+                    <span class=nv>$commandLine</span> <span class=p>=</span> <span class=p>(</span><span class=nb>Get-WmiObject</span> <span class=n>-Query</span> <span class=nv>$qryProc</span> <span class=n>-ComputerName</span> <span class=nv>$remoteServer</span> <span class=n>-ErrorAction</span> <span class=n>Stop</span><span class=p>).</span><span class=n>CommandLine</span>
+                    <span class=k>break</span> <span class=n>triesCmdL</span>
+                <span class=p>}</span> <span class=k>catch</span> <span class=p>{</span>
+                    <span class=nv>$retryCount</span><span class=p>++</span>
+                    <span class=nb>Write-Error</span> <span class=s2>&quot;Attempt $retryCount failed: $_&quot;</span>
+                    <span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=nv>$serverWaitSecs</span>
+                <span class=p>}</span>
+            <span class=p>}</span>
+
+            <span class=nv>$commandLine</span> <span class=p>=</span> <span class=nv>$commandLine</span><span class=p>.</span><span class=n>Substring</span><span class=p>(</span><span class=nv>$commandLine</span><span class=p>.</span><span class=n>LastIndexOf</span><span class=p>(</span><span class=s2>&quot;/&quot;</span><span class=p>)</span> <span class=p>+</span><span class=n>1</span><span class=p>)</span>
+
+            <span class=nv>$iFound</span> <span class=p>=</span> <span class=p>@(</span>
+                <span class=s2>&quot;Instance: ${commandLine} &quot;</span>
+                <span class=s2>&quot;p-ID: ${processId} &quot;</span>
+                <span class=s2>&quot;t-ID: ${threadId} &quot;</span>
+                <span class=s2>&quot;t-CPU %: ${pctCPU} &quot;</span>
+                <span class=s2>&quot;t-CPU time: </span><span class=p>$(</span><span class=nv>$cpuTime</span><span class=p>.</span><span class=n>ThreadAge</span><span class=p>)</span><span class=s2> &quot;</span>
+                <span class=s2>&quot;t-Reason: </span><span class=p>$(</span><span class=nv>$cpuTime</span><span class=p>.</span><span class=n>ThreadWaitReason</span><span class=p>)</span><span class=s2> &quot;</span>
+            <span class=p>)</span> <span class=n>-Join</span> <span class=s2>&quot;&quot;</span>
+
+            <span class=nb>Write-Host</span> <span class=nv>$iFound</span>
+
+            <span class=c># if the instance cputime is greater than 6 hours check if it&#39;s foundid file is present</span>
+            <span class=k>if</span> <span class=p>((</span><span class=no>[int]</span><span class=nv>$cpuTime</span><span class=p>.</span><span class=n>ThreadAgeD</span> <span class=o>-gt</span> <span class=n>0</span><span class=p>)</span> <span class=o>-or</span> <span class=p>(</span><span class=no>[int]</span><span class=nv>$cpuTime</span><span class=p>.</span><span class=n>ThreadAgeH</span> <span class=o>-ge</span> <span class=n>6</span><span class=p>))</span> <span class=c># we have a persistent, stuck thread)</span>
+            <span class=p>{</span>
+                <span class=nv>$sidserver</span> <span class=p>=</span> <span class=nv>$remoteServer</span><span class=p>.</span><span class=n>Substring</span><span class=p>(</span><span class=nv>$remoteServer</span><span class=p>.</span><span class=n>LastIndexOf</span><span class=p>(</span><span class=s2>&quot;-&quot;</span><span class=p>)</span> <span class=p>+</span><span class=n>1</span><span class=p>)</span> <span class=c>#03</span>
+                <span class=nv>$sidinst</span> <span class=p>=</span> <span class=nv>$commandLine</span><span class=p>.</span><span class=n>Substring</span><span class=p>(</span><span class=nv>$commandLine</span><span class=p>.</span><span class=n>Length</span> <span class=p>-</span> <span class=n>2</span><span class=p>)</span> <span class=c>#07</span>
+                <span class=nv>$sid</span> <span class=p>=</span> <span class=nv>$sidserver</span> <span class=p>+</span> <span class=nv>$sidinst</span> <span class=p>+</span> <span class=nv>$processId</span> <span class=p>+</span> <span class=nv>$threadId</span> <span class=c>#sid03078285964 </span>
+                <span class=nv>$sidFilePath</span> <span class=p>=</span> <span class=nv>$PSScriptRoot</span> <span class=p>+</span> <span class=s2>&quot;\sid${sid}&quot;</span>
+
+                <span class=nv>$iMessage</span> <span class=p>=</span> <span class=p>@(</span>
+                    <span class=s2>&quot;If an opportunity arises you can restart the intance in off hours.&quot;</span>
+                    <span class=s2>&quot;Make sure to Log this occurance.&quot;</span>
+                    <span class=s2>&quot;Take a look at today&#39;s log to determine the start time.&quot;</span>
+                    <span class=s2>&quot;Log is located here:&quot;</span>
+                    <span class=s2>&quot;  MONSERVER-02 - ${Transcript}&quot;</span>
+                <span class=p>)</span> <span class=n>-Join</span> <span class=s2>&quot;</span><span class=se>`n</span><span class=s2>&quot;</span>
+
+                <span class=k>if</span> <span class=p>(</span><span class=o>-Not</span> <span class=p>(</span><span class=nb>Test-Path</span> <span class=n>-Path</span> <span class=nv>$sidFilePath</span><span class=p>))</span> <span class=p>{</span>
+                    <span class=c># Send the message using the internal relay</span>
+                    <span class=nb>Send-MailMessage</span> <span class=p>`</span>
+                        <span class=n>-From</span> <span class=nv>$fromEmail</span> <span class=p>`</span>
+                        <span class=n>-To</span> <span class=nv>$toEmail</span> <span class=p>`</span>
+                        <span class=n>-Subject</span> <span class=s2>&quot;_Alert - APP - Thread Monitor&quot;</span> <span class=p>`</span>
+                        <span class=n>-Body</span> <span class=s2>&quot;${remoteServer} - ${iFound}</span><span class=se>`n`n</span><span class=s2>${iMessage}&quot;</span> <span class=p>`</span>
+                        <span class=n>-Priority</span> <span class=n>High</span> <span class=p>`</span>
+                        <span class=n>-SmtpServer</span> <span class=s1>&#39;relay.domain.com&#39;</span>
+
+                    <span class=nb>New-Item</span> <span class=n>-Path</span> <span class=nv>$sidFilePath</span> <span class=n>-ItemType</span> <span class=n>File</span> <span class=p>|</span> <span class=nb>Out-Null</span>
+                <span class=p>}</span>
+
+                <span class=nv>$currSidFilePaths</span> <span class=p>+=</span> <span class=nv>$sidFilePath</span>
+            <span class=p>}</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=c># At the end of the script, get all sid files in the script directory.</span>
+<span class=nv>$allSidFiles</span> <span class=p>=</span> <span class=nb>Get-ChildItem</span> <span class=n>-Path</span> <span class=nv>$PSScriptRoot</span> <span class=o>-File</span> <span class=n>-Filter</span> <span class=s2>&quot;sid*.*&quot;</span>
+
+<span class=c># Clear out sid files that are no longer needed.</span>
+<span class=k>foreach</span> <span class=p>(</span><span class=nv>$sidFile</span> <span class=k>in</span> <span class=nv>$allSidFiles</span><span class=p>)</span> <span class=p>{</span>
+
+    <span class=k>if</span> <span class=p>(</span><span class=o>-Not</span> <span class=p>(</span><span class=nv>$currSidFilePaths</span> <span class=o>-contains</span> <span class=nv>$sidFile</span><span class=p>.</span><span class=n>FullName</span><span class=p>))</span> <span class=p>{</span>
+        <span class=c># File is not in the array, delete it</span>
+        <span class=nb>Remove-Item</span> <span class=n>-Path</span> <span class=nv>$sidFile</span><span class=p>.</span><span class=n>FullName</span> <span class=n>-Force</span>
+        <span class=nb>Write-Output</span> <span class=s2>&quot;Deleted file: </span><span class=p>$(</span><span class=nv>$sidFile</span><span class=p>.</span><span class=n>FullName</span><span class=p>)</span><span class=s2>&quot;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=nb>Stop-Transcript</span>
+
+<span class=c># Get the files in the directory</span>
+<span class=nv>$files</span> <span class=p>=</span> <span class=nb>Get-ChildItem</span> <span class=n>-Path</span> <span class=nv>$PSScriptRoot</span> <span class=o>-File</span> <span class=n>-Filter</span> <span class=s2>&quot;*.txt&quot;</span>
+
+<span class=c># Count the number of files in the directory</span>
+<span class=nv>$fileCount</span> <span class=p>=</span> <span class=nv>$files</span><span class=p>.</span><span class=n>Count</span>
+
+<span class=c># Check if the number of files is greater than 90</span>
+<span class=k>if</span> <span class=p>(</span><span class=nv>$fileCount</span> <span class=o>-gt</span> <span class=n>90</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c># Get the oldest file in the directory</span>
+    <span class=nv>$oldestFile</span> <span class=p>=</span> <span class=nv>$files</span> <span class=p>|</span> <span class=nb>Sort-Object</span> <span class=n>LastWriteTime</span> <span class=p>|</span> <span class=nb>Select-Object</span> <span class=n>-First</span> <span class=n>1</span>
+
+    <span class=c># Delete the oldest file</span>
+    <span class=nb>Remove-Item</span> <span class=nv>$oldestFile</span><span class=p>.</span><span class=n>FullName</span>
+<span class=p>}</span>
+</code></pre></div> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <!-- Copyright and theme information --> <div class=md-footer-copyright> </div> <div class=md-social> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../../../..", "features": ["navigation.tabs", "toc.integrate", "navigation.path", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../../../assets/javascripts/bundle.c8d2eff1.min.js></script> </body> </html>
